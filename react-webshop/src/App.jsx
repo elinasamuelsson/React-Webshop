@@ -1,4 +1,6 @@
 import {useState} from "react";
+import Header from "./components/Header";
+
 import "./App.css";
 
 function App() {
@@ -6,7 +8,7 @@ function App() {
 
 	return (
 		<>
-			<h3>Hello World!</h3>
+			<Header />
 		</>
 	);
 }
