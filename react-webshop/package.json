@@ -4,7 +4,7 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"start": "concurrently \"npx json-server \"db/db.json\" \"vite\"",
+		"start": "concurrently \"npx json-server db/db.json\" \"vite\"",
 		"db": "npx json-server db/db.json",
 		"dev": "vite",
 		"build": "vite build",
