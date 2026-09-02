@@ -1,0 +1,463 @@
+{
+	"products": [
+		{
+			"id": "k3j9x2q",
+			"title": "Die Hard",
+			"price": 49,
+			"description": "A NYPD cop battles terrorists who've taken over a Los Angeles skyscraper on Christmas Eve.",
+			"release": 1988,
+			"genre": "Action",
+			"imgLink": "dieHard.jpg"
+		},
+		{
+			"id": "p7m1t8w",
+			"title": "Heat",
+			"price": 59,
+			"description": "A relentless detective and a master thief face off in a cat-and-mouse battle across LA.",
+			"release": 1995,
+			"genre": "Action",
+			"imgLink": "heat.jpg"
+		},
+		{
+			"id": "z4h6r9v",
+			"title": "Mad Max: Fury Road",
+			"price": 59,
+			"description": "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland.",
+			"release": 2015,
+			"genre": "Action",
+			"imgLink": "madMaxFuryRoad.jpg"
+		},
+		{
+			"id": "b2n5f0y",
+			"title": "No Country for Old Men",
+			"price": 49,
+			"description": "A hunter stumbles upon a drug deal gone wrong and finds himself pursued by a remorseless killer.",
+			"release": 2007,
+			"genre": "Thriller",
+			"imgLink": "noCountryForOldMen.jpg"
+		},
+		{
+			"id": "q8s3d1c",
+			"title": "Ghostbusters",
+			"price": 39,
+			"description": "Three unemployed parapsychologists start a ghost-catching business in New York City.",
+			"release": 1984,
+			"genre": "Comedy",
+			"imgLink": "ghostbusters.png"
+		},
+		{
+			"id": "x1w7g4e",
+			"title": "Bridesmaids",
+			"price": 39,
+			"description": "A maid of honor's life unravels as she competes to plan the perfect wedding for her best friend.",
+			"release": 2011,
+			"genre": "Comedy",
+			"imgLink": "bridesmaids.webp"
+		},
+		{
+			"id": "j9k2l6a",
+			"title": "The Grand Budapest Hotel",
+			"price": 49,
+			"description": "A legendary concierge and his protégé become entangled in a theft and murder mystery.",
+			"release": 2014,
+			"genre": "Comedy",
+			"imgLink": "theGrandBudapestHotel.jpg"
+		},
+		{
+			"id": "m5v8b3n",
+			"title": "Groundhog Day",
+			"price": 39,
+			"description": "A cynical weatherman relives the same day over and over in a small Pennsylvania town.",
+			"release": 1993,
+			"genre": "Comedy",
+			"imgLink": "groundhogDay.webp"
+		},
+		{
+			"id": "t2c9x5r",
+			"title": "The Shining",
+			"price": 49,
+			"description": "A family heads to an isolated hotel for the winter, where a sinister presence influences the father.",
+			"release": 1980,
+			"genre": "Horror",
+			"imgLink": "theShining.webp"
+		},
+		{
+			"id": "f6q1z8h",
+			"title": "Get Out",
+			"price": 59,
+			"description": "A young man uncovers a disturbing secret when he meets his white girlfriend's family.",
+			"release": 2017,
+			"genre": "Horror",
+			"imgLink": "getOut.jpg"
+		},
+		{
+			"id": "d3p7y0w",
+			"title": "Alien",
+			"price": 49,
+			"description": "The crew of a commercial spacecraft encounters a deadly extraterrestrial lifeform.",
+			"release": 1979,
+			"genre": "Horror",
+			"imgLink": "alien.webp"
+		},
+		{
+			"id": "s9j4k2m",
+			"title": "Hereditary",
+			"price": 59,
+			"description": "A family unravels dark secrets after the death of their secretive grandmother.",
+			"release": 2018,
+			"genre": "Horror",
+			"imgLink": "hereditary.png"
+		},
+		{
+			"id": "l1g8v6b",
+			"title": "Blade Runner",
+			"price": 49,
+			"description": "A blade runner must pursue and terminate four replicants who stole a ship in space.",
+			"release": 1982,
+			"genre": "Sci-Fi",
+			"imgLink": "bladeRunner.jpg"
+		},
+		{
+			"id": "n5x2c9t",
+			"title": "Arrival",
+			"price": 59,
+			"description": "A linguist works with the military to communicate with alien lifeforms after twelve mysterious spacecraft land.",
+			"release": 2016,
+			"genre": "Sci-Fi",
+			"imgLink": "arrival.jpg"
+		},
+		{
+			"id": "w7r4f1q",
+			"title": "The Matrix",
+			"price": 49,
+			"description": "A computer hacker learns the truth about his reality and his role in the war against its controllers.",
+			"release": 1999,
+			"genre": "Sci-Fi",
+			"imgLink": "theMatrix.webp"
+		},
+		{
+			"id": "e8h3d6z",
+			"title": "The Godfather",
+			"price": 59,
+			"description": "The aging patriarch of an organized crime dynasty transfers control to his reluctant son.",
+			"release": 1972,
+			"genre": "Drama",
+			"imgLink": "theGodfather.webp"
+		},
+		{
+			"id": "a2m9k5j",
+			"title": "Moonlight",
+			"price": 49,
+			"description": "A young Black man's story of struggle and identity is told across three defining chapters of his life.",
+			"release": 2016,
+			"genre": "Drama",
+			"imgLink": "moonlight.png"
+		},
+		{
+			"id": "y6b1v8p",
+			"title": "Manchester by the Sea",
+			"price": 49,
+			"description": "A man is forced to return home to care for his teenage nephew after his brother's death.",
+			"release": 2016,
+			"genre": "Drama",
+			"imgLink": "manchesterByTheSea.jpg"
+		},
+		{
+			"id": "c4t9x2s",
+			"title": "Spirited Away",
+			"price": 49,
+			"description": "A young girl wanders into a mysterious world of spirits after her parents are transformed.",
+			"release": 2001,
+			"genre": "Animated",
+			"imgLink": "spiritedAway.jpg"
+		},
+		{
+			"id": "r7q3g1n",
+			"title": "Spider-Man: Into the Spider-Verse",
+			"price": 59,
+			"description": "A teen from Brooklyn discovers he's one of many Spider-People across the multiverse.",
+			"release": 2018,
+			"genre": "Animated",
+			"imgLink": "spiderManIntoTheSpiderVerse.webp"
+		},
+		{
+			"id": "h5w8f6d",
+			"title": "WALL-E",
+			"price": 39,
+			"description": "A lonely robot tasked with cleaning a deserted Earth falls in love and embarks on a journey through space.",
+			"release": 2008,
+			"genre": "Animated",
+			"imgLink": "wallE.webp"
+		},
+		{
+			"id": "u1j4k9m",
+			"title": "When Harry Met Sally",
+			"price": 39,
+			"description": "Two friends debate whether men and women can ever truly just be friends.",
+			"release": 1989,
+			"genre": "Romance",
+			"imgLink": "whenHarryMetSally.webp"
+		},
+		{
+			"id": "v6p2t7b",
+			"title": "Eternal Sunshine of the Spotless Mind",
+			"price": 49,
+			"description": "A couple undergoes a procedure to erase each other from their memories after a painful breakup.",
+			"release": 2004,
+			"genre": "Romance",
+			"imgLink": "eternalSunshine.webp"
+		},
+		{
+			"id": "d8m2w5r",
+			"title": "Superman",
+			"price": 59,
+			"description": "The Man of Steel navigates his dual heritage as both a Kryptonian and a human raised on Earth.",
+			"release": 2025,
+			"genre": "Action",
+			"imgLink": "superman.jpg"
+		},
+		{
+			"id": "x4q9k1v",
+			"title": "The Fantastic Four: First Steps",
+			"price": 59,
+			"description": "Marvel's first family must defend Earth from a cosmic threat while balancing life together.",
+			"release": 2025,
+			"genre": "Family",
+			"imgLink": "fantasticFour.jpg"
+		},
+		{
+			"id": "w3n7t2b",
+			"title": "Zootopia 2",
+			"price": 49,
+			"description": "A rabbit officer and a fox con artist reunite to investigate a mysterious new resident of their city.",
+			"release": 2025,
+			"genre": "Animated",
+			"imgLink": "zootopia2.jpg"
+		},
+		{
+			"id": "c9h5m8j",
+			"title": "Lilo & Stitch",
+			"price": 49,
+			"description": "A lonely Hawaiian girl befriends a chaotic alien fugitive who crash-lands on her island.",
+			"release": 2025,
+			"genre": "Family",
+			"imgLink": "lilo&stitch.jpg"
+		},
+		{
+			"id": "v2k6d1q",
+			"title": "A Minecraft Movie",
+			"price": 49,
+			"description": "Four misfits are pulled through a portal into a blocky, creative world where survival takes imagination.",
+			"release": 2025,
+			"genre": "Family",
+			"imgLink": "aMinecraftMovie.jpg"
+		},
+		{
+			"id": "m6j1w9c",
+			"title": "The Bad Guys 2",
+			"price": 39,
+			"description": "A reformed crew of animal outlaws is pulled back into crime by a new team of slick criminals.",
+			"release": 2025,
+			"genre": "Animated",
+			"imgLink": "theBadGuys2.jpg"
+		},
+		{
+			"id": "h5w1q8c",
+			"title": "Five Nights at Freddy's 2",
+			"price": 49,
+			"description": "A night security guard and his allies face fresh terrors from animatronic figures with a violent past.",
+			"release": 2025,
+			"genre": "Horror",
+			"imgLink": "fiveNightsAtFreddys2.jpg"
+		},
+		{
+			"id": "q5d8v2h",
+			"title": "Elio",
+			"price": 49,
+			"description": "A space-obsessed boy is mistakenly beamed up and mistaken for Earth's official ambassador to aliens.",
+			"release": 2025,
+			"genre": "Animated",
+			"imgLink": "elio.jpg"
+		},
+		{
+			"id": "k1n4t7b",
+			"title": "Avatar: Fire and Ash",
+			"price": 59,
+			"description": "The Na'vi face a new and volatile threat as conflict spreads across Pandora.",
+			"release": 2025,
+			"genre": "Sci-Fi",
+			"imgLink": "avatarFireAndAsh.jpg"
+		},
+		{
+			"id": "j7x2m5w",
+			"title": "Wicked: For Good",
+			"price": 59,
+			"description": "The concluding chapter follows Elphaba and Glinda as their diverging paths reach a turning point.",
+			"release": 2025,
+			"genre": "Musical",
+			"imgLink": "wickedForGood.jpg"
+		},
+		{
+			"id": "f3k8m1p",
+			"title": "Toy Story",
+			"price": 39,
+			"description": "A cowboy doll feels threatened when a new spaceman toy replaces him as a boy's favorite.",
+			"release": 1995,
+			"genre": "Family",
+			"imgLink": "toyStory.jpg"
+		},
+		{
+			"id": "n7q2x5d",
+			"title": "The Incredibles",
+			"price": 49,
+			"description": "A family of undercover superheroes tries to live a quiet suburban life while forced into a crisis.",
+			"release": 2004,
+			"genre": "Family",
+			"imgLink": "theIncredibles.jpg"
+		},
+		{
+			"id": "j4r8v2b",
+			"title": "Harry Potter and the Sorcerer's Stone",
+			"price": 49,
+			"description": "An orphaned boy discovers he's a wizard and begins his first year at a magical school.",
+			"release": 2001,
+			"genre": "Family",
+			"imgLink": "harryPotterSorcerersStone.jpg"
+		},
+		{
+			"id": "y9m3g6k",
+			"title": "Back to the Future",
+			"price": 49,
+			"description": "A teenager is accidentally sent thirty years into the past in a time-traveling DeLorean.",
+			"release": 1985,
+			"genre": "Adventure",
+			"imgLink": "backToTheFuture.jpg"
+		},
+		{
+			"id": "s2p7d4x",
+			"title": "Jurassic Park",
+			"price": 49,
+			"description": "A theme park showcasing genetically recreated dinosaurs suffers a catastrophic systems failure.",
+			"release": 1993,
+			"genre": "Adventure",
+			"imgLink": "jurassicPark.webp"
+		},
+		{
+			"id": "w6c1n8q",
+			"title": "Indiana Jones and the Last Crusade",
+			"price": 49,
+			"description": "An archaeologist races to find his father and the Holy Grail before the Nazis do.",
+			"release": 1989,
+			"genre": "Adventure",
+			"imgLink": "indianaJonesLastCrusade.webp"
+		},
+		{
+			"id": "e5x9j2t",
+			"title": "Superbad",
+			"price": 39,
+			"description": "Two high school best friends have one wild night before graduation forces them apart.",
+			"release": 2007,
+			"genre": "Comedy",
+			"imgLink": "superbad.webp"
+		},
+		{
+			"id": "b8f4h1m",
+			"title": "Legally Blonde",
+			"price": 39,
+			"description": "A sorority queen enrolls at Harvard Law to win back her ex and discovers she's smarter than she thought.",
+			"release": 2001,
+			"genre": "Comedy",
+			"imgLink": "legallyBlonde.webp"
+		},
+		{
+			"id": "k2v7r5n",
+			"title": "Knives Out",
+			"price": 59,
+			"description": "A detective investigates the death of a wealthy crime novelist surrounded by a family of suspects.",
+			"release": 2019,
+			"genre": "Mystery",
+			"imgLink": "knivesOut.jpg"
+		},
+		{
+			"id": "q9d3w6p",
+			"title": "Gone Girl",
+			"price": 49,
+			"description": "A man becomes the prime suspect when his wife disappears on their wedding anniversary.",
+			"release": 2014,
+			"genre": "Thriller",
+			"imgLink": "goneGirl.jpg"
+		},
+		{
+			"id": "m1t8k4c",
+			"title": "Se7en",
+			"price": 49,
+			"description": "Two detectives hunt a serial killer who uses the seven deadly sins as his motives.",
+			"release": 1995,
+			"genre": "Thriller",
+			"imgLink": "se7en.webp"
+		},
+		{
+			"id": "x5j2q9v",
+			"title": "Parasite",
+			"price": 59,
+			"description": "A poor family schemes to become employed by a wealthy household, with unforeseen consequences.",
+			"release": 2019,
+			"genre": "Drama",
+			"imgLink": "parasite.jpg"
+		},
+		{
+			"id": "g7n4b1w",
+			"title": "Whiplash",
+			"price": 49,
+			"description": "A young drummer enrolls at a music conservatory and clashes with an abusive, perfectionist instructor.",
+			"release": 2014,
+			"genre": "Drama",
+			"imgLink": "whiplash.webp"
+		},
+		{
+			"id": "c3h9m6d",
+			"title": "La La Land",
+			"price": 49,
+			"description": "A jazz musician and an aspiring actress fall in love while pursuing their dreams in Los Angeles.",
+			"release": 2016,
+			"genre": "Musical",
+			"imgLink": "laLaLand.webp"
+		},
+		{
+			"id": "p6k1x8f",
+			"title": "The Nightmare Before Christmas",
+			"price": 39,
+			"description": "The king of Halloween Town stumbles into Christmas Town and decides to take over the holiday.",
+			"release": 1993,
+			"genre": "Musical",
+			"imgLink": "theNightmareBeforeChristmas.jpg"
+		},
+		{
+			"id": "v4q7t2j",
+			"title": "A Quiet Place",
+			"price": 59,
+			"description": "A family must live in silence while hiding from creatures that hunt by sound.",
+			"release": 2018,
+			"genre": "Horror",
+			"imgLink": "aQuietPlace.jpg"
+		},
+		{
+			"id": "d8w3n5r",
+			"title": "Midsommar",
+			"price": 59,
+			"description": "A grieving woman's trip to a Swedish festival with her friends descends into a disturbing cult ritual.",
+			"release": 2019,
+			"genre": "Horror",
+			"imgLink": "midsommar.jpg"
+		},
+		{
+			"id": "t1c6v9k",
+			"title": "The Exorcist",
+			"price": 49,
+			"description": "A mother seeks the help of two priests when her daughter becomes possessed by a demonic entity.",
+			"release": 1973,
+			"genre": "Horror",
+			"imgLink": "theExorcist.webp"
+		}
+	]
+}

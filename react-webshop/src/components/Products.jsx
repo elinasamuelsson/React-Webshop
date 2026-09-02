@@ -28,8 +28,12 @@ export default function Products() {
             {
                 products.map(p => {
                     return <div key={p.id} style={{display: "flex", flexDirection: "column"}}>
-                        <h3>{p.name}</h3>
+                        <h3>{p.title}</h3>
+                        <img src={`./public/productimages/${p.imgLink}`} height={"200px"} width={"200px"} />
                         <p>{p.price}</p>
+                        <p>{p.description}</p>
+                        <p>{p.release}</p>
+                        <p>{p.genre}</p>
                         <p>{p.stock}</p>
                     </div>
                 })
