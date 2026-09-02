@@ -1,0 +1,15 @@
+/* rv är förkortning på Footer titeln ReelVault */
+:root {
+  --rv-bg: #0c0c0e;
+  --rv-text-main: #e8e0d0;
+  --rv-text-muted: #a89d8a;
+  --rv-text-darker: #574f44;
+  --rv-text-darkest: #4a4438;
+  --rv-accent: #c9a84c;
+  --rv-accent-hover: #d4b45c;
+  --rv-border: rgba(255, 255, 255, 0.06);
+  --rv-border-light: rgba(255, 255, 255, 0.09);
+  
+  --font-outfit: 'Outfit', sans-serif;
+  --font-fraunces: 'Fraunces', serif;
+}
