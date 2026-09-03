@@ -1,13 +1,16 @@
-import { Outlet } from "react-router";
+import {Outlet} from "react-router";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
+import {BasketContext} from "./context/basketContext.jsx";
 
 function App() {
 	return (
 		<>
-			<Header />
-			<Outlet />
-			<Footer />
+			<BasketContext>
+				<Header />
+				<Outlet />
+				<Footer />
+			</BasketContext>
 		</>
 	);
 }
