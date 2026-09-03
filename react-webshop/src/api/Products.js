@@ -1,5 +1,14 @@
-export default class Products {
-	async getProductById(id) {
+
+export default class Product {
+
+    async getAllProducts(page) {
+        const response = await fetch(`/api/products?_page=${page}`);
+        const result = await response.json();
+
+        return {response, result};
+    }
+
+async getProductById(id) {
 		try {
 			const response = await fetch(`/api/products/${id}`);
 			if (!response.ok) {
