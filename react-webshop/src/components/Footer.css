@@ -7,10 +7,9 @@ footer {
     flex-direction: column;
 }
 
-div {
+.div-footer {
     display: flex;
-    justify-content: center;
-    gap: 300px;
+    justify-content: space-around;
 }
 
 section {
@@ -106,6 +105,7 @@ footer > div:last-of-type > div {
     display: flex;
     padding: 30px 0;
     border-top: 1px solid var(--rv-border);
+    justify-content: space-around;
 }
 
 footer > div:last-of-type > div > span > a {
