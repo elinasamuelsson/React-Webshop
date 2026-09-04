@@ -29,8 +29,8 @@ export default function Products({ filter }) {
         getProducts(page);
     }, [page, filter]);
 
+    // Här filtreras filmerna beroende på filtret
     const displayedProducts = filter ? products.filter(p => p.genre === filter) : products;
-    console.log(displayedProducts.map(p => p.genre));
 
     return (
         <div class="card-container">

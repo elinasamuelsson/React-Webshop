@@ -4,7 +4,9 @@ import { useLocation } from "react-router";
 function Products() {
 
   const location = useLocation();
-  const filterName = location.state?.filterName; // Fångar filterName egenskap som ligger i state attribut i Link komponent
+  
+  // Fångar filterName egenskap som ligger i state attribut i Link komponent
+  const filterName = location.state?.filterName;
 
   return (
     <div>
