@@ -2,7 +2,7 @@ import "./Productpage.css";
 import Product from "../api/Products";
 
 import {useState, useEffect, useContext} from "react";
-import {useParams} from "react-router";
+import {useParams, NavLink} from "react-router";
 import {BasketContext} from "../context/basketContext";
 
 export default function Productpage() {
@@ -44,7 +44,9 @@ export default function Productpage() {
 	return (
 		<>
 			<main>
-				<p className="backLink">&larr; back to products</p>
+				<NavLink to="/" className="backLink">
+					&larr; back to products
+				</NavLink>
 				<div className="productContainer">
 					<div className="imageContainer" style={{backgroundImage: `url(${image})`}}></div>
 
