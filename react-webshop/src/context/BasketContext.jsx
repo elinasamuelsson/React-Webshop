@@ -16,13 +16,13 @@ function basketReducer(basket, action) {
 
 	switch (type) {
 		case "ADD":
-			console.log(payload.title + " added to cart.");
+			console.log("Movie(s) added to cart.");
 			{
 				/* returnerar en array med alla föregående poster, plus den nya */
 			}
 			return [...basket, payload];
 		case "REMOVE":
-			console.log(payload.title + " removed from cart.");
+			console.log("Movie(s) removed from cart.");
 			{
 				/* returnerar en filtrerad array där alla produkter förutom den vi valt att ta bort finns kvar */
 			}
