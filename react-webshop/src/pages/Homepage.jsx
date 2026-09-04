@@ -1,3 +1,4 @@
+import {NavLink} from "react-router";
 import "./Homepage.css";
 
 export default function Homepage() {
@@ -5,24 +6,22 @@ export default function Homepage() {
 		<main>
 			{/* Sidbanner med slogan */}
 			<div className="pageBanner">
-				<h1>Movie magic the old fashioned way!</h1>
+				<h1>ReelVault</h1>
+				<h2>Movie magic the old fashioned way!</h2>
 				<p>Because physical medium is just that much better</p>
 			</div>
 
 			{/* Kategoriknappar som med hjälp av routing kan leda direkt till sorterade vyer på products-sidan */}
 			<div className="categoryContainer">
-				<p className="categoryItem">Action</p>
-				<p className="categoryItem">Adventure</p>
-				<p className="categoryItem">Animated</p>
-				<p className="categoryItem">Comedy</p>
-				<p className="categoryItem">Drama</p>
-				<p className="categoryItem">Family</p>
-				<p className="categoryItem">Horror</p>
-				<p className="categoryItem">Musical</p>
-				<p className="categoryItem">Mystery</p>
-				<p className="categoryItem">Romance</p>
-				<p className="categoryItem">Sci-Fi</p>
-				<p className="categoryItem">Thriller</p>
+				<NavLink className="categoryItem" to="/products/k3j9x2q">
+					Die Hard
+				</NavLink>
+				<NavLink className="categoryItem" to="/products/v2k6d1q">
+					A Minecraft Movie
+				</NavLink>
+				<NavLink className="categoryItem" to="/products/s2p7d4x">
+					Jurassic Park
+				</NavLink>
 			</div>
 
 			{/* Kundomdömen */}
