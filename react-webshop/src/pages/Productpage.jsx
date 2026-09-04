@@ -3,7 +3,7 @@ import Product from "../api/Products";
 
 import {useState, useEffect, useContext} from "react";
 import {useParams, NavLink} from "react-router";
-import {BasketContext} from "../context/basketContext";
+import {BasketContext} from "../context/BasketContext";
 
 export default function Productpage() {
 	const {id} = useParams();
