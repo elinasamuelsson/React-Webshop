@@ -8,7 +8,7 @@ export default function Products() {
     const productsAPI = new Product();
     const [products, setProducts] = useState([]);
     const [page, setPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(1);
+    const [totalPages, setTotalPages] = useState();
 
     async function getProducts() {
         const { response, result } = await productsAPI.getAllProducts(page);
@@ -59,7 +59,7 @@ export default function Products() {
             <div style={{gridColumn: "span 3", display: "flex", alignItems: "center", justifyContent: "center"}}>
                 <button class="previous"
                     disabled={page <= 1} 
-                    onClick={() => setPage(prev => prev - 1)}
+                    onClick={() => setPage(prev => prev - 1)} // Functional state value
                 >
                     Previous
                 </button>
