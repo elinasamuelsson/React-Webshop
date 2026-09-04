@@ -1,155 +1,159 @@
-
 footer {
-    font-family: var(--font-outfit);
-    background-color: var(--rv-bg);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+	font-family: var(--font-outfit);
+	background-color: var(--rv-bg);
+	width: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
-div {
-    display: flex;
-    justify-content: center;
-    gap: 300px;
+footer div {
+	display: flex;
+	justify-content: center;
+	gap: 300px;
 }
 
 section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 /* ÖVER SEKTION STYLING */
 h4 {
-    font-size: x-large;
+	font-size: x-large;
 }
 
 div:first-child section > h4 > span:first-child {
-    color: var(--rv-accent);
+	color: var(--rv-accent);
 }
 
 div:first-child section > h4 > span:last-child {
-    color: var(--rv-text-main);
+	color: var(--rv-text-main);
 }
 
 div:first-child > section > p:first-of-type {
-    margin: 0;
-    font-style: italic;
+	margin: 0;
+	font-style: italic;
 }
 
 div:first-child > section > p:last-of-type {
-    font-weight: bolder;
+	font-weight: bolder;
 }
 
-div:first-child > section > p:first-of-type, 
-div:first-child > section > p:last-of-type  {
-    color: var(--rv-accent);
-    font-size: small;
+div:first-child > section > p:first-of-type,
+div:first-child > section > p:last-of-type {
+	color: var(--rv-accent);
+	font-size: small;
 }
 
 div:first-child > section > p:nth-of-type(2) {
-    color: var(--rv-text-muted);
-    font-size: smaller;
+	color: var(--rv-text-muted);
+	font-size: smaller;
 }
 
 section > a {
-    text-decoration: none;
-    color: var(--rv-text-muted);
-    margin-bottom: 20px;
-    font-size: small;
+	text-decoration: none;
+	color: var(--rv-text-muted);
+	margin-bottom: 20px;
+	font-size: small;
 }
 
 section > a:hover {
-    color: var(--rv-accent-hover);
+	color: var(--rv-accent-hover);
 }
 
 div:first-child section > div {
-    gap: 0 !important;
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
+	gap: 0 !important;
+	display: flex;
+	justify-content: flex-start;
+	width: 100%;
 }
 
 div:first-child section > div > button {
-    border: none;
-    background-color: var(--rv-accent);
-    font-weight: bolder;
-    padding: 10px;
+	border: none;
+	background-color: var(--rv-accent);
+	font-weight: bolder;
+	padding: 10px;
 }
 
 div:first-child section > div > button:hover {
-    background-color: var(--rv-accent-hover);
-    cursor: pointer;
+	background-color: var(--rv-accent-hover);
+	cursor: pointer;
 }
 
 div:first-child section > div > input {
-    background-color: var(--rv-text-darkest);
-    outline: none;
-    border: 1px solid var(--rv-border);
-    color: var(--rv-text-muted);
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    padding-left: 10px;
+	background-color: var(--rv-text-darkest);
+	outline: none;
+	border: 1px solid var(--rv-border);
+	color: var(--rv-text-muted);
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	padding-left: 10px;
 }
 
 h5 {
-    color: var(--rv-accent);
+	color: var(--rv-accent);
 }
 
 /* NEDERST SEKTION STYLING */
 footer > div:last-of-type {
-    color: var(--rv-text-darker);
-    font-size: small;
+	color: var(--rv-text-darker);
+	font-size: small;
 }
 
 footer > div:last-of-type > div {
-    display: flex;
-    padding: 30px 0;
-    border-top: 1px solid var(--rv-border);
+	display: flex;
+	padding: 30px 0;
+	border-top: 1px solid var(--rv-border);
 }
 
 footer > div:last-of-type > div > span > a {
-    text-decoration: none;
-    color: var(--rv-text-darkest);
-    padding-left: 50px;
+	text-decoration: none;
+	color: var(--rv-text-darkest);
+	padding-left: 50px;
 }
 
 footer > div:last-of-type > div > span > a:hover {
-    color: var(--rv-accent-hover);
+	color: var(--rv-accent-hover);
 }
 
 footer > div:last-of-type > span:first-of-type {
-    justify-self: start;
+	justify-self: start;
+}
+
+@media (max-width: 1500px) {
+	footer div {
+		gap: 100px;
+	}
 }
 
 /* RESPONSIVE FOOTER */
 @media (max-width: 768px) {
-    div {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
+	div {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
 
-    div > * {
-        padding-left: 10px;
-    }
+	div > * {
+		padding-left: 10px;
+	}
 
-    section {
-        display: flex;
-        flex-direction: column;
-    }
+	section {
+		display: flex;
+		flex-direction: column;
+	}
 
-    div:first-child section > div {
-        display: flex;
-        flex-direction: row;
-    }
+	div:first-child section > div {
+		display: flex;
+		flex-direction: row;
+	}
 
-    footer > div:last-of-type > div > span:last-of-type {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        padding-left: 0;
-        gap: 5px;
-    }
-
+	footer > div:last-of-type > div > span:last-of-type {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		padding-left: 0;
+		gap: 5px;
+	}
 }

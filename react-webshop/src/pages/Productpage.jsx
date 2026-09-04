@@ -1,16 +1,20 @@
 import "./Productpage.css";
-import Products from "../api/Products";
+import Product from "../api/Products";
 
-import {useState, useEffect} from "react";
+import {useState, useEffect, useContext} from "react";
+import {useParams, NavLink} from "react-router";
+import {BasketContext} from "../context/basketContext";
 
 export default function Productpage() {
+	const {id} = useParams();
 	const [product, setProduct] = useState({});
 	const [productQuantity, setProductQuantity] = useState(1);
+	const {dispatch} = useContext(BasketContext);
 
 	useEffect(() => {
 		async function fetchProduct() {
-			const products = new Products();
-			const result = await products.getProductById("k2v7r5n");
+			const products = new Product();
+			const result = await products.getProductById(id);
 			setProduct(result);
 		}
 		fetchProduct();
@@ -26,13 +30,23 @@ export default function Productpage() {
 	}
 
 	function addToCart() {
-		console.log(`${productQuantity} product(s) added to cart.`);
+		dispatch({type: "ADD", payload: {product, productQuantity}});
+	}
+
+	function removeFromCart() {
+		dispatch({type: "REMOVE", payload: id});
+	}
+
+	function clearCart() {
+		dispatch({type: "CLEAR"});
 	}
 
 	return (
 		<>
 			<main>
-				<p className="backLink">&larr; back to products</p>
+				<NavLink to="/" className="backLink">
+					&larr; back to products
+				</NavLink>
 				<div className="productContainer">
 					<div className="imageContainer" style={{backgroundImage: `url(${image})`}}></div>
 
@@ -59,6 +73,12 @@ export default function Productpage() {
 
 					<button type="button" className="addToCartButton" onClick={addToCart}>
 						Add to Cart
+					</button>
+					<button type="button" className="addToCartButton" onClick={removeFromCart}>
+						Remove from Cart
+					</button>
+					<button type="button" className="addToCartButton" onClick={clearCart}>
+						Clear Cart
 					</button>
 				</div>
 			</main>
