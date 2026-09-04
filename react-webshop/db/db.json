@@ -7,7 +7,9 @@
 			"description": "A NYPD cop battles terrorists who've taken over a Los Angeles skyscraper on Christmas Eve.",
 			"release": 1988,
 			"genre": "Action",
-			"imgLink": "dieHard.jpg"
+			"imgLink": "dieHard.jpg", 
+			"isDiscount": true,
+			"discountPercent": 0.15
 		},
 		{
 			"id": "p7m1t8w",

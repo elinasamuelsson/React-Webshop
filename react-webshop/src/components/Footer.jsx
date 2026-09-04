@@ -7,7 +7,7 @@ export default function Footer() {
     <footer>
 
         {/* ÖVER SEKTION */}
-        <div>
+        <div class="div-footer">
             <section>
                 <h4>
                     <span>Reel</span>

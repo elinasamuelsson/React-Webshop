@@ -1,0 +1,110 @@
+
+.card-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 50px;
+    justify-content: center;
+    font-family: var(--font-outfit);
+    margin: 50px 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-bg-color);
+    width: fit-content;
+    border: 1px solid var(--rv-text-darkest);
+    transition: all .5s;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.card:hover {
+    border: 1px solid var(--rv-accent-hover);
+    box-shadow: 0px 0px 20px var(--rv-accent-hover);
+}
+
+.card:hover .card-img {
+    transform: scale(1.02);
+}
+
+.card-title {
+    color: var(--rv-text-main);
+    margin-left: 20px;
+    width: 200px;
+}
+
+.card-img {
+    width: 300px;
+    height: 500px;
+    transition: all 0.5s;
+}
+
+.card-genre {
+    color: var(--rv-text-darker);
+    border: 1px solid var(--rv-text-darker);
+    width: fit-content;
+    margin-left: 20px;
+    padding: 2px 4px;
+    font-size: x-small;
+}
+
+.card-description {
+    width: 250px;
+    color: var(--rv-text-muted);
+    margin-left: 20px;
+    font-size: small;
+}
+
+.card-release {
+    color: var(--rv-text-darkest);
+    margin-left: 20px;
+    font-size: small;
+    display: flex;
+    align-items: center;
+}
+
+.card-price {
+    color: var(--rv-accent);
+    font-weight: bolder;
+    font-size: xx-large;
+    margin-left: 20px;
+}
+
+.card > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card > div > button, 
+.next, 
+.previous {
+    margin-right: 20px;
+    padding: 10px;
+    border: none;
+    background-color: var(--rv-accent);
+    font-weight: bolder;
+    transition: all .5s;
+}
+
+.next, 
+.previous {
+    margin-right: 0 !important;
+}
+
+.card > div > button:hover {
+    background-color: var(--rv-accent-hover);
+}
+
+.page {
+    color: var(--rv-text-main);
+    margin: 0 20px;
+}
+
+.discount-icon {
+    position: absolute;
+    background-color: var(--rv-accent);
+    padding: 5px;
+    z-index: 100;
+}
