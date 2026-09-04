@@ -1,8 +1,15 @@
 
 export default class Product {
 
-    async getAllProducts(page) {
-        const response = await fetch(`/api/products?_page=${page}&_per_page=9`);
+    async getAllProducts(page, genre = null) {
+		let url = `/api/products?_page=${page}&_per_page=9`;
+		if (genre) { // Om genre är inte null så gäller pagination
+			// EncodedURIComponent säger till servern att ignorera special karaktärer som "+-%&#/"
+			// Annars blir det error när man hämtar "Sci-Fi" category och inget hämtas & renderas
+			url += `&genre=${encodeURIComponent(genre)}`;
+		}
+
+        const response = await fetch(url);
         const result = await response.json();
 
         return {response, result};

@@ -1,6 +1,8 @@
 import "./Homepage.css";
+import { Link } from "react-router";
 
 export default function Homepage() {
+
 	return (
 		<main>
 			{/* Sidbanner med slogan */}
@@ -10,19 +12,68 @@ export default function Homepage() {
 			</div>
 
 			{/* Kategoriknappar som med hjälp av routing kan leda direkt till sorterade vyer på products-sidan */}
+			{/* Inte den bästa lösning just nu men det funkar just nu med filtrering */}
 			<div className="categoryContainer">
-				<p className="categoryItem">Action</p>
-				<p className="categoryItem">Adventure</p>
-				<p className="categoryItem">Animated</p>
-				<p className="categoryItem">Comedy</p>
-				<p className="categoryItem">Drama</p>
-				<p className="categoryItem">Family</p>
-				<p className="categoryItem">Horror</p>
-				<p className="categoryItem">Musical</p>
-				<p className="categoryItem">Mystery</p>
-				<p className="categoryItem">Romance</p>
-				<p className="categoryItem">Sci-Fi</p>
-				<p className="categoryItem">Thriller</p>
+				<p className="categoryItem" >	
+					<Link to="/products" state={{ filterName: "Action" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Action
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Adventure" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Adventure
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Animated" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Animated
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Comedy" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Comedy
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Drama" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Drama
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Family" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Family
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Horror" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Horror
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Musical" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Musical
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Mystery" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Mystery
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Romance" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Romance
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Sci-Fi" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Sci-Fi
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Thriller" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Thriller
+					</Link>
+				</p>
 			</div>
 
 			{/* Kundomdömen */}

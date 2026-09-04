@@ -3,15 +3,19 @@ import Product from "../api/Products.js";
 import "./ProductCard.css";
 import DiscountIcon from "./DiscountIcon.jsx";
 
-export default function Products() {
+export default function Products({ filter }) {
 
     const productsAPI = new Product();
     const [products, setProducts] = useState([]);
     const [page, setPage] = useState(1);
-    const [totalPages, setTotalPages] = useState();
+    const [totalPages, setTotalPages] = useState(1);
+
+    useEffect(() => {
+        setPage(1);
+    }, [filter]);
 
     async function getProducts() {
-        const { response, result } = await productsAPI.getAllProducts(page);
+        const { response, result } = await productsAPI.getAllProducts(page, filter);
 
         if (response.ok) {
             setProducts(result.data);
@@ -23,12 +27,15 @@ export default function Products() {
 
     useEffect(() => {
         getProducts(page);
-    }, [page]);
+    }, [page, filter]);
+
+    const displayedProducts = filter ? products.filter(p => p.genre === filter) : products;
+    console.log(displayedProducts.map(p => p.genre));
 
     return (
         <div class="card-container">
             {
-                products.map(p => {
+                displayedProducts.map(p => {
                     return (
                         <div class="card" key={p.id} style={{display: "flex", flexDirection: "column"}}>
 
@@ -58,14 +65,14 @@ export default function Products() {
             {/* Knappar för att bläddra mellan sidorna */}
             <div style={{gridColumn: "span 3", display: "flex", alignItems: "center", justifyContent: "center"}}>
                 <button class="previous"
-                    disabled={page <= 1} 
+                    disabled={page <= 1}
                     onClick={() => setPage(prev => prev - 1)} // Functional state value
                 >
                     Previous
                 </button>
                 <span class="page">Page {page} of {totalPages}</span>
                 <button class="next"
-                    disabled={page >= totalPages} 
+                    disabled={page >= totalPages || displayedProducts.length < 9} 
                     onClick={() => setPage(prev => prev + 1)}
                 >
                     Next
