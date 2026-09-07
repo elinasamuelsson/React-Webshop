@@ -1,3 +1,4 @@
+import {NavLink} from "react-router";
 import "./Homepage.css";
 import { Link } from "react-router";
 
@@ -7,7 +8,8 @@ export default function Homepage() {
 		<main>
 			{/* Sidbanner med slogan */}
 			<div className="pageBanner">
-				<h1>Movie magic the old fashioned way!</h1>
+				<h1>ReelVault</h1>
+				<h2>Movie magic the old fashioned way!</h2>
 				<p>Because physical medium is just that much better</p>
 			</div>
 
@@ -74,6 +76,15 @@ export default function Homepage() {
 						Thriller
 					</Link>
 				</p>
+				<NavLink className="categoryItem" to="/products/k3j9x2q">
+					Die Hard
+				</NavLink>
+				<NavLink className="categoryItem" to="/products/v2k6d1q">
+					A Minecraft Movie
+				</NavLink>
+				<NavLink className="categoryItem" to="/products/s2p7d4x">
+					Jurassic Park
+				</NavLink>
 			</div>
 
 			{/* Kundomdömen */}
