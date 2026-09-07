@@ -1,7 +1,9 @@
+import ProductCard from "../components/ProductCard.jsx"
+
 function Products() {
   return (
     <div>
-      <h1>Produkter</h1>
+      <ProductCard />
     </div>
   );
 }

@@ -1,9 +1,10 @@
 footer {
-	font-family: var(--font-outfit);
-	background-color: var(--rv-bg);
-	width: 100%;
-	display: flex;
-	flex-direction: column;
+    font-family: var(--font-outfit);
+    background-color: var(--rv-bg);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-top: 5px dashed var(--rv-accent);
 }
 
 .div-footer {

@@ -59,7 +59,7 @@ export default function Products() {
             <div style={{gridColumn: "span 3", display: "flex", alignItems: "center", justifyContent: "center"}}>
                 <button class="previous"
                     disabled={page <= 1} 
-                    onClick={() => setPage(prev => prev - 1)}
+                    onClick={() => setPage(prev => prev - 1)} // Functional state value
                 >
                     Previous
                 </button>
