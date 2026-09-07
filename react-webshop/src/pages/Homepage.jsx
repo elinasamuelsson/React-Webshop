@@ -1,7 +1,9 @@
 import {NavLink} from "react-router";
 import "./Homepage.css";
+import { Link } from "react-router";
 
 export default function Homepage() {
+
 	return (
 		<main>
 			{/* Sidbanner med slogan */}
@@ -12,7 +14,68 @@ export default function Homepage() {
 			</div>
 
 			{/* Kategoriknappar som med hjälp av routing kan leda direkt till sorterade vyer på products-sidan */}
+			{/* Inte den bästa lösning just nu men det funkar just nu med filtrering */}
 			<div className="categoryContainer">
+				<p className="categoryItem" >	
+					<Link to="/products" state={{ filterName: "Action" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Action
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Adventure" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Adventure
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Animated" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Animated
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Comedy" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Comedy
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Drama" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Drama
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Family" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Family
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Horror" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Horror
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Musical" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Musical
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Mystery" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Mystery
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Romance" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Romance
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Sci-Fi" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Sci-Fi
+					</Link>
+				</p>
+				<p className="categoryItem">
+					<Link to="/products" state={{ filterName: "Thriller" }} className={({ isActive }) => (isActive ? "active" : "")}>
+						Thriller
+					</Link>
+				</p>
 				<NavLink className="categoryItem" to="/products/k3j9x2q">
 					Die Hard
 				</NavLink>
