@@ -8,7 +8,7 @@ export default function Products() {
     const productsAPI = new Product();
     const [products, setProducts] = useState([]);
     const [page, setPage] = useState(1);
-    const [totalPages, setTotalPages] = useState();
+    const [totalPages, setTotalPages] = useState(1);
 
     async function getProducts() {
         const { response, result } = await productsAPI.getAllProducts(page);
