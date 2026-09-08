@@ -5,6 +5,7 @@ import Products from "./pages/Products.jsx";
 import Productpage from "./pages/Productpage.jsx";
 import Admin from "./pages/Admin.jsx";
 import Cartpage from "./pages/Cartpage.jsx";
+import Checkout from "./pages/Checkout.jsx";
 
 // createBrowserRouter skapar routern för applikationen.
 const router = createBrowserRouter([
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
 				path: "/cart",
 				element: <Cartpage />,
 			},
+			{
+   				path: "/checkout",
+    			element: <Checkout />,
+		},
 		],
 	},
 ]);
