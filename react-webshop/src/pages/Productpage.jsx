@@ -33,14 +33,6 @@ export default function Productpage() {
 		dispatch({type: "ADD", payload: {product, productQuantity}});
 	}
 
-	function removeFromCart() {
-		dispatch({type: "REMOVE", payload: id});
-	}
-
-	function clearCart() {
-		dispatch({type: "CLEAR"});
-	}
-
 	return (
 		<>
 			<main>
@@ -56,7 +48,7 @@ export default function Productpage() {
 							{product.genre} &middot; {product.release}
 						</p>
 						<p className="productDescription">{product.description}</p>
-						<p className="productPrice">${product.price}</p>
+						<p className="productPrice">{product.price} SEK</p>
 					</div>
 				</div>
 
@@ -73,12 +65,6 @@ export default function Productpage() {
 
 					<button type="button" className="addToCartButton" onClick={addToCart}>
 						Add to Cart
-					</button>
-					<button type="button" className="addToCartButton" onClick={removeFromCart}>
-						Remove from Cart
-					</button>
-					<button type="button" className="addToCartButton" onClick={clearCart}>
-						Clear Cart
 					</button>
 				</div>
 			</main>

@@ -31,7 +31,8 @@ function basketReducer(basket, action) {
 			console.log("Movie(s) removed from cart.");
 
 			/* returnerar en filtrerad array där alla produkter förutom den vi valt att ta bort finns kvar */
-			let updatedBasketRemove = basket.filter((p) => p.id !== payload.id);
+			let updatedBasketRemove = basket.filter((p) => p.product.id !== payload);
+			console.log(payload);
 			console.log(updatedBasketRemove);
 			return updatedBasketRemove;
 		/* uppdaterar varukorgen
