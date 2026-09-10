@@ -1,6 +1,7 @@
 import "./Cartpage.css";
 import {useContext} from "react";
 import {BasketContext} from "../context/BasketContext.jsx";
+import {Link} from "react-router";
 
 export default function Cart() {
 	const {basket: cartItems, dispatch} = useContext(BasketContext);
@@ -65,6 +66,9 @@ export default function Cart() {
 
 					<div className="cart-total">
 						<strong>Total: {totalPrice} kr</strong>
+						<Link to="/checkout">
+							<button>Go to Checkout</button>
+						</Link>
 					</div>
 				</>
 			)}
