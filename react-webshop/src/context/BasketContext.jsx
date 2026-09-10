@@ -18,22 +18,15 @@ function basketReducer(basket, action) {
 			if (existingProductAdd) {
 				return basket.map((p) => {
 					if (payload.product.id === p.product.id) {
-						console.log("Updating existing product!");
 						return {...p, productQuantity: p.productQuantity + payload.productQuantity};
 					} else return p;
 				});
 			}
 			let updatedBasketAdd = [...basket, payload];
-			console.log("Movie(s) added to cart.");
-			console.log(updatedBasketAdd);
 			return updatedBasketAdd;
 		case "REMOVE":
-			console.log("Movie(s) removed from cart.");
-
 			/* returnerar en filtrerad array där alla produkter förutom den vi valt att ta bort finns kvar */
 			let updatedBasketRemove = basket.filter((p) => p.product.id !== payload);
-			console.log(payload);
-			console.log(updatedBasketRemove);
 			return updatedBasketRemove;
 		/* uppdaterar varukorgen
 		 * förutsätter att mängden i varukorgen korrigeras med + / - knappar, om inte kan denna logik ändras för att matcha kundkorgens utseende */
@@ -41,7 +34,6 @@ function basketReducer(basket, action) {
 			let existingProductUpdate = basket.find((p) => payload.product.id === p.product.id);
 
 			if (!existingProductUpdate) {
-				console.log("Product doesn't exist");
 				return basket;
 			}
 
@@ -54,16 +46,12 @@ function basketReducer(basket, action) {
 			//förutsätter att uppdateringen på varukorgssidan är + och - knappar, annars kan denna logik ändras
 			return basket.map((p) => {
 				if (payload.product.id === p.product.id) {
-					console.log("Updating existing product!");
 					return {...p, productQuantity: newQuantity};
 				} else return p;
 			});
 		case "CLEAR":
-			console.log("No items in cart.");
-
 			/* tömmer varukorgen */
 			let updatedBasketClear = [];
-			console.log(updatedBasketClear);
 			return updatedBasketClear;
 		default:
 			return basket;
