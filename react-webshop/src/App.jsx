@@ -2,15 +2,18 @@ import {Outlet} from "react-router";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import {BasketProvider} from "./context/BasketContext.jsx";
+import {ToastProvider} from "./context/ToastContext.jsx";
 
 function App() {
 	return (
 		<>
-			<BasketProvider>
-				<Header />
-				<Outlet />
-				<Footer />
-			</BasketProvider>
+			<ToastProvider>
+				<BasketProvider>
+					<Header />
+					<Outlet />
+					<Footer />
+				</BasketProvider>
+			</ToastProvider>
 		</>
 	);
 }
