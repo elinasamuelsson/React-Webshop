@@ -1,11 +1,36 @@
 import "./Cartpage.css";
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {BasketContext} from "../context/BasketContext.jsx";
+import CampaignEngineModule from "../modules/campaigns/CampaignEngineModule.js";
+
+const campaignModule = new CampaignEngineModule();
 
 export default function Cart() {
 	const {basket: cartItems, dispatch} = useContext(BasketContext);
 
 	const totalPrice = cartItems.reduce((sum, item) => sum + item.product.price * item.productQuantity, 0);
+
+	const [promoCode, setPromoCode] = useState("");
+	const [discountResult, setDiscountResult] = useState(null);
+	const [errorMessage, setErrorMessage] = useState("");
+
+	async function handleSubmit(e) {
+		e.preventDefault();
+		setErrorMessage("");
+
+		try {
+			const result = await campaignModule.run(
+				{ code: promoCode }, 
+				{ cartItems }
+			);
+
+			setDiscountResult(result);
+		} catch (error) {
+			setDiscountResult(null);
+			setErrorMessage(error.message);
+			console.log(error);
+		}
+	}
 
 	return (
 		<main className="cart-page">
@@ -63,8 +88,25 @@ export default function Cart() {
 						))}
 					</div>
 
-					<div className="cart-total">
-						<strong>Total: {totalPrice} kr</strong>
+					<div className="cart-total" style={{display: "flex", flexDirection: "column"}}>
+						<form onSubmit={handleSubmit}>
+							<input 
+								type="text" 
+								placeholder="Enter promo code" 
+								onChange={(e) => setPromoCode(e.target.value)}/>
+							<button type="submit">Apply</button>
+						</form>
+
+						{errorMessage && <p style={{color: "red"}}>{errorMessage}</p>}
+
+						{discountResult ? (
+							<div>
+								<p style={{color: "green"}}>{discountResult.message}</p>
+								<p>Original total: {totalPrice}</p>
+								<p>Discount: -{discountResult.discountAmount} kr</p>
+								<strong>Final total: {discountResult.finalTotal} kr</strong>
+							</div>
+						) : <strong>Total: {totalPrice} kr</strong>}
 					</div>
 				</>
 			)}
