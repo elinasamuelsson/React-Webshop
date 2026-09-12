@@ -11,6 +11,16 @@ export default defineConfig({
 				changeOrigin: true,
 				rewrite: (path) => path.replace(/^\/api/, ""),
 			},
+			"/api/inventory/stockItems": {
+				target: "http://localhost:3000",
+				changeOrigin: true,
+				rewrite: (path) => path.replace(/^\/api\/inventory\/stockItems/, "/stockItems"),
+			},
+			"/api/inventory/stockMovements": {
+				target: "http://localhost:3000",
+				changeOrigin: true,
+				rewrite: (path) => path.replace(/^\/api\/inventory\/stockMovements/, "/stockMovements"),
+			},
 		},
 	},
 });

@@ -462,13 +462,6 @@
       "imgLink": "theExorcist.webp"
     }
   ],
-  "cart": [
-    {
-      "id": "1",
-      "productId": "k3j9x2q",
-      "quantity": 2
-    }
-  ],
   "orders": [
     {
       "firstName": "alex",
@@ -500,5 +493,885 @@
       "id": "qRGX2b4O8m4"
     }
   ],
-  "$schema": "./node_modules/json-server/schema.json"
+	"stockItems": [
+		{
+			"id": "k3j9x2q",
+			"reorderPoint": 15
+		},
+		{
+			"id": "p7m1t8w",
+			"reorderPoint": 5
+		},
+		{
+			"id": "z4h6r9v",
+			"reorderPoint": 15
+		},
+		{
+			"id": "b2n5f0y",
+			"reorderPoint": 12
+		},
+		{
+			"id": "q8s3d1c",
+			"reorderPoint": 25
+		},
+		{
+			"id": "x1w7g4e",
+			"reorderPoint": 8
+		},
+		{
+			"id": "j9k2l6a",
+			"reorderPoint": 20
+		},
+		{
+			"id": "m5v8b3n",
+			"reorderPoint": 5
+		},
+		{
+			"id": "t2c9x5r",
+			"reorderPoint": 15
+		},
+		{
+			"id": "f6q1z8h",
+			"reorderPoint": 25
+		},
+		{
+			"id": "d3p7y0w",
+			"reorderPoint": 10
+		},
+		{
+			"id": "s9j4k2m",
+			"reorderPoint": 5
+		},
+		{
+			"id": "l1g8v6b",
+			"reorderPoint": 12
+		},
+		{
+			"id": "n5x2c9t",
+			"reorderPoint": 25
+		},
+		{
+			"id": "w7r4f1q",
+			"reorderPoint": 20
+		},
+		{
+			"id": "e8h3d6z",
+			"reorderPoint": 5
+		},
+		{
+			"id": "a2m9k5j",
+			"reorderPoint": 25
+		},
+		{
+			"id": "y6b1v8p",
+			"reorderPoint": 15
+		},
+		{
+			"id": "c4t9x2s",
+			"reorderPoint": 10
+		},
+		{
+			"id": "r7q3g1n",
+			"reorderPoint": 5
+		},
+		{
+			"id": "h5w8f6d",
+			"reorderPoint": 8
+		},
+		{
+			"id": "u1j4k9m",
+			"reorderPoint": 8
+		},
+		{
+			"id": "v6p2t7b",
+			"reorderPoint": 25
+		},
+		{
+			"id": "d8m2w5r",
+			"reorderPoint": 10
+		},
+		{
+			"id": "x4q9k1v",
+			"reorderPoint": 10
+		},
+		{
+			"id": "w3n7t2b",
+			"reorderPoint": 10
+		},
+		{
+			"id": "c9h5m8j",
+			"reorderPoint": 15
+		},
+		{
+			"id": "v2k6d1q",
+			"reorderPoint": 15
+		},
+		{
+			"id": "m6j1w9c",
+			"reorderPoint": 10
+		},
+		{
+			"id": "h5w1q8c",
+			"reorderPoint": 15
+		},
+		{
+			"id": "q5d8v2h",
+			"reorderPoint": 8
+		},
+		{
+			"id": "k1n4t7b",
+			"reorderPoint": 10
+		},
+		{
+			"id": "j7x2m5w",
+			"reorderPoint": 10
+		},
+		{
+			"id": "f3k8m1p",
+			"reorderPoint": 12
+		},
+		{
+			"id": "n7q2x5d",
+			"reorderPoint": 5
+		},
+		{
+			"id": "j4r8v2b",
+			"reorderPoint": 15
+		},
+		{
+			"id": "y9m3g6k",
+			"reorderPoint": 20
+		},
+		{
+			"id": "s2p7d4x",
+			"reorderPoint": 5
+		},
+		{
+			"id": "w6c1n8q",
+			"reorderPoint": 8
+		},
+		{
+			"id": "e5x9j2t",
+			"reorderPoint": 12
+		},
+		{
+			"id": "b8f4h1m",
+			"reorderPoint": 25
+		},
+		{
+			"id": "k2v7r5n",
+			"reorderPoint": 8
+		},
+		{
+			"id": "q9d3w6p",
+			"reorderPoint": 15
+		},
+		{
+			"id": "m1t8k4c",
+			"reorderPoint": 12
+		},
+		{
+			"id": "x5j2q9v",
+			"reorderPoint": 20
+		},
+		{
+			"id": "g7n4b1w",
+			"reorderPoint": 8
+		},
+		{
+			"id": "c3h9m6d",
+			"reorderPoint": 10
+		},
+		{
+			"id": "p6k1x8f",
+			"reorderPoint": 8
+		},
+		{
+			"id": "v4q7t2j",
+			"reorderPoint": 8
+		},
+		{
+			"id": "d8w3n5r",
+			"reorderPoint": 25
+		},
+		{
+			"id": "t1c6v9k",
+			"reorderPoint": 5
+		}
+	],
+	"stockMovements": [
+		{
+			"id": "sm001",
+			"stockItemId": "k3j9x2q",
+			"type": "inleverans",
+			"quantity": 26,
+			"timestamp": "2026-07-09T16:24:09.762Z"
+		},
+		{
+			"id": "sm002",
+			"stockItemId": "k3j9x2q",
+			"type": "försäljning",
+			"quantity": -13,
+			"timestamp": "2026-08-01T01:40:17.727Z"
+		},
+		{
+			"id": "sm003",
+			"stockItemId": "p7m1t8w",
+			"type": "inleverans",
+			"quantity": 31,
+			"timestamp": "2026-09-10T23:31:44.244Z"
+		},
+		{
+			"id": "sm004",
+			"stockItemId": "z4h6r9v",
+			"type": "inleverans",
+			"quantity": 30,
+			"timestamp": "2026-06-30T09:16:07.894Z"
+		},
+		{
+			"id": "sm005",
+			"stockItemId": "z4h6r9v",
+			"type": "försäljning",
+			"quantity": -2,
+			"timestamp": "2026-08-21T01:29:27.303Z"
+		},
+		{
+			"id": "sm006",
+			"stockItemId": "z4h6r9v",
+			"type": "försäljning",
+			"quantity": -8,
+			"timestamp": "2026-08-22T09:38:18.368Z"
+		},
+		{
+			"id": "sm007",
+			"stockItemId": "b2n5f0y",
+			"type": "inleverans",
+			"quantity": 51,
+			"timestamp": "2026-05-16T16:12:58.519Z"
+		},
+		{
+			"id": "sm008",
+			"stockItemId": "b2n5f0y",
+			"type": "försäljning",
+			"quantity": -8,
+			"timestamp": "2026-06-15T04:46:25.570Z"
+		},
+		{
+			"id": "sm009",
+			"stockItemId": "b2n5f0y",
+			"type": "försäljning",
+			"quantity": -7,
+			"timestamp": "2026-07-26T18:23:14.817Z"
+		},
+		{
+			"id": "sm010",
+			"stockItemId": "q8s3d1c",
+			"type": "inleverans",
+			"quantity": 14,
+			"timestamp": "2026-06-06T11:15:11.392Z"
+		},
+		{
+			"id": "sm011",
+			"stockItemId": "x1w7g4e",
+			"type": "inleverans",
+			"quantity": 12,
+			"timestamp": "2026-07-27T00:28:28.432Z"
+		},
+		{
+			"id": "sm012",
+			"stockItemId": "j9k2l6a",
+			"type": "inleverans",
+			"quantity": 18,
+			"timestamp": "2026-05-19T22:11:55.804Z"
+		},
+		{
+			"id": "sm013",
+			"stockItemId": "j9k2l6a",
+			"type": "försäljning",
+			"quantity": -13,
+			"timestamp": "2026-08-21T22:53:31.187Z"
+		},
+		{
+			"id": "sm014",
+			"stockItemId": "j9k2l6a",
+			"type": "försäljning",
+			"quantity": -8,
+			"timestamp": "2026-08-31T10:37:12.375Z"
+		},
+		{
+			"id": "sm015",
+			"stockItemId": "m5v8b3n",
+			"type": "inleverans",
+			"quantity": 21,
+			"timestamp": "2026-05-21T20:52:10.531Z"
+		},
+		{
+			"id": "sm016",
+			"stockItemId": "t2c9x5r",
+			"type": "inleverans",
+			"quantity": 45,
+			"timestamp": "2026-08-06T21:10:43.208Z"
+		},
+		{
+			"id": "sm017",
+			"stockItemId": "f6q1z8h",
+			"type": "inleverans",
+			"quantity": 12,
+			"timestamp": "2026-05-11T23:47:31.295Z"
+		},
+		{
+			"id": "sm018",
+			"stockItemId": "f6q1z8h",
+			"type": "försäljning",
+			"quantity": -3,
+			"timestamp": "2026-08-29T02:02:05.275Z"
+		},
+		{
+			"id": "sm019",
+			"stockItemId": "f6q1z8h",
+			"type": "försäljning",
+			"quantity": -3,
+			"timestamp": "2026-09-08T04:33:08.726Z"
+		},
+		{
+			"id": "sm020",
+			"stockItemId": "d3p7y0w",
+			"type": "inleverans",
+			"quantity": 37,
+			"timestamp": "2026-05-20T22:02:50.913Z"
+		},
+		{
+			"id": "sm021",
+			"stockItemId": "d3p7y0w",
+			"type": "försäljning",
+			"quantity": -2,
+			"timestamp": "2026-06-17T16:19:39.273Z"
+		},
+		{
+			"id": "sm022",
+			"stockItemId": "d3p7y0w",
+			"type": "försäljning",
+			"quantity": -2,
+			"timestamp": "2026-07-12T13:39:23.879Z"
+		},
+		{
+			"id": "sm023",
+			"stockItemId": "s9j4k2m",
+			"type": "inleverans",
+			"quantity": 34,
+			"timestamp": "2026-05-04T09:00:09.970Z"
+		},
+		{
+			"id": "sm024",
+			"stockItemId": "s9j4k2m",
+			"type": "försäljning",
+			"quantity": -6,
+			"timestamp": "2026-06-25T15:44:15.754Z"
+		},
+		{
+			"id": "sm025",
+			"stockItemId": "l1g8v6b",
+			"type": "inleverans",
+			"quantity": 17,
+			"timestamp": "2026-07-10T20:16:23.625Z"
+		},
+		{
+			"id": "sm026",
+			"stockItemId": "l1g8v6b",
+			"type": "försäljning",
+			"quantity": -12,
+			"timestamp": "2026-08-10T23:30:17.201Z"
+		},
+		{
+			"id": "sm027",
+			"stockItemId": "n5x2c9t",
+			"type": "inleverans",
+			"quantity": 29,
+			"timestamp": "2026-06-14T04:06:50.866Z"
+		},
+		{
+			"id": "sm028",
+			"stockItemId": "n5x2c9t",
+			"type": "försäljning",
+			"quantity": -2,
+			"timestamp": "2026-07-12T05:38:59.332Z"
+		},
+		{
+			"id": "sm029",
+			"stockItemId": "w7r4f1q",
+			"type": "inleverans",
+			"quantity": 24,
+			"timestamp": "2026-05-17T22:44:27.141Z"
+		},
+		{
+			"id": "sm030",
+			"stockItemId": "w7r4f1q",
+			"type": "försäljning",
+			"quantity": -8,
+			"timestamp": "2026-07-18T04:02:50.253Z"
+		},
+		{
+			"id": "sm031",
+			"stockItemId": "w7r4f1q",
+			"type": "försäljning",
+			"quantity": -12,
+			"timestamp": "2026-07-19T13:22:11.439Z"
+		},
+		{
+			"id": "sm032",
+			"stockItemId": "e8h3d6z",
+			"type": "inleverans",
+			"quantity": 11,
+			"timestamp": "2026-05-18T09:45:39.592Z"
+		},
+		{
+			"id": "sm033",
+			"stockItemId": "e8h3d6z",
+			"type": "försäljning",
+			"quantity": -6,
+			"timestamp": "2026-06-15T04:35:00.299Z"
+		},
+		{
+			"id": "sm034",
+			"stockItemId": "e8h3d6z",
+			"type": "försäljning",
+			"quantity": -4,
+			"timestamp": "2026-08-24T16:19:38.439Z"
+		},
+		{
+			"id": "sm035",
+			"stockItemId": "a2m9k5j",
+			"type": "inleverans",
+			"quantity": 20,
+			"timestamp": "2026-08-03T13:05:55.267Z"
+		},
+		{
+			"id": "sm036",
+			"stockItemId": "y6b1v8p",
+			"type": "inleverans",
+			"quantity": 42,
+			"timestamp": "2026-06-29T23:35:06.383Z"
+		},
+		{
+			"id": "sm037",
+			"stockItemId": "c4t9x2s",
+			"type": "inleverans",
+			"quantity": 29,
+			"timestamp": "2026-07-21T11:16:10.535Z"
+		},
+		{
+			"id": "sm038",
+			"stockItemId": "r7q3g1n",
+			"type": "inleverans",
+			"quantity": 41,
+			"timestamp": "2026-05-13T19:16:05.082Z"
+		},
+		{
+			"id": "sm039",
+			"stockItemId": "r7q3g1n",
+			"type": "försäljning",
+			"quantity": -3,
+			"timestamp": "2026-05-30T13:27:14.559Z"
+		},
+		{
+			"id": "sm040",
+			"stockItemId": "h5w8f6d",
+			"type": "inleverans",
+			"quantity": 9,
+			"timestamp": "2026-06-04T14:06:38.314Z"
+		},
+		{
+			"id": "sm041",
+			"stockItemId": "h5w8f6d",
+			"type": "försäljning",
+			"quantity": -5,
+			"timestamp": "2026-08-03T10:47:46.257Z"
+		},
+		{
+			"id": "sm042",
+			"stockItemId": "h5w8f6d",
+			"type": "försäljning",
+			"quantity": -3,
+			"timestamp": "2026-08-27T02:19:58.190Z"
+		},
+		{
+			"id": "sm043",
+			"stockItemId": "u1j4k9m",
+			"type": "inleverans",
+			"quantity": 25,
+			"timestamp": "2026-08-10T23:06:09.603Z"
+		},
+		{
+			"id": "sm044",
+			"stockItemId": "u1j4k9m",
+			"type": "försäljning",
+			"quantity": -9,
+			"timestamp": "2026-09-03T07:24:43.485Z"
+		},
+		{
+			"id": "sm045",
+			"stockItemId": "v6p2t7b",
+			"type": "inleverans",
+			"quantity": 27,
+			"timestamp": "2026-06-30T09:37:39.670Z"
+		},
+		{
+			"id": "sm046",
+			"stockItemId": "d8m2w5r",
+			"type": "inleverans",
+			"quantity": 22,
+			"timestamp": "2026-05-02T14:42:38.496Z"
+		},
+		{
+			"id": "sm047",
+			"stockItemId": "d8m2w5r",
+			"type": "försäljning",
+			"quantity": -3,
+			"timestamp": "2026-05-07T06:32:45.864Z"
+		},
+		{
+			"id": "sm048",
+			"stockItemId": "d8m2w5r",
+			"type": "försäljning",
+			"quantity": -4,
+			"timestamp": "2026-08-18T04:20:50.101Z"
+		},
+		{
+			"id": "sm049",
+			"stockItemId": "x4q9k1v",
+			"type": "inleverans",
+			"quantity": 9,
+			"timestamp": "2026-08-12T22:49:54.975Z"
+		},
+		{
+			"id": "sm050",
+			"stockItemId": "w3n7t2b",
+			"type": "inleverans",
+			"quantity": 11,
+			"timestamp": "2026-07-29T14:59:05.930Z"
+		},
+		{
+			"id": "sm051",
+			"stockItemId": "w3n7t2b",
+			"type": "försäljning",
+			"quantity": -5,
+			"timestamp": "2026-08-05T06:49:44.831Z"
+		},
+		{
+			"id": "sm052",
+			"stockItemId": "c9h5m8j",
+			"type": "inleverans",
+			"quantity": 14,
+			"timestamp": "2026-08-31T01:02:56.342Z"
+		},
+		{
+			"id": "sm053",
+			"stockItemId": "v2k6d1q",
+			"type": "inleverans",
+			"quantity": 56,
+			"timestamp": "2026-07-14T11:12:06.267Z"
+		},
+		{
+			"id": "sm054",
+			"stockItemId": "m6j1w9c",
+			"type": "inleverans",
+			"quantity": 28,
+			"timestamp": "2026-05-06T06:00:29.900Z"
+		},
+		{
+			"id": "sm055",
+			"stockItemId": "m6j1w9c",
+			"type": "försäljning",
+			"quantity": -14,
+			"timestamp": "2026-06-22T19:08:34.573Z"
+		},
+		{
+			"id": "sm056",
+			"stockItemId": "m6j1w9c",
+			"type": "försäljning",
+			"quantity": -6,
+			"timestamp": "2026-06-23T14:39:35.606Z"
+		},
+		{
+			"id": "sm057",
+			"stockItemId": "h5w1q8c",
+			"type": "inleverans",
+			"quantity": 14,
+			"timestamp": "2026-05-04T13:35:55.112Z"
+		},
+		{
+			"id": "sm058",
+			"stockItemId": "h5w1q8c",
+			"type": "försäljning",
+			"quantity": -5,
+			"timestamp": "2026-07-15T12:58:48.653Z"
+		},
+		{
+			"id": "sm059",
+			"stockItemId": "h5w1q8c",
+			"type": "försäljning",
+			"quantity": -4,
+			"timestamp": "2026-08-18T11:42:38.861Z"
+		},
+		{
+			"id": "sm060",
+			"stockItemId": "q5d8v2h",
+			"type": "inleverans",
+			"quantity": 20,
+			"timestamp": "2026-05-26T01:50:54.487Z"
+		},
+		{
+			"id": "sm061",
+			"stockItemId": "k1n4t7b",
+			"type": "inleverans",
+			"quantity": 48,
+			"timestamp": "2026-05-18T16:37:01.690Z"
+		},
+		{
+			"id": "sm062",
+			"stockItemId": "j7x2m5w",
+			"type": "inleverans",
+			"quantity": 54,
+			"timestamp": "2026-08-08T18:40:43.953Z"
+		},
+		{
+			"id": "sm063",
+			"stockItemId": "f3k8m1p",
+			"type": "inleverans",
+			"quantity": 11,
+			"timestamp": "2026-07-28T22:11:12.188Z"
+		},
+		{
+			"id": "sm064",
+			"stockItemId": "f3k8m1p",
+			"type": "försäljning",
+			"quantity": -5,
+			"timestamp": "2026-08-19T02:54:33.422Z"
+		},
+		{
+			"id": "sm065",
+			"stockItemId": "n7q2x5d",
+			"type": "inleverans",
+			"quantity": 21,
+			"timestamp": "2026-06-17T10:17:24.596Z"
+		},
+		{
+			"id": "sm066",
+			"stockItemId": "j4r8v2b",
+			"type": "inleverans",
+			"quantity": 13,
+			"timestamp": "2026-06-22T05:36:16.060Z"
+		},
+		{
+			"id": "sm067",
+			"stockItemId": "y9m3g6k",
+			"type": "inleverans",
+			"quantity": 49,
+			"timestamp": "2026-05-23T01:35:18.879Z"
+		},
+		{
+			"id": "sm068",
+			"stockItemId": "s2p7d4x",
+			"type": "inleverans",
+			"quantity": 56,
+			"timestamp": "2026-05-15T01:52:01.511Z"
+		},
+		{
+			"id": "sm069",
+			"stockItemId": "s2p7d4x",
+			"type": "försäljning",
+			"quantity": -2,
+			"timestamp": "2026-07-09T23:50:41.440Z"
+		},
+		{
+			"id": "sm070",
+			"stockItemId": "s2p7d4x",
+			"type": "försäljning",
+			"quantity": -6,
+			"timestamp": "2026-09-07T17:45:44.011Z"
+		},
+		{
+			"id": "sm071",
+			"stockItemId": "w6c1n8q",
+			"type": "inleverans",
+			"quantity": 13,
+			"timestamp": "2026-09-06T00:34:50.809Z"
+		},
+		{
+			"id": "sm072",
+			"stockItemId": "e5x9j2t",
+			"type": "inleverans",
+			"quantity": 10,
+			"timestamp": "2026-06-16T13:28:11.628Z"
+		},
+		{
+			"id": "sm073",
+			"stockItemId": "b8f4h1m",
+			"type": "inleverans",
+			"quantity": 30,
+			"timestamp": "2026-06-02T02:47:40.772Z"
+		},
+		{
+			"id": "sm074",
+			"stockItemId": "b8f4h1m",
+			"type": "försäljning",
+			"quantity": -6,
+			"timestamp": "2026-06-26T20:01:20.023Z"
+		},
+		{
+			"id": "sm075",
+			"stockItemId": "k2v7r5n",
+			"type": "inleverans",
+			"quantity": 46,
+			"timestamp": "2026-05-08T01:18:43.826Z"
+		},
+		{
+			"id": "sm076",
+			"stockItemId": "k2v7r5n",
+			"type": "försäljning",
+			"quantity": -7,
+			"timestamp": "2026-08-18T16:52:46.710Z"
+		},
+		{
+			"id": "sm077",
+			"stockItemId": "q9d3w6p",
+			"type": "inleverans",
+			"quantity": 13,
+			"timestamp": "2026-07-23T11:21:00.286Z"
+		},
+		{
+			"id": "sm078",
+			"stockItemId": "q9d3w6p",
+			"type": "försäljning",
+			"quantity": -4,
+			"timestamp": "2026-08-29T17:16:26.710Z"
+		},
+		{
+			"id": "sm079",
+			"stockItemId": "q9d3w6p",
+			"type": "försäljning",
+			"quantity": -2,
+			"timestamp": "2026-09-08T00:02:45.500Z"
+		},
+		{
+			"id": "sm080",
+			"stockItemId": "m1t8k4c",
+			"type": "inleverans",
+			"quantity": 58,
+			"timestamp": "2026-05-09T11:04:36.787Z"
+		},
+		{
+			"id": "sm081",
+			"stockItemId": "m1t8k4c",
+			"type": "försäljning",
+			"quantity": -7,
+			"timestamp": "2026-07-22T11:16:37.603Z"
+		},
+		{
+			"id": "sm082",
+			"stockItemId": "x5j2q9v",
+			"type": "inleverans",
+			"quantity": 26,
+			"timestamp": "2026-06-05T17:59:19.575Z"
+		},
+		{
+			"id": "sm083",
+			"stockItemId": "x5j2q9v",
+			"type": "försäljning",
+			"quantity": -6,
+			"timestamp": "2026-07-28T08:56:17.849Z"
+		},
+		{
+			"id": "sm084",
+			"stockItemId": "x5j2q9v",
+			"type": "försäljning",
+			"quantity": -2,
+			"timestamp": "2026-09-01T18:17:57.488Z"
+		},
+		{
+			"id": "sm085",
+			"stockItemId": "g7n4b1w",
+			"type": "inleverans",
+			"quantity": 9,
+			"timestamp": "2026-07-18T03:54:16.556Z"
+		},
+		{
+			"id": "sm086",
+			"stockItemId": "g7n4b1w",
+			"type": "försäljning",
+			"quantity": -3,
+			"timestamp": "2026-07-22T19:08:13.385Z"
+		},
+		{
+			"id": "sm087",
+			"stockItemId": "g7n4b1w",
+			"type": "försäljning",
+			"quantity": -4,
+			"timestamp": "2026-08-08T21:05:01.455Z"
+		},
+		{
+			"id": "sm088",
+			"stockItemId": "c3h9m6d",
+			"type": "inleverans",
+			"quantity": 17,
+			"timestamp": "2026-05-19T06:49:32.180Z"
+		},
+		{
+			"id": "sm089",
+			"stockItemId": "c3h9m6d",
+			"type": "försäljning",
+			"quantity": -14,
+			"timestamp": "2026-08-23T02:56:52.171Z"
+		},
+		{
+			"id": "sm090",
+			"stockItemId": "c3h9m6d",
+			"type": "försäljning",
+			"quantity": -7,
+			"timestamp": "2026-09-09T03:07:12.594Z"
+		},
+		{
+			"id": "sm091",
+			"stockItemId": "p6k1x8f",
+			"type": "inleverans",
+			"quantity": 32,
+			"timestamp": "2026-07-12T02:11:41.023Z"
+		},
+		{
+			"id": "sm092",
+			"stockItemId": "v4q7t2j",
+			"type": "inleverans",
+			"quantity": 32,
+			"timestamp": "2026-06-25T10:59:10.340Z"
+		},
+		{
+			"id": "sm093",
+			"stockItemId": "d8w3n5r",
+			"type": "inleverans",
+			"quantity": 30,
+			"timestamp": "2026-08-06T11:26:13.479Z"
+		},
+		{
+			"id": "sm094",
+			"stockItemId": "t1c6v9k",
+			"type": "inleverans",
+			"quantity": 32,
+			"timestamp": "2026-05-25T20:35:49.465Z"
+		},
+		{
+			"id": "sm095",
+			"stockItemId": "t1c6v9k",
+			"type": "försäljning",
+			"quantity": -3,
+			"timestamp": "2026-06-03T18:20:20.845Z"
+		},
+		{
+			"id": "sm096",
+			"stockItemId": "t1c6v9k",
+			"type": "försäljning",
+			"quantity": -3,
+			"timestamp": "2026-08-21T17:54:31.187Z"
+		}
+	],
+	"$schema": "./node_modules/json-server/schema.json"
 }
