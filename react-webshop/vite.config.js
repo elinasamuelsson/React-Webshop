@@ -6,20 +6,20 @@ export default defineConfig({
 	plugins: [react()],
 	server: {
 		proxy: {
+			"/api/inventory/stockItems": {
+				target: "http://localhost:3000/stockItems",
+				changeOrigin: true,
+				rewrite: (path) => path.replace(/^\/api\/inventory\/stockItems/, ""),
+			},
+			"/api/inventory/stockMovements": {
+				target: "http://localhost:3000/stockMovements",
+				changeOrigin: true,
+				rewrite: (path) => path.replace(/^\/api\/inventory\/stockMovements/, ""),
+			},
 			"/api": {
 				target: "http://localhost:3000",
 				changeOrigin: true,
 				rewrite: (path) => path.replace(/^\/api/, ""),
-			},
-			"/api/inventory/stockItems": {
-				target: "http://localhost:3000",
-				changeOrigin: true,
-				rewrite: (path) => path.replace(/^\/api\/inventory\/stockItems/, "/stockItems"),
-			},
-			"/api/inventory/stockMovements": {
-				target: "http://localhost:3000",
-				changeOrigin: true,
-				rewrite: (path) => path.replace(/^\/api\/inventory\/stockMovements/, "/stockMovements"),
 			},
 		},
 	},
