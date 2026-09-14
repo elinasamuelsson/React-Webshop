@@ -2,39 +2,37 @@ import stockItem from "./stockItem.js";
 import stockMovement from "./stockMovement.js";
 
 export default class inventoryService {
-	/* returnera fullt dataset innehållande:
-	 * stockItems, X
-	 * nuvarande lagernivåer efter uträkning baserat på lagerrörelser, X
-	 * senaste lagerhändelserna, X
-	 * varningar baserat på reorderPoint och försäljningshastighet.
-	 * Ansvarar också för POST till databasen vid nya lagerrörelser */
-
-	// lägg till så att funktion returnerar en varning för lågt lagersaldo och ovanliga lagerrörelser
-	/* returnerar en array av objekt som innehåller stockItemId, lagersaldovärdet, de tre senaste lagerhändelserna, samt en varning i de fall lagersaldot behöver ses över */
+	/* returnerar en array av objekt som innehåller stockItemId, lagersaldovärdet, de tre senaste lagerhändelserna, samt en varningar i de fall lagersaldot behöver ses över av olika anledningar (lågt lagervärde, ovanligt snabb försäljning) */
 	async returnDataReport() {
 		const [stockItems, stockMovements] = await Promise.all([this.fetchStockItems(), this.fetchStockMovements()]);
 		const stockItemMovements = stockItems.map((i) => {
-			const allItemMovements = stockMovements.filter((m) => m.stockItemId === i.id);
+			const allItemMovements = this.returnItemMovements(i, stockMovements);
 			const stockItemBalance = this.returnStockBalance(allItemMovements);
 			const recentMovements = this.returnRecentMovements(allItemMovements);
 			const lowStockWarning = this.returnLowStockWarn(stockItemBalance, i.reorderPoint);
+			const fastMovementWarning = this.returnFastMovementWarn(allItemMovements, i.reorderPoint);
 			return {
 				item: i.id,
 				balance: stockItemBalance,
 				movements: recentMovements,
-				stockWarnings: {lowStockWarning: lowStockWarning, fastMovementWarning: false},
+				stockWarnings: {lowStockWarning: lowStockWarning, fastMovementWarning: fastMovementWarning},
 			};
 		});
 		console.log(stockItemMovements);
 		return stockItemMovements;
 	}
 
-	/* returnerar den totala summan för de rörelser i arrayen som skickas in som argument */
+	/* returnerar det aktuella stockItem:ets lagerrörelser */
+	returnItemMovements(item, movements) {
+		return movements.filter((m) => m.stockItemId === item.id);
+	}
+
+	/* returnerar den totala summan för de rörelserna */
 	returnStockBalance(movements) {
 		return movements.reduce((total, movement) => total + movement.quantity, 0);
 	}
 
-	/* returnerar de tre senaste rörelserna i arrayen som skickas in som argument, nyast först och äldst sist */
+	/* returnerar de tre senaste rörelserna, nyast först och äldst sist */
 	returnRecentMovements(movements) {
 		movements.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 		return movements.slice(0, 3);
@@ -46,7 +44,20 @@ export default class inventoryService {
 	}
 
 	/* returnerar en boolean som deklarerar true för varning eller false för ingen varning när det sker ovanligt snabba lagerrörelser */
-	returnFastMovementWarn() {}
+	returnFastMovementWarn(movements, reorderPoint) {
+		if (movements.length === 0) return false;
+
+		const mostRecent = [...movements].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))[0];
+		const allSales = movements.filter((m) => m.type === "försäljning");
+
+		if (allSales.length === 0) return false;
+
+		const unusualMovements = allSales
+			.filter((m) => new Date(m.timestamp) > new Date(mostRecent.timestamp) - 3 * 24 * 60 * 60 * 1000)
+			.reduce((sum, m) => sum + Math.abs(m.quantity), 0);
+
+		return unusualMovements >= reorderPoint / 3;
+	}
 
 	/* asynkron hjälpmetod som hämtar lagervaror från databasen och mappar dem till stockItem-objektet innan listan returneras */
 	async fetchStockItems() {
