@@ -1,0 +1,20 @@
+.toastContainer {
+	min-width: 300px;
+	min-height: 100px;
+
+	position: fixed;
+	top: 100px;
+	right: 50px;
+	z-index: 2;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: var(--rv-bg);
+}
+
+.toastMessage {
+	font-family: var(--outfit);
+	color: var(--rv-text-main);
+}

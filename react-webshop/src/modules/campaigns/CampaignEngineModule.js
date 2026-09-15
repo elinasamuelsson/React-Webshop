@@ -5,15 +5,7 @@ export default class CampaignEngineModule {
 
     static descriptor = {
         moduleName: "CampaignEngine", 
-        description: "Calculates discount based on promo code", 
-        fields: [
-            {
-                name: "code", 
-                label: "PromoCode", 
-                type: "text", 
-                required: true
-            }
-        ]
+        description: "Calculates discount based on promo code"
     };
 
     constructor() {
@@ -22,13 +14,19 @@ export default class CampaignEngineModule {
     }
 
     async fetchCampaigns() {
-        const CACHE_TTL_MS = 5 * 60 * 1000;
+        const CACHE_TTL_MS = 5 * 60 * 1000; // Det här blir 5 minuter eller 300 000 tusen millisekunder
         const now = Date.now();
 
+        // Kollar så att campaignCache och lastFetched är inte null OCH
+        // now - den sista fetchen är inte större än 5 minuter (300 000 ms)
+        //
+        // Helt enkelt, om datan finns och datan har inte varit i cache över 5 minuter
+        // Så behöver vi inte göra en request
         if (this.campaignCache && this.lastFetched && now - this.lastFetched < CACHE_TTL_MS) {
             return this.campaignCache;
         }
 
+        // Om datan finns inte, då hämtar vi datan och spara den i cache
         try {
             const response = await fetch("/api/campaigns");
             if (!response.ok) {
@@ -43,6 +41,7 @@ export default class CampaignEngineModule {
     }
 
     async run(values, context = {}) {
+        // trim metod tar bort whitespaces från båda sidor t.ex "    HELLO WORLD    " => "HELLO WORLD"
         const code = values?.code?.trim();
         const cartItems = context?.cartItems || [];
 
@@ -55,11 +54,10 @@ export default class CampaignEngineModule {
         }
 
         const campaigns = await this.fetchCampaigns();
+        // Hittar en specifik json object från campaigns beroende på kampanjkoden
         const rawCampaign = campaigns.find(
             (c) => c.code === code
         );
-
-        console.log(cartItems);
 
         if (!rawCampaign) {
             throw new Error("Invalid discount code.");

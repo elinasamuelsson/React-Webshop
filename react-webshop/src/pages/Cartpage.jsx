@@ -2,19 +2,17 @@ import "./Cartpage.css";
 import {useContext, useState} from "react";
 import {BasketContext} from "../context/BasketContext.jsx";
 import CampaignEngineModule from "../modules/campaigns/CampaignEngineModule.js";
+import {Link} from "react-router";
 
 const campaignModule = new CampaignEngineModule();
 
 export default function Cart() {
-	const {basket: cartItems, dispatch} = useContext(BasketContext);
-
-	const totalPrice = cartItems.reduce((sum, item) => sum + item.product.price * item.productQuantity, 0);
+	const {basket: cartItems, appliedDiscount, setAppliedDiscount, rawTotal, finalTotal, dispatch} = useContext(BasketContext);
 
 	const [promoCode, setPromoCode] = useState("");
-	const [discountResult, setDiscountResult] = useState(null);
 	const [errorMessage, setErrorMessage] = useState("");
 
-	async function handleSubmit(e) {
+	async function handleDiscountSubmit(e) {
 		e.preventDefault();
 		setErrorMessage("");
 
@@ -24,11 +22,10 @@ export default function Cart() {
 				{ cartItems }
 			);
 
-			setDiscountResult(result);
+			setAppliedDiscount(result);
 		} catch (error) {
-			setDiscountResult(null);
+			setAppliedDiscount(null);
 			setErrorMessage(error.message);
-			console.log(error);
 		}
 	}
 
@@ -89,7 +86,7 @@ export default function Cart() {
 					</div>
 
 					<div className="cart-total" style={{display: "flex", flexDirection: "column"}}>
-						<form onSubmit={handleSubmit}>
+						<form onSubmit={handleDiscountSubmit}>
 							<input 
 								type="text" 
 								placeholder="Enter promo code" 
@@ -99,14 +96,18 @@ export default function Cart() {
 
 						{errorMessage && <p style={{color: "red"}}>{errorMessage}</p>}
 
-						{discountResult ? (
+						{appliedDiscount ? (
 							<div>
-								<p style={{color: "green"}}>{discountResult.message}</p>
-								<p>Original total: {totalPrice}</p>
-								<p>Discount: -{discountResult.discountAmount} kr</p>
-								<strong>Final total: {discountResult.finalTotal} kr</strong>
+								<p style={{color: "green"}}>{appliedDiscount.message}</p>
+								<p>Original total: {rawTotal}</p>
+								<p>Discount: -{appliedDiscount.discountAmount} kr</p>
+								<strong>Final total: {finalTotal} kr</strong>
 							</div>
-						) : <strong>Total: {totalPrice} kr</strong>}
+						) : <strong>Total: {rawTotal} kr</strong>}
+
+						<Link to="/checkout">
+							<button>Go to Checkout</button>
+						</Link>
 					</div>
 				</>
 			)}

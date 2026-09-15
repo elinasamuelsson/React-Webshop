@@ -466,19 +466,93 @@
       "code": "SOMMAR20",
       "type": "percentage",
       "value": 20,
-      "minAmount": 0
+      "minAmount": 0,
+      "id": "S_M9xGCz9HE"
     },
     {
       "code": "HANDLA500",
       "type": "threshold",
       "discountAmount": 100,
-      "minAmount": 500
+      "minAmount": 500,
+      "id": "-x-Zwk4rNng"
     },
     {
       "code": "3FOR2",
       "type": "buyXgetY",
       "buyCount": 3,
-      "payCount": 2
+      "payCount": 2,
+      "id": "JPyM8cC11kk"
+    }
+  ],
+  "orders": [
+    {
+      "firstName": "alex",
+      "lastName": "reichstein",
+      "items": [],
+      "total": 0,
+      "id": "LMNobfiiz5o"
+    },
+    {
+      "firstName": "Alex ",
+      "lastName": "Reichstein",
+      "items": [
+        {
+          "product": {
+            "id": "k3j9x2q",
+            "title": "Die Hard",
+            "price": 49,
+            "description": "A NYPD cop battles terrorists who've taken over a Los Angeles skyscraper on Christmas Eve.",
+            "release": 1988,
+            "genre": "Action",
+            "imgLink": "dieHard.jpg",
+            "isDiscount": true,
+            "discountPercent": 0.15
+          },
+          "productQuantity": 1
+        }
+      ],
+      "total": 49,
+      "id": "qRGX2b4O8m4"
+    },
+    {
+      "firstName": "Hussein",
+      "lastName": "Himidh",
+      "items": [
+        {
+          "product": {
+            "id": "k3j9x2q",
+            "title": "Die Hard",
+            "price": 49,
+            "description": "A NYPD cop battles terrorists who've taken over a Los Angeles skyscraper on Christmas Eve.",
+            "release": 1988,
+            "genre": "Action",
+            "imgLink": "dieHard.jpg"
+          },
+          "productQuantity": 1
+        }
+      ],
+      "total": 49,
+      "id": "ybvHETtAwPY"
+    },
+    {
+      "firstName": "Hussein",
+      "lastName": "Himidh",
+      "items": [
+        {
+          "product": {
+            "id": "k3j9x2q",
+            "title": "Die Hard",
+            "price": 49,
+            "description": "A NYPD cop battles terrorists who've taken over a Los Angeles skyscraper on Christmas Eve.",
+            "release": 1988,
+            "genre": "Action",
+            "imgLink": "dieHard.jpg"
+          },
+          "productQuantity": 1
+        }
+      ],
+      "total": 49,
+      "id": "TQ6a9Ex6oaw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

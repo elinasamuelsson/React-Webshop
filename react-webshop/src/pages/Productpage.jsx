@@ -4,12 +4,14 @@ import Product from "../api/Products";
 import {useState, useEffect, useContext} from "react";
 import {useParams, NavLink} from "react-router";
 import {BasketContext} from "../context/BasketContext";
+import {ToastContext} from "../context/ToastContext";
 
 export default function Productpage() {
 	const {id} = useParams();
 	const [product, setProduct] = useState({});
 	const [productQuantity, setProductQuantity] = useState(1);
-	const {dispatch} = useContext(BasketContext);
+	const {dispatch: basketDispatch} = useContext(BasketContext);
+	const {dispatch: toastDispatch} = useContext(ToastContext);
 
 	useEffect(() => {
 		async function fetchProduct() {
@@ -30,7 +32,8 @@ export default function Productpage() {
 	}
 
 	function addToCart() {
-		dispatch({type: "ADD", payload: {product, productQuantity}});
+		basketDispatch({type: "ADD", payload: {product, productQuantity}});
+		toastDispatch({type: "SHOW", payload: "Item(s) added to cart!"});
 	}
 
 	return (

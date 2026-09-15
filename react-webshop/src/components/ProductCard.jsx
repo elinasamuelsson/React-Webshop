@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Product from "../api/Products.js";
 import "./ProductCard.css";
 import DiscountIcon from "./DiscountIcon.jsx";
+import { BasketContext } from "../context/BasketContext.jsx";
 
 export default function Products({ filter }) {
 
@@ -9,6 +10,7 @@ export default function Products({ filter }) {
     const [products, setProducts] = useState([]);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
+    const { dispatch } = useContext(BasketContext);
 
     useEffect(() => {
         setPage(1);
@@ -31,6 +33,11 @@ export default function Products({ filter }) {
 
     // Här filtreras filmerna beroende på filtret
     const displayedProducts = filter ? products.filter(p => p.genre === filter) : products;
+
+    // Lägger till en produkt i varukorgen, alltid med antal 1 från produktgriden
+    function addToCart(product) {
+        dispatch({ type: "ADD", payload: { product, productQuantity: 1 } });
+    }
 
     return (
         <div class="card-container">
@@ -55,7 +62,7 @@ export default function Products({ filter }) {
                             <p class="card-stock">{p.stock}</p>
                             <div>
                                 <p class="card-price">${p.price}</p>
-                                <button>ADD TO CART</button>
+                                <button onClick={() => addToCart(p)}>ADD TO CART</button>
                             </div>
                         </div>
                     )
