@@ -12,10 +12,10 @@ export default class inventoryService {
 			const lowStockWarning = this.returnLowStockWarn(stockItemBalance, i.reorderPoint);
 			const fastMovementWarning = this.returnFastMovementWarn(allItemMovements, i.reorderPoint);
 			return {
-				item: i.id,
+				itemId: i.id,
 				balance: stockItemBalance,
 				movements: recentMovements,
-				stockWarnings: {lowStockWarning: lowStockWarning, fastMovementWarning: fastMovementWarning},
+				warnings: {lowStockWarning: lowStockWarning, fastMovementWarning: fastMovementWarning},
 			};
 		});
 		console.log(stockItemMovements);

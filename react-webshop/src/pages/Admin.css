@@ -1,0 +1,51 @@
+main {
+	width: 100%;
+	background-color: var(--rv-text-main);
+}
+
+.inventoryTable {
+	max-width: 100%;
+	margin: 30px;
+	border-collapse: collapse;
+}
+
+.inventoryTable th,
+.inventoryTable td {
+	padding: 0.5rem 0.75rem;
+	text-align: left;
+	border: 1px solid #ccc;
+}
+
+.inventoryTable ul {
+	list-style-type: none;
+
+	li {
+		margin-left: -40px;
+	}
+}
+
+.warningRow {
+	background-color: var(--rv-accent);
+}
+
+@media (max-width: 600px) {
+	.inventoryTable {
+		margin: 12px;
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+
+	.inventoryTable th,
+	.inventoryTable td {
+		padding: 0.4rem 0.5rem;
+		font-size: 0.9rem;
+	}
+
+	.inventoryTable th:first-child,
+	.inventoryTable td:first-child {
+		position: sticky;
+		left: 0;
+		background-color: var(--rv-text-main);
+	}
+}
