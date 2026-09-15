@@ -462,6 +462,11 @@
       "imgLink": "theExorcist.webp"
     }
   ],
+  "rates": {
+    "SEK": 1,
+    "EUR": 0.087,
+    "USD": 0.096
+  },
   "cart": [
     {
       "id": "1",

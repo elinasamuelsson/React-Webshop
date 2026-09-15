@@ -1,17 +1,22 @@
 import "./Productpage.css";
 import Product from "../api/Products";
+import PriceConverter from "../modules/Admir/index.js";
 
-import {useState, useEffect, useContext} from "react";
-import {useParams, NavLink} from "react-router";
-import {BasketContext} from "../context/BasketContext";
-import {ToastContext} from "../context/ToastContext";
+import { useState, useEffect, useContext } from "react";
+import { useParams, NavLink } from "react-router";
+import { BasketContext } from "../context/BasketContext";
+import { ToastContext } from "../context/ToastContext";
+
+const priceConverter = new PriceConverter();
 
 export default function Productpage() {
-	const {id} = useParams();
+	const { id } = useParams();
 	const [product, setProduct] = useState({});
 	const [productQuantity, setProductQuantity] = useState(1);
-	const {dispatch: basketDispatch} = useContext(BasketContext);
-	const {dispatch: toastDispatch} = useContext(ToastContext);
+	const { dispatch: basketDispatch } = useContext(BasketContext);
+	const { dispatch: toastDispatch } = useContext(ToastContext);
+	const [priceInfo, setPriceInfo] = useState(null);
+	const [priceError, setPriceError] = useState(null);
 
 	useEffect(() => {
 		async function fetchProduct() {
@@ -21,6 +26,29 @@ export default function Productpage() {
 		}
 		fetchProduct();
 	}, []);
+
+	useEffect(() => {
+		if (!product || product.price === undefined) return;
+
+		async function calculatePrice() {
+			try {
+				const result = await priceConverter.run({
+					amount: product.price,
+					category: "standard",
+					targetCurrency: "SEK",
+				});
+				setPriceInfo(result);
+				setPriceError(null);
+			} catch (err) {
+				console.error(err);
+				setPriceError("Could not calculate price.");
+				setPriceInfo(null);
+			}
+		}
+
+		calculatePrice();
+	}, [product]);
+
 	const image = `/productImages/${product.imgLink}`;
 
 	function quantityUp() {
@@ -32,9 +60,11 @@ export default function Productpage() {
 	}
 
 	function addToCart() {
-		basketDispatch({type: "ADD", payload: {product, productQuantity}});
-		toastDispatch({type: "SHOW", payload: "Item(s) added to cart!"});
+		basketDispatch({ type: "ADD", payload: { product, productQuantity } });
+		toastDispatch({ type: "SHOW", payload: "Item(s) added to cart!" });
 	}
+
+	if (!product) return null;
 
 	return (
 		<>
@@ -43,7 +73,7 @@ export default function Productpage() {
 					&larr; back to products
 				</NavLink>
 				<div className="productContainer">
-					<div className="imageContainer" style={{backgroundImage: `url(${image})`}}></div>
+					<div className="imageContainer" style={{ backgroundImage: `url(${image})` }}></div>
 
 					<div className="detailsContainer">
 						<h1 className="productTitle">{product.title}</h1>
@@ -51,7 +81,19 @@ export default function Productpage() {
 							{product.genre} &middot; {product.release}
 						</p>
 						<p className="productDescription">{product.description}</p>
-						<p className="productPrice">{product.price} SEK</p>
+
+						{priceError && <p className="productPrice">{priceError}</p>}
+						{!priceError && priceInfo && (
+							<p className="productPrice">
+								{priceInfo.formatted}{" "}
+								<span className="productPriceVatNote">
+									(inkl. {priceInfo.taxRate}% moms)
+								</span>
+							</p>
+						)}
+						{!priceError && !priceInfo && (
+							<p className="productPrice">Calculating price...</p>
+						)}
 					</div>
 				</div>
 
