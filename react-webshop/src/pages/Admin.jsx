@@ -1,13 +1,19 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect, useContext} from "react";
+import {ToastContext} from "../context/ToastContext";
 import inventoryService from "../modules/Elina/inventoryService";
+import Form from "../components/Form";
 
 import "./Admin.css";
 
 function Admin() {
 	let [report, setReport] = useState([]);
+	let [formKey, setFormKey] = useState(0);
+
+	const service = new inventoryService();
+
+	const {dispatch} = useContext(ToastContext);
 
 	useEffect(() => {
-		const service = new inventoryService();
 		service.returnDataReport().then(setReport);
 	}, []);
 
@@ -40,6 +46,40 @@ function Admin() {
 		);
 	}
 
+	const formDescriptor = {
+		stockItemId: {
+			label: "Artikelnummer",
+			type: "text",
+			initialValue: "",
+			required: true,
+		},
+		type: {
+			label: "Händelsetyp",
+			type: "text",
+			initialValue: "",
+			required: true,
+		},
+		quantity: {
+			label: "Kvantitet",
+			type: "text",
+			initialValue: "",
+			required: true,
+		},
+	};
+
+	async function handleMovementSubmit(formData) {
+		const {response, result} = await service.postMovement(formData);
+
+		if (response && response.ok) {
+			console.log(result);
+			dispatch({type: "SHOW", payload: "Movement has been posted."});
+			setFormKey((prev) => prev + 1);
+			service.returnDataReport().then(setReport);
+		} else {
+			dispatch({type: "SHOW", payload: "Movement was not posted."});
+		}
+	}
+
 	return (
 		<main>
 			<h1>Admin</h1>
@@ -68,6 +108,7 @@ function Admin() {
 					})}
 				</tbody>
 			</table>
+			<Form key={formKey} descriptor={formDescriptor} onSubmit={handleMovementSubmit} />
 		</main>
 	);
 }

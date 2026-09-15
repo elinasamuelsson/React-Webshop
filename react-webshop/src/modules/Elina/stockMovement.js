@@ -22,17 +22,17 @@ export default class stockMovement {
 	/* statisk metod som skapar en stockMovement utan tidigare källa */
 	static createFromNew(newMovement) {
 		return new stockMovement(
-			createStockMovementId(newMovement.timestamp),
+			this.createStockMovementId(newMovement.timestamp), //skrivs över av json-servers egna id-generator >:(
 			newMovement.stockItemId,
 			newMovement.type,
-			newMovement.quantity,
+			Number(newMovement.quantity),
 			newMovement.timestamp,
 		);
 	}
 
 	/* metoden skapar ett stockMovementId genom att använda string:en "sm" (kort för Stock Movement) och tidsstämpeln i millisekunder sedan UNIX epoch.
 	 * Att två rörelser skulle ske i exakt samma millisekund är väldigt otroligt */
-	createStockMovementId(timestamp) {
+	static createStockMovementId(timestamp) {
 		const date = new Date(`${timestamp}`);
 		return "sm" + date.getTime().toString();
 	}

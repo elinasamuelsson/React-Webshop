@@ -1,13 +1,13 @@
-import stockItem from "./stockItem.js";
-import stockMovement from "./stockMovement.js";
+import inventoryApi from "./inventoryApi.js";
 
 export default class inventoryService {
 	/* returnerar en array av objekt som innehåller stockItemId, lagersaldovärdet, de tre senaste lagerhändelserna, samt en varningar i de fall lagersaldot behöver ses över av olika anledningar (lågt lagervärde, ovanligt snabb försäljning) */
+	api = new inventoryApi();
 	async returnDataReport() {
 		const [stockItems, stockMovements, products] = await Promise.all([
-			this.fetchStockItems(),
-			this.fetchStockMovements(),
-			this.fetchProducts(),
+			this.api.fetchStockItems(),
+			this.api.fetchStockMovements(),
+			this.api.fetchProducts(),
 		]);
 
 		const stockItemMovements = stockItems.map((i) => {
@@ -26,6 +26,14 @@ export default class inventoryService {
 			};
 		});
 		return stockItemMovements;
+	}
+
+	async postMovement(formData) {
+		const movement = {
+			...formData,
+			timestamp: new Date().toISOString(),
+		};
+		return await this.api.postStockMovements(movement);
 	}
 
 	returnItemName(item, products) {
@@ -68,39 +76,5 @@ export default class inventoryService {
 			.reduce((sum, m) => sum + Math.abs(m.quantity), 0);
 
 		return unusualMovements >= reorderPoint / 3;
-	}
-
-	/* asynkron hjälpmetod som hämtar lagervaror från databasen och mappar dem till stockItem-objektet innan listan returneras */
-	async fetchStockItems() {
-		const response = await fetch("api/inventory/stockItems");
-
-		if (!response.ok) {
-			throw new Error("stockItems fetch failed");
-		}
-
-		const items = await response.json();
-		return items.map((i) => new stockItem(i.id, i.reorderPoint));
-	}
-
-	/* asnkron hjälpmetod som hämtar lagerrörelser från databasen och mappar dem till stockMovement-objektet innan listan returneras */
-	async fetchStockMovements() {
-		const response = await fetch("api/inventory/stockMovements");
-
-		if (!response.ok) {
-			throw new Error("stockMovements fetch failed");
-		}
-
-		const movements = await response.json();
-		return movements.map((m) => stockMovement.createFromApiResponse(m));
-	}
-
-	async fetchProducts() {
-		const response = await fetch("/api/products");
-
-		if (!response.ok) {
-			throw new Error("products fetch failed");
-		}
-
-		return await response.json();
 	}
 }
