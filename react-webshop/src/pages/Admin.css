@@ -46,6 +46,8 @@ main {
 	.inventoryTable td:first-child {
 		position: sticky;
 		left: 0;
+		max-width: 110px;
+		overflow: hidden;
 		background-color: var(--rv-text-main);
 	}
 }
