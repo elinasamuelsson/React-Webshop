@@ -4,8 +4,14 @@ import stockMovement from "./stockMovement.js";
 export default class inventoryService {
 	/* returnerar en array av objekt som innehåller stockItemId, lagersaldovärdet, de tre senaste lagerhändelserna, samt en varningar i de fall lagersaldot behöver ses över av olika anledningar (lågt lagervärde, ovanligt snabb försäljning) */
 	async returnDataReport() {
-		const [stockItems, stockMovements] = await Promise.all([this.fetchStockItems(), this.fetchStockMovements()]);
+		const [stockItems, stockMovements, products] = await Promise.all([
+			this.fetchStockItems(),
+			this.fetchStockMovements(),
+			this.fetchProducts(),
+		]);
+
 		const stockItemMovements = stockItems.map((i) => {
+			const itemName = this.returnItemName(i, products);
 			const allItemMovements = this.returnItemMovements(i, stockMovements);
 			const stockItemBalance = this.returnStockBalance(allItemMovements);
 			const recentMovements = this.returnRecentMovements(allItemMovements);
@@ -13,13 +19,18 @@ export default class inventoryService {
 			const fastMovementWarning = this.returnFastMovementWarn(allItemMovements, i.reorderPoint);
 			return {
 				itemId: i.id,
+				itemName: itemName,
 				balance: stockItemBalance,
 				movements: recentMovements,
 				warnings: {lowStockWarning: lowStockWarning, fastMovementWarning: fastMovementWarning},
 			};
 		});
-		console.log(stockItemMovements);
 		return stockItemMovements;
+	}
+
+	returnItemName(item, products) {
+		const product = products.filter((p) => p.id === item.id)[0];
+		return product.title;
 	}
 
 	/* returnerar det aktuella stockItem:ets lagerrörelser */
@@ -81,5 +92,15 @@ export default class inventoryService {
 
 		const movements = await response.json();
 		return movements.map((m) => stockMovement.createFromApiResponse(m));
+	}
+
+	async fetchProducts() {
+		const response = await fetch("/api/products");
+
+		if (!response.ok) {
+			throw new Error("products fetch failed");
+		}
+
+		return await response.json();
 	}
 }

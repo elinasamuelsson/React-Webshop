@@ -46,7 +46,7 @@ function Admin() {
 			<table className="inventoryTable">
 				<thead>
 					<tr>
-						<td>Vara</td>
+						<td>Artikelnummer | Varunamn</td>
 						<td>Lagervärde</td>
 						<td>Senaste rörelser</td>
 						<td>Varningar</td>
@@ -57,7 +57,9 @@ function Admin() {
 						const hasWarning = item.warnings.fastMovementWarning || item.warnings.lowStockWarning;
 						return (
 							<tr key={item.itemId} className={hasWarning ? "warningRow" : ""}>
-								<td>{item.itemId}</td>
+								<td>
+									{item.itemId} | {item.itemName}
+								</td>
 								<td>{item.balance}</td>
 								<td>{createMovementTableData(item)}</td>
 								<td>{createWarningTableData(item)}</td>
