@@ -1,6 +1,6 @@
 import {useState, useEffect, useContext} from "react";
 import {ToastContext} from "../context/ToastContext";
-import inventoryService from "../modules/Elina/inventoryService";
+import moduleMaker from "../modules/moduleMaker";
 import Form from "../components/Form";
 
 import "./Admin.css";
@@ -9,12 +9,10 @@ function Admin() {
 	let [report, setReport] = useState([]);
 	let [formKey, setFormKey] = useState(0);
 
-	const service = new inventoryService();
-
 	const {dispatch} = useContext(ToastContext);
 
 	useEffect(() => {
-		service.returnDataReport().then(setReport);
+		moduleMaker.InventoryModule.run().then(setReport);
 	}, []);
 
 	function createMovementTableData(item) {
@@ -68,13 +66,13 @@ function Admin() {
 	};
 
 	async function handleMovementSubmit(formData) {
-		const {response, result} = await service.postMovement(formData);
+		const {response, result} = await moduleMaker.InventoryModule.postMovement(formData);
 
 		if (response && response.ok) {
 			console.log(result);
 			dispatch({type: "SHOW", payload: "Movement has been posted."});
 			setFormKey((prev) => prev + 1);
-			service.returnDataReport().then(setReport);
+			moduleMaker.InventoryModule.run().then(setReport);
 		} else {
 			dispatch({type: "SHOW", payload: "Movement was not posted."});
 		}
