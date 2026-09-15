@@ -25,10 +25,10 @@ main {
 }
 
 .warningRow {
-	background-color: var(--rv-accent);
+	background-color: rgba(255, 0, 0, 0.75);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
 	.inventoryTable {
 		margin: 12px;
 		display: block;
