@@ -35,7 +35,7 @@ export class CampaignRule {
                 Array(item.productQuantity).fill(item.product.price)
             );
 
-            if (itemPrices.length < this.buyCount || itemPrices.length > this.buyCount) {
+            if (itemPrices.length < this.buyCount) {
                 throw new Error(
                     `Code '${this.code}' requires you to have at least ${this.buyCount} products in the cart.`
                 );

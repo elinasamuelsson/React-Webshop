@@ -82,9 +82,3 @@ export function BasketProvider({ children }) {
 		</BasketContext.Provider>
 	);
 }
-
-/* BasketProvider gör varukorgens kontext tillgänglig för alla komponenter / sidor som finns innanför taggarna <BasketProvider> </BasketProvider> istället för att använda useReducer(basketReducer, []) i App.jsx */
-// export function BasketProvider({children}) {
-// 	const [basket, dispatch] = useReducer(basketReducer, []);
-// 	return <BasketContext.Provider value={{basket, dispatch}}>{children}</BasketContext.Provider>;
-// }
