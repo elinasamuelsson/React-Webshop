@@ -40,7 +40,7 @@ export default function Form({descriptor, onSubmit}) {
 				);
 			})}
 
-			<button type="submit">Place Order</button>
+			<button type="submit">Skicka</button>
 		</form>
 	);
 }

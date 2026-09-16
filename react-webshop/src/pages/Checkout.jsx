@@ -1,5 +1,6 @@
 import {useContext} from "react";
 import {BasketContext} from "../context/BasketContext.jsx";
+import moduleMaker from "../modules/moduleMaker.js";
 import Form from "../components/Form.jsx";
 import Orders from "../api/Orders.js";
 
@@ -23,6 +24,20 @@ export default function Checkout() {
 		},
 	};
 
+	async function decreaseStock(orderData) {
+		const movements = orderData.items.map((m) => {
+			return {
+				stockItemId: m.product.id,
+				type: "försäljning",
+				quantity: "-" + m.productQuantity,
+			};
+		});
+
+		for (let i = 0; i < movements.length; i++) {
+			moduleMaker.InventoryModule.postMovement(movements[i]);
+		}
+	}
+
 	async function handleOrderSubmit(formData) {
 		const ordersAPI = new Orders();
 
@@ -36,6 +51,7 @@ export default function Checkout() {
 
 		if (response && response.ok) {
 			console.log("Order placed!", result);
+			decreaseStock(orderData);
 			dispatch({type: "CLEAR"});
 		} else {
 			console.log("Something went wrong placing the order.");
