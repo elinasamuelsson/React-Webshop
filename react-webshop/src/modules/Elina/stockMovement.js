@@ -21,11 +21,36 @@ export default class stockMovement {
 
 	/* statisk metod som skapar en stockMovement utan tidigare källa */
 	static createFromNew(newMovement) {
+		const quantity = Number(newMovement.quantity);
+
+		if (
+			newMovement.type !== "försäljning" &&
+			newMovement.type !== "inleverans" &&
+			newMovement.type !== "justering"
+		) {
+			throw new Error(`Rörelsetyp måste vara "försäljning", "inleverans", eller "justering".`);
+		}
+
+		if (typeof quantity !== "number" || Number.isNaN(quantity)) {
+			throw new Error(`Kvantiteten måste vara ett giltigt nummer.`);
+		}
+		if (newMovement.type === "justering" && quantity >= 0) {
+			throw new Error(`Justeringar måste vara negativa.`);
+		}
+
+		if (newMovement.type === "inleverans" && quantity < 0) {
+			throw new Error(`Inleveranser får inte vara negativa eller 0.`);
+		}
+
+		if (newMovement.type === "försäljning" && quantity >= 0) {
+			throw new Error(`Försäljningar måste vara negativa.`);
+		}
+
 		return new stockMovement(
 			this.createStockMovementId(newMovement.timestamp), //skrivs över av json-servers egna id-generator >:(
 			newMovement.stockItemId,
 			newMovement.type,
-			Number(newMovement.quantity),
+			quantity,
 			newMovement.timestamp,
 		);
 	}
@@ -36,8 +61,4 @@ export default class stockMovement {
 		const date = new Date(`${timestamp}`);
 		return "sm" + date.getTime().toString();
 	}
-
-	// metod som bestämmer att kvantitet inte kan vara 0
-
-	// metod som bestämmer att type enbart kan vara "inleverans", "justering", eller "försäljning"
 }

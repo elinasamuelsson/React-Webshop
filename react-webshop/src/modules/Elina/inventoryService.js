@@ -3,9 +3,26 @@ import inventoryApi from "./inventoryApi.js";
 export default class inventoryService {
 	/* returnerar en array av objekt som innehåller stockItemId, lagersaldovärdet, de tre senaste lagerhändelserna, samt en varningar i de fall lagersaldot behöver ses över av olika anledningar (lågt lagervärde, ovanligt snabb försäljning) */
 	api = new inventoryApi();
-	async returnDataReport() {
+	constructor() {
+		this.stockItems = null;
+		this.lastReport = null;
+	}
+
+	async getStockItems() {
+		if (this.stockItems) {
+			return this.stockItems;
+		}
+		this.stockItems = await this.api.fetchStockItems();
+		return this.stockItems;
+	}
+
+	async returnDataReport({forceRefresh = false} = {}) {
+		if (!forceRefresh && this.lastReport) {
+			return this.lastReport;
+		}
+
 		const [stockItems, stockMovements, products] = await Promise.all([
-			this.api.fetchStockItems(),
+			this.getStockItems(),
 			this.api.fetchStockMovements(),
 			this.api.fetchProducts(),
 		]);
@@ -25,14 +42,25 @@ export default class inventoryService {
 				warnings: {lowStockWarning: lowStockWarning, fastMovementWarning: fastMovementWarning},
 			};
 		});
+
+		this.lastReport = stockItemMovements;
 		return stockItemMovements;
 	}
 
 	async postMovement(formData) {
+		const items = await this.getStockItems();
+		const stockItemIds = items.map((i) => i.id);
+
+		if (!stockItemIds.includes(formData.stockItemId)) {
+			throw new Error(`Det finns ingen lagerprodukt med angivet id.`);
+		}
+
 		const movement = {
 			...formData,
 			timestamp: new Date().toISOString(),
 		};
+
+		this.lastReport = null;
 		return await this.api.postStockMovements(movement);
 	}
 

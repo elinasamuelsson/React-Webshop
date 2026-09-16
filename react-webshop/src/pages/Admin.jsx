@@ -66,15 +66,17 @@ function Admin() {
 	};
 
 	async function handleMovementSubmit(formData) {
-		const {response, result} = await moduleMaker.InventoryModule.postMovement(formData);
+		try {
+			const {response, result} = await moduleMaker.InventoryModule.postMovement(formData);
 
-		if (response && response.ok) {
-			console.log(result);
-			dispatch({type: "SHOW", payload: "Movement has been posted."});
-			setFormKey((prev) => prev + 1);
-			moduleMaker.InventoryModule.run().then(setReport);
-		} else {
-			dispatch({type: "SHOW", payload: "Movement was not posted."});
+			if (response && response.ok) {
+				console.log(result);
+				dispatch({type: "SHOW", payload: "Movement has been posted."});
+				setFormKey((prev) => prev + 1);
+				moduleMaker.InventoryModule.run().then(setReport);
+			}
+		} catch (e) {
+			dispatch({type: "SHOW", payload: e.message});
 		}
 	}
 
