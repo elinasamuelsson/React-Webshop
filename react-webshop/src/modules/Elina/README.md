@@ -10,7 +10,7 @@ Vid köp av en vara sjunker lagersaldot för berörda varor, och man kan via ett
 
 stockItems kan ha stockMovements, kopplade tillsammans med id:t i stockItem och stockItemId i stockMovement.
 
-Modulens administration sköts genom inventoryService som är ett logiklager som arbetar som en relay mellan databasen och applikationen.
+Modulens administration sköts genom inventoryService som är ett logiklager där hämtad data och data som ska skickas till databasen genomgår nödvändig transformering innan den går vidare till inventoryApi, som sköter databashämtningar och tillägg.
 
 stockItems och stockMovements agerar som en ram för hur in- och utdata som hanteras av inventoryService. Vardera klass sköter validering av sina fält, och ser till att all in- och utdata har ett enhetligt utseende.
 
@@ -35,9 +35,9 @@ Klasserna stockItem och stockMovement representerar båda en post i databastabel
 
 I stockMovement används två statiska metoder för att kalla på constructor:n, eftersom objektet kan skapas på två olika sätt; som ny händelse eller som existerande händelse hämtad från databasen. Beroende på skapandesätt krävs olika vägar att hantera objektets id. Egentligen hade en metod räckt för nyskapande, och databashämtningen hade kunnat kalla på constructor:n men för tydlighetens skull används istället två olika metoder för olika syften.
 
-### inventoryService
+### inventoryService och inventoryApi
 
-Det är i inventoryService som själva logiken sker, från insamling till urval av data, och uppbyggnad av den rapport som sedan lämnar modulen. Även intag av data och POST till databasen sker i inventoryService.
+Det är i inventoryService som själva logiken sker, från urval av data, till uppbyggnad av den rapport som sedan lämnar modulen.
 
 Den största delen av databearbetningen sker med hjälp av arrowfunktioner och arraymetoder.
 
@@ -45,3 +45,9 @@ Den största delen av databearbetningen sker med hjälp av arrowfunktioner och a
 - .filter() används i samband med den sistnämnda .map()-metoden för att samla alla movements för ett item i samma objekt genom att jämföra id:n.
 - .reduce() används för att slå ihop rörelsernas kvantiteter in och ut för att nå ett lagervärde.
 - .sort() sorterar lagerrörelserna per datum och lägger den senaste händelsen i listan längst fram.
+
+inventoryService cachar stockItem-tabellen från databasen, eftersom denna är oföränderlig i den version av applikation vi skrivit nu. Detta sparar in på databashämtningar vilket ger bättre prestanda.
+
+Även rapporten cachas, även detta av prestandaskäl, men med conditions; den nollas och uppdateras varje gång en förändring sker. Man kan även via run()-funktionen i index.js tvinga en refresh genom att skicka in värdet true enligt beskrivning i moduleMaker.js.
+
+För att inventoryService ska vara mindre luddig och mer lättläst har logiken för databashändelser brutits ut till sin egen klass i form av inventoryApi.
