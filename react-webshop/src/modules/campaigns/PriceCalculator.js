@@ -25,9 +25,9 @@ export class PriceCalculator {
 
         return {
             code: campaignRule.code,
-            originalTotal: Math.round(originalTotal),
-            discountAmount: Math.round(discountAmount),
-            finalTotal: Math.round(finalTotal),
+            originalTotal: originalTotal,
+            discountAmount: discountAmount,
+            finalTotal: finalTotal,
             message: `Discount code '${campaignRule.code}' applied!`
         };
     }
