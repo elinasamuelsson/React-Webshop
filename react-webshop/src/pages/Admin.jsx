@@ -16,7 +16,7 @@ function Admin() {
 	}, []);
 
 	function createMovementTableData(item) {
-		if (item.movements.length === 0) return "Inga rörelser";
+		if (item.movements.length === 0) return "";
 
 		return (
 			<ul>
@@ -33,7 +33,7 @@ function Admin() {
 		const {fastMovementWarning, lowStockWarning} = item.warnings;
 
 		if (!fastMovementWarning && !lowStockWarning) {
-			return "Lagerbalans okej";
+			return "";
 		}
 
 		return (
