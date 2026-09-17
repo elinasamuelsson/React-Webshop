@@ -6,6 +6,8 @@ import { useState, useEffect, useContext } from "react";
 import { useParams, NavLink } from "react-router";
 import { BasketContext } from "../context/BasketContext";
 import { ToastContext } from "../context/ToastContext";
+import { CurrencyContext } from "../context/CurrencyContext.jsx";
+import { priceWithTax } from "../hooks/priceWithTax.js";
 
 const priceConverter = new PriceConverter();
 
@@ -15,8 +17,6 @@ export default function Productpage() {
 	const [productQuantity, setProductQuantity] = useState(1);
 	const { dispatch: basketDispatch } = useContext(BasketContext);
 	const { dispatch: toastDispatch } = useContext(ToastContext);
-	const [priceInfo, setPriceInfo] = useState(null);
-	const [priceError, setPriceError] = useState(null);
 
 	useEffect(() => {
 		async function fetchProduct() {
@@ -27,27 +27,8 @@ export default function Productpage() {
 		fetchProduct();
 	}, []);
 
-	useEffect(() => {
-		if (!product || product.price === undefined) return;
-
-		async function calculatePrice() {
-			try {
-				const result = await priceConverter.run({
-					amount: product.price,
-					category: "standard",
-					targetCurrency: "SEK",
-				});
-				setPriceInfo(result);
-				setPriceError(null);
-			} catch (err) {
-				console.error(err);
-				setPriceError("Could not calculate price.");
-				setPriceInfo(null);
-			}
-		}
-
-		calculatePrice();
-	}, [product]);
+	const { currency } = useContext(CurrencyContext);
+	const { priceInfo, priceError } = priceWithTax(product?.price, "standard", currency);
 
 	const image = `/productImages/${product.imgLink}`;
 
