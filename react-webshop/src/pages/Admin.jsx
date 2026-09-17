@@ -1,141 +1,228 @@
-import { useState } from "react";
+import {useState, useEffect, useContext} from "react";
+import {ToastContext} from "../context/ToastContext";
+import moduleMaker from "../modules/moduleMaker";
+import Form from "../components/Form";
+
+import "./Admin.css";
 
 function Admin() {
+	let [report, setReport] = useState([]);
+	let [formKey, setFormKey] = useState(0);
 
-  const [isPercent, setIsPercent] = useState(false);
-  const [isThreshold, setIsThreshold] = useState(false);
-  const [isBundle, setIsBundle] = useState(false);
+  // Kampanj typ
+  const [selectedType, setSelectedType] = useState("");
+  const [campaignFormKey, setCampaignFormKey] = useState(100);
 
-  const [code, setCode] = useState("");
-  const [type, setType] = useState("");
-  const [value, setValue] = useState(0);
-  const [discountAmount, setDiscountAmount] = useState(0);
-  const [minAmount, setMinAmount] = useState(0);
-  const [buyCount, setBuyCount] = useState(0);
-  const [payCount, setPayCount] = useState(0);
+	const {dispatch} = useContext(ToastContext);
 
-  function setCampaignType(type) {
-    if (type === "percentage") {
-      setIsPercent(true);
-      setIsBundle(false);
-      setIsThreshold(false);
+	useEffect(() => {
+		moduleMaker.InventoryModule.run().then(setReport);
+	}, []);
+
+	function createMovementTableData(item) {
+		if (item.movements.length === 0) return "";
+
+		return (
+			<ul>
+				{item.movements.map((m) => (
+					<li key={m.id}>
+						{m.timestamp} | {m.quantity} | {m.type}
+					</li>
+				))}
+			</ul>
+		);
+	}
+
+	function createWarningTableData(item) {
+		const {fastMovementWarning, lowStockWarning} = item.warnings;
+
+		if (!fastMovementWarning && !lowStockWarning) {
+			return "";
+		}
+
+		return (
+			<ul>
+				{fastMovementWarning && <li>Ovanligt snabb försäljningshastighet!</li>}
+				{lowStockWarning && <li>Lågt lagervärde!</li>}
+			</ul>
+		);
+	}
+
+	const formDescriptor = {
+		stockItemId: {
+			label: "Artikelnummer",
+			type: "text",
+			initialValue: "",
+			required: true,
+		},
+		type: {
+			label: "Händelsetyp",
+			type: "text",
+			initialValue: "",
+			required: true,
+		},
+		quantity: {
+			label: "Kvantitet",
+			type: "text",
+			initialValue: "",
+			required: true,
+		},
+	};
+
+	async function handleMovementSubmit(formData) {
+		try {
+			const {response, result} = await moduleMaker.InventoryModule.postMovement(formData);
+
+			if (response && response.ok) {
+				console.log(result);
+				dispatch({type: "SHOW", payload: "Movement has been posted."});
+				setFormKey((prev) => prev + 1);
+				moduleMaker.InventoryModule.run().then(setReport);
+			}
+		} catch (e) {
+			dispatch({type: "SHOW", payload: e.message});
+		}
+	}
+
+  // Kampanj from descriptor och logik
+  const campaignFormDescriptor = {
+    code: {
+      label: "Rabattkod", 
+      type: "text", 
+      initialValue: "", 
+      required: true, 
+    }, 
+    ...(selectedType === "percentage" && {
+      value: {
+        label: "Procentsats (%)", 
+        type: "number", 
+        initialValue: "", 
+        required: true, 
+      }, 
+    }), 
+    ...(selectedType === "threshold" && {
+      minAmount: {
+        label: "Lägsta köpbelopp (kr)", 
+        type: "number", 
+        initialValue: "", 
+        required: true, 
+      }, 
+      discountAmount: {
+        label: "Rabatt (kr)", 
+        type: "number", 
+        initialValue: "", 
+        required: true, 
+      }
+    }), 
+    ...(selectedType === "buyXgetY" && {
+      buyCount: {
+        label: "Minsta antal produkter (X)", 
+        type: "number", 
+        initialValue: "", 
+        required: true, 
+      }, 
+      payCount: {
+        label: "Antal du betalar för (Y)", 
+        type: "number", 
+        initialValue: "", 
+        required: true, 
+      }, 
+    }), 
+  };
+
+  async function handleCampaignSubmit(formData) {
+    if (!selectedType) {
+      dispatch({ type: "SHOW", payload: "Välj en kampanjtyp först." });
       return;
     }
-
-    if (type === "threshold") {
-      setIsThreshold(true);
-      setIsPercent(false);
-      setIsBundle(false);
-      return;
-    }
-
-    if (type === "buyXgetY") {
-      setIsBundle(true);
-      setIsPercent(false);
-      setIsThreshold(false);
-      return;
-    }
-
-    setIsPercent(false);
-    setIsBundle(false);
-    setIsThreshold(false);
-    return;
-  }
-
-  async function handleSubmit(e) {
-    e.preventDefault();
 
     try {
-      const response = await fetch(`/api/campaigns`, {
-        method: "POST", 
-        body: JSON.stringify({
-          code: code, 
-          type: type, 
-          value: value, 
-          discountAmount: discountAmount, 
-          minAmount: minAmount, 
-          buyCount: buyCount, 
-          payCount: payCount
-        }), 
-        headers: {
-          "Content-type": "application/json: charset=UTF-8"
-        }
-      });
-
-      if (!response.ok) {
-        console.log("Something went wrong.");
+      const payload = {
+        // Formaterar sträng nummer till nummer
+        code: formData.code?.trim(), 
+        type: selectedType, 
+        ...(formData.value && { value: Number(formData.value) }), 
+        ...(formData.discountAmount && { discountAmount: Number(formData.discountAmount) }),
+        ...(formData.minAmount && { minAmount: Number(formData.minAmount) }),
+        ...(formData.buyCount && { buyCount: Number(formData.buyCount) }),
+        ...(formData.payCount && { payCount: Number(formData.payCount) }),
       }
 
-      const result = await response.json();
-      return {response, result};
-    } catch (error) {
-      console.log(error);
+      const response = await fetch(`/api/campaigns`, {
+        method: "POST", 
+        body: JSON.stringify(payload), 
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        }, 
+      }); 
+
+      if (!response.ok) {
+        throw new Error("Couldn't create campaign code.");
+      }
+
+      dispatch( { type: "SHOW", payload: `Kampanjkod '${payload.code}' har skapats!`}); 
+      setSelectedType(""); 
+      setCampaignFormKey((prev) => prev + 1); 
+    } catch(error) {
+      dispatch( {type: "SHOW", payload: error.message });
     }
   }
 
-  return (
-    <div style={{color: "white"}}>
-      <h1>Admin</h1>
+	return (
+		<main>
+			<h1>Admin</h1>
+			<table className="inventoryTable">
+				<thead>
+					<tr>
+						<td>Artikelnummer | Varunamn</td>
+						<td>Lagervärde</td>
+						<td>Senaste rörelser</td>
+						<td>Varningar</td>
+					</tr>
+				</thead>
+				<tbody>
+					{report.map((item) => {
+						const hasWarning = item.warnings.fastMovementWarning || item.warnings.lowStockWarning;
+						return (
+							<tr key={item.itemId} className={hasWarning ? "warningRow" : ""}>
+								<td>
+									{item.itemId} | {item.itemName}
+								</td>
+								<td>{item.balance}</td>
+								<td>{createMovementTableData(item)}</td>
+								<td>{createWarningTableData(item)}</td>
+							</tr>
+						);
+					})}
+				</tbody>
+			</table>
+			<Form key={formKey} descriptor={formDescriptor} onSubmit={handleMovementSubmit} />
 
-      <form onSubmit={handleSubmit}>
-        <h2>Add Discount Code</h2>
-        <label>
-          Code: 
-          <input type="text" required onChange={(e) => setCode(e.target.value)}/>
-        </label>
+      {/* KAMPANJ SKAPANDE SEKTION */}
+      <section>
+        <h2>Skapa Kampanjkod</h2>
 
-        <label>
-          Type: 
-          <select onChange={(e) => {
-            setCampaignType(e.target.value);
-            setType(e.target.value);
-          }} required>
-            <option>Select campaign type</option>
-            <option value="percentage">Percent</option>
-            <option value="threshold">Threshold</option>
-            <option value="buyXgetY">Bundle</option>
-          </select>
-        </label>
-
-        {isPercent && 
-          <label>
-            Percent: 
-            <input onChange={(e) => setValue(e.target.value)} type="number" max={100} min={0} placeholder="20" required/>
-          </label>
-        }
-
-        {isThreshold && 
-          <>
-            <label>
-              Required Amount: 
-              <input onChange={(e) => setMinAmount(e.target.value)} type="number" max={100} min={0} placeholder="500" required/>
+          <div style={{ marginBottom: "1rem" }}>
+            <label style={{ display: "block", marginBottom: "0.5rem" }}>
+              Välj kampanjtyp:
             </label>
+            <select
+              value={selectedType}
+              onChange={(e) => setSelectedType(e.target.value)}
+            >
+              <option value="">-- Välj kampanjtyp --</option>
+              <option value="percentage">Procentrabatt</option>
+              <option value="threshold">Tröskelrabatt</option>
+              <option value="buyXgetY">Mängdrabatt (Köp X betala för Y)</option>
+            </select>
+          </div>
 
-            <label>
-              Discount Amount: 
-              <input onChange={(e) => setDiscountAmount(e.target.value)} type="number" max={100} min={0} placeholder="100" required/>
-            </label>
-          </>
-        }
-
-        {isBundle && 
-          <>
-            <label>
-              Minimum product amount: 
-              <input onChange={(e) => setBuyCount(e.target.value)} type="number" placeholder="3"/>
-            </label>
-
-            <label>
-              Pay count: 
-              <input onChange={(e) => setPayCount(e.target.value)} type="number" placeholder="2"/>
-            </label>
-          </>
-        }
-
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  );
+          {selectedType && (
+            <Form key={campaignFormKey} descriptor={campaignFormDescriptor} onSubmit={handleCampaignSubmit} />
+          )}
+      </section>
+		</main>
+	);
 }
 
 export default Admin;

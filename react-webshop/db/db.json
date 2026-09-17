@@ -481,32 +481,6 @@
       "buyCount": 3,
       "payCount": 2,
       "id": "JPyM8cC11kk"
-    },
-    {
-      "code": "TEST",
-      "type": "percentage",
-      "value": "50",
-      "id": "ryQgt_xKwIo"
-    },
-    {
-      "code": "THRESH",
-      "type": "threshold",
-      "value": 0,
-      "discountAmount": "20",
-      "minAmount": "100",
-      "buyCount": 0,
-      "payCount": 0,
-      "id": "Ji4U3j6nd7w"
-    },
-    {
-      "code": "BUNDLING",
-      "type": "buyXgetY",
-      "value": 0,
-      "discountAmount": 0,
-      "minAmount": 0,
-      "buyCount": "4",
-      "payCount": "2",
-      "id": "LioU37swHF4"
     }
   ],
   "orders": [
