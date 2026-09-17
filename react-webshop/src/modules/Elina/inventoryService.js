@@ -94,13 +94,14 @@ export default class inventoryService {
 	returnFastMovementWarn(movements, reorderPoint) {
 		if (movements.length === 0) return false;
 
-		const mostRecent = [...movements].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))[0];
 		const allSales = movements.filter((m) => m.type === "försäljning");
 
 		if (allSales.length === 0) return false;
 
+		const mostRecentSale = [...allSales].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))[0];
+
 		const unusualMovements = allSales
-			.filter((m) => new Date(m.timestamp) > new Date(mostRecent.timestamp) - 3 * 24 * 60 * 60 * 1000)
+			.filter((m) => new Date(m.timestamp) > new Date(mostRecentSale.timestamp) - 3 * 24 * 60 * 60 * 1000)
 			.reduce((sum, m) => sum + Math.abs(m.quantity), 0);
 
 		return unusualMovements >= reorderPoint / 3;

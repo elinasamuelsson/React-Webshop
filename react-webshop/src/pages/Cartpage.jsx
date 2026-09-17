@@ -1,14 +1,35 @@
 import "./Cartpage.css";
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {BasketContext} from "../context/BasketContext.jsx";
+import CampaignEngineModule from "../modules/campaigns/CampaignEngineModule.js";
 import {Link} from "react-router";
 import {ToastContext} from "../context/ToastContext.jsx";
 
-export default function Cart() {
-	const {basket: cartItems, dispatch: basketDispatch} = useContext(BasketContext);
-	const {dispatch: toastDispatch} = useContext(ToastContext);
+const campaignModule = new CampaignEngineModule();
 
-	const totalPrice = cartItems.reduce((sum, item) => sum + item.product.price * item.productQuantity, 0);
+export default function Cart() {
+	const {basket: cartItems, appliedDiscount, setAppliedDiscount, rawTotal, finalTotal, dispatch} = useContext(BasketContext);
+  const {dispatch: toastDispatch} = useContext(ToastContext);
+
+	const [promoCode, setPromoCode] = useState("");
+	const [errorMessage, setErrorMessage] = useState("");
+
+	async function handleDiscountSubmit(e) {
+		e.preventDefault();
+		setErrorMessage("");
+
+		try {
+			const result = await campaignModule.run(
+				{ code: promoCode }, 
+				{ cartItems }
+			);
+
+			setAppliedDiscount(result);
+		} catch (error) {
+			setAppliedDiscount(null);
+			setErrorMessage(error.message);
+		}
+	}
 
 	function toast() {
 		toastDispatch({type: "SHOW", payload: "Cart has been updated!"});
@@ -79,8 +100,26 @@ export default function Cart() {
 						))}
 					</div>
 
-					<div className="cart-total">
-						<strong>Total: {totalPrice} kr</strong>
+					<div className="cart-total" style={{display: "flex", flexDirection: "column"}}>
+						<form onSubmit={handleDiscountSubmit}>
+							<input 
+								type="text" 
+								placeholder="Enter promo code" 
+								onChange={(e) => setPromoCode(e.target.value)}/>
+							<button type="submit">Apply</button>
+						</form>
+
+						{errorMessage && <p style={{color: "red"}}>{errorMessage}</p>}
+
+						{appliedDiscount ? (
+							<div>
+								<p style={{color: "green"}}>{appliedDiscount.message}</p>
+								<p>Original total: {rawTotal}</p>
+								<p>Discount: -{appliedDiscount.discountAmount} kr</p>
+								<strong>Final total: {finalTotal} kr</strong>
+							</div>
+						) : <strong>Total: {rawTotal} kr</strong>}
+
 						<Link to="/checkout">
 							<button>Go to Checkout</button>
 						</Link>

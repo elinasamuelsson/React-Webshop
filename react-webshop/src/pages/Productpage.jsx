@@ -1,17 +1,22 @@
 import "./Productpage.css";
 import Product from "../api/Products";
+import PriceConverter from "../modules/Admir/index.js";
 
-import {useState, useEffect, useContext} from "react";
-import {useParams, Link, useNavigate} from "react-router";
-import {BasketContext} from "../context/BasketContext";
-import {ToastContext} from "../context/ToastContext";
+import { useState, useEffect, useContext } from "react";
+import { useParams, NavLink, useNavigate } from "react-router";
+import { BasketContext } from "../context/BasketContext";
+import { ToastContext } from "../context/ToastContext";
+import { CurrencyContext } from "../context/CurrencyContext.jsx";
+import { priceWithTax } from "../hooks/priceWithTax.js";
+
+const priceConverter = new PriceConverter();
 
 export default function Productpage() {
-	const {id} = useParams();
+	const { id } = useParams();
 	const [product, setProduct] = useState({});
 	const [productQuantity, setProductQuantity] = useState(1);
-	const {dispatch: basketDispatch} = useContext(BasketContext);
-	const {dispatch: toastDispatch} = useContext(ToastContext);
+	const { dispatch: basketDispatch } = useContext(BasketContext);
+	const { dispatch: toastDispatch } = useContext(ToastContext);
 
 	useEffect(() => {
 		async function fetchProduct() {
@@ -21,6 +26,10 @@ export default function Productpage() {
 		}
 		fetchProduct();
 	}, []);
+
+	const { currency } = useContext(CurrencyContext);
+	const { priceInfo, priceError } = priceWithTax(product?.price, "standard", currency);
+
 	const image = `/productImages/${product.imgLink}`;
 
 	function quantityUp() {
@@ -32,14 +41,16 @@ export default function Productpage() {
 	}
 
 	function addToCart() {
-		basketDispatch({type: "ADD", payload: {product, productQuantity}});
-		toastDispatch({type: "SHOW", payload: "Item(s) added to cart!"});
+		basketDispatch({ type: "ADD", payload: { product, productQuantity } });
+		toastDispatch({ type: "SHOW", payload: "Item(s) added to cart!" });
 	}
 
 	let navigate = useNavigate();
 	const prevPage = () => {
 		navigate(-1);
 	};
+  
+	if (!product) return null;
 
 	return (
 		<>
@@ -55,7 +66,7 @@ export default function Productpage() {
 					&larr; back to products
 				</Link>
 				<div className="productContainer">
-					<div className="imageContainer" style={{backgroundImage: `url(${image})`}}></div>
+					<div className="imageContainer" style={{ backgroundImage: `url(${image})` }}></div>
 
 					<div className="detailsContainer">
 						<h1 className="productTitle">{product.title}</h1>
@@ -63,7 +74,19 @@ export default function Productpage() {
 							{product.genre} &middot; {product.release}
 						</p>
 						<p className="productDescription">{product.description}</p>
-						<p className="productPrice">{product.price} SEK</p>
+
+						{priceError && <p className="productPrice">{priceError}</p>}
+						{!priceError && priceInfo && (
+							<p className="productPrice">
+								{priceInfo.formatted}{" "}
+								<span className="productPriceVatNote">
+									(inkl. {priceInfo.taxRate}% moms)
+								</span>
+							</p>
+						)}
+						{!priceError && !priceInfo && (
+							<p className="productPrice">Calculating price...</p>
+						)}
 					</div>
 				</div>
 
