@@ -2,11 +2,17 @@ import "./Cartpage.css";
 import {useContext} from "react";
 import {BasketContext} from "../context/BasketContext.jsx";
 import {Link} from "react-router";
+import {ToastContext} from "../context/ToastContext.jsx";
 
 export default function Cart() {
-	const {basket: cartItems, dispatch} = useContext(BasketContext);
+	const {basket: cartItems, dispatch: basketDispatch} = useContext(BasketContext);
+	const {dispatch: toastDispatch} = useContext(ToastContext);
 
 	const totalPrice = cartItems.reduce((sum, item) => sum + item.product.price * item.productQuantity, 0);
+
+	function toast() {
+		toastDispatch({type: "SHOW", payload: "Cart has been updated!"});
+	}
 
 	return (
 		<main className="cart-page">
@@ -33,12 +39,13 @@ export default function Cart() {
 
 								<div className="cart-quantity">
 									<button
-										onClick={() =>
-											dispatch({
+										onClick={() => {
+											basketDispatch({
 												type: "UPDATE",
 												payload: {product: item.product, productQuantity: -1},
-											})
-										}
+											});
+											toast();
+										}}
 									>
 										&#45;
 									</button>
@@ -46,12 +53,13 @@ export default function Cart() {
 									<span>{item.productQuantity}</span>
 
 									<button
-										onClick={() =>
-											dispatch({
+										onClick={() => {
+											basketDispatch({
 												type: "UPDATE",
 												payload: {product: item.product, productQuantity: 1},
-											})
-										}
+											});
+											toast();
+										}}
 									>
 										+
 									</button>
@@ -59,7 +67,12 @@ export default function Cart() {
 
 								<strong>{item.product.price * item.productQuantity} kr</strong>
 
-								<button onClick={() => dispatch({type: "REMOVE", payload: item.product.id})}>
+								<button
+									onClick={() => {
+										basketDispatch({type: "REMOVE", payload: item.product.id});
+										toast();
+									}}
+								>
 									Remove
 								</button>
 							</article>

@@ -1,11 +1,13 @@
 import {useContext} from "react";
 import {BasketContext} from "../context/BasketContext.jsx";
+import {ToastContext} from "../context/ToastContext.jsx";
 import moduleMaker from "../modules/moduleMaker.js";
 import Form from "../components/Form.jsx";
 import Orders from "../api/Orders.js";
 
 export default function Checkout() {
-	const {basket: cartItems, dispatch} = useContext(BasketContext);
+	const {basket: cartItems, dispatch: basketDispatch} = useContext(BasketContext);
+	const {dispatch: toastDispatch} = useContext(ToastContext);
 
 	const totalPrice = cartItems.reduce((sum, item) => sum + item.product.price * item.productQuantity, 0);
 
@@ -50,11 +52,11 @@ export default function Checkout() {
 		const {response, result} = await ordersAPI.createOrder(orderData);
 
 		if (response && response.ok) {
-			console.log("Order placed!", result);
 			decreaseStock(orderData);
-			dispatch({type: "CLEAR"});
+			toastDispatch({type: "SHOW", payload: "Your order has been placed!"});
+			basketDispatch({type: "CLEAR"});
 		} else {
-			console.log("Something went wrong placing the order.");
+			toastDispatch({type: "SHOW", payload: "Something went wrong!"});
 		}
 	}
 
