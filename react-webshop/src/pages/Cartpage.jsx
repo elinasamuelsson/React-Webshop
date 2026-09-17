@@ -59,7 +59,9 @@ export default function Cart() {
 
 								<strong>{item.product.price * item.productQuantity} kr</strong>
 
-								<button>Remove</button>
+								<button onClick={() => dispatch({type: "REMOVE", payload: item.product.id})}>
+									Remove
+								</button>
 							</article>
 						))}
 					</div>
