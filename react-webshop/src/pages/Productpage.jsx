@@ -3,6 +3,7 @@ import Product from "../api/Products";
 
 import {useState, useEffect, useContext} from "react";
 import {useParams, NavLink} from "react-router";
+import {useHistory} from "react-router";
 import {BasketContext} from "../context/BasketContext";
 import {ToastContext} from "../context/ToastContext";
 
@@ -36,10 +37,15 @@ export default function Productpage() {
 		toastDispatch({type: "SHOW", payload: "Item(s) added to cart!"});
 	}
 
+	let history = useHistory();
+	const prevPage = () => {
+		history.goBack();
+	};
+
 	return (
 		<>
 			<main>
-				<NavLink to="/" className="backLink">
+				<NavLink to={prevPage} className="backLink">
 					&larr; back to products
 				</NavLink>
 				<div className="productContainer">
