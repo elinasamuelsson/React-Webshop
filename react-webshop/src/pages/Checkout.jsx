@@ -49,14 +49,15 @@ export default function Checkout() {
 			total: totalPrice,
 		};
 
-		const {response, result} = await ordersAPI.createOrder(orderData);
+		const {response, result} = await ordersAPI.createOrder(orderData).catch((e) => {
+			toastDispatch({type: "SHOW", payload: `${e}`});
+			return {response: null, result: null};
+		});
 
 		if (response && response.ok) {
 			decreaseStock(orderData);
 			toastDispatch({type: "SHOW", payload: "Your order has been placed!"});
 			basketDispatch({type: "CLEAR"});
-		} else {
-			toastDispatch({type: "SHOW", payload: "Something went wrong!"});
 		}
 	}
 
