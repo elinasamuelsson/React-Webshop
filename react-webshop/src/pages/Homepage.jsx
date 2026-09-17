@@ -76,15 +76,6 @@ export default function Homepage() {
 						Thriller
 					</Link>
 				</p>
-				<NavLink className="categoryItem" to="/products/k3j9x2q">
-					Die Hard
-				</NavLink>
-				<NavLink className="categoryItem" to="/products/v2k6d1q">
-					A Minecraft Movie
-				</NavLink>
-				<NavLink className="categoryItem" to="/products/s2p7d4x">
-					Jurassic Park
-				</NavLink>
 			</div>
 
 			{/* Kundomdömen */}
