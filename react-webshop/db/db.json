@@ -469,6 +469,41 @@
       "quantity": 2
     }
   ],
+  "carriers": [
+    {
+      "id": "postnord",
+      "name": "PostNord",
+      "pricingModel": "weight",
+      "pricePerKg": 15,
+      "basePrice": 39,
+      "estimatedDays": "3-5"
+    },
+    {
+      "id": "dhl",
+      "name": "DHL",
+      "pricingModel": "zone",
+      "zonePrices": {
+        "zone1": 49,
+        "zone2": 69,
+        "zone3": 99
+      },
+      "estimatedDays": "1-2"
+    },
+    {
+      "id": "budbee",
+      "name": "Budbee",
+      "pricingModel": "volumetric",
+      "pricePerKg": 12,
+      "basePrice": 45,
+      "estimatedDays": "2-3"
+    }
+  ],
+  "productDimensions": {
+    "weightGrams": 200,
+    "lengthCm": 19,
+    "widthCm": 11,
+    "heightCm": 3
+  },
   "orders": [
     {
       "firstName": "alex",
@@ -498,6 +533,56 @@
       ],
       "total": 49,
       "id": "qRGX2b4O8m4"
+    },
+    {
+      "firstName": "Alex Robin Oscar",
+      "lastName": "Reichstein",
+      "items": [
+        {
+          "product": {
+            "id": "q8s3d1c",
+            "title": "Ghostbusters",
+            "price": 39,
+            "description": "Three unemployed parapsychologists start a ghost-catching business in New York City.",
+            "release": 1984,
+            "genre": "Comedy",
+            "imgLink": "ghostbusters.png"
+          },
+          "productQuantity": 1
+        }
+      ],
+      "total": 39,
+      "id": "oHPStZ15zsY"
+    },
+    {
+      "firstName": "a",
+      "lastName": "asd",
+      "address": "gatan 1",
+      "zipCode": "12345",
+      "items": [
+        {
+          "product": {
+            "id": "k3j9x2q",
+            "title": "Die Hard",
+            "price": 49,
+            "description": "A NYPD cop battles terrorists who've taken over a Los Angeles skyscraper on Christmas Eve.",
+            "release": 1988,
+            "genre": "Action",
+            "imgLink": "dieHard.jpg",
+            "isDiscount": true,
+            "discountPercent": 0.15
+          },
+          "productQuantity": 1
+        }
+      ],
+      "total": 91,
+      "shipping": {
+        "carrierId": "postnord",
+        "carrierName": "PostNord",
+        "price": 42,
+        "estimatedDays": "3-5"
+      },
+      "id": "v3xnHXK-x1g"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

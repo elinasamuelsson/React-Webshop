@@ -4,7 +4,7 @@ import Parcel from "./Parcel.js";
 // ShippingQuoteService hämtar tillgängliga transportörer, beräknar en offert per transportör,
 // och returnerar en sorterad lista - även om någon transportör skulle misslyckas.
 export default class ShippingQuoteService {
-	// Hämtar transportörsdata asynkront från /api/carriers
+	// Hämtar transportörsdata asynkront från /api/carriers - json-server läser från carriers.json och skapar själv REST-endpointen /api/carriers
 	async fetchCarriers() {
 		const response = await fetch("/api/carriers");
 		if (!response.ok) {
