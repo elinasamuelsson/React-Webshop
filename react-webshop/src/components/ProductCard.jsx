@@ -1,19 +1,16 @@
 import { useEffect, useState, useContext } from "react";
-import {Link} from "react-router";
 import Product from "../api/Products.js";
 import "./ProductCard.css";
 import DiscountIcon from "./DiscountIcon.jsx";
 import { BasketContext } from "../context/BasketContext.jsx";
-import {ToastContext} from "../context/ToastContext.jsx";
 
 export default function Products({ filter }) {
-	const {dispatch: basketDispatch} = useContext(BasketContext);
-	const {dispatch: toastDispatch} = useContext(ToastContext);
 
     const productsAPI = new Product();
     const [products, setProducts] = useState([]);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
+    const { dispatch } = useContext(BasketContext);
 
     useEffect(() => {
         setPage(1);
@@ -36,11 +33,10 @@ export default function Products({ filter }) {
 
     // Här filtreras filmerna beroende på filtret
     const displayedProducts = filter ? products.filter(p => p.genre === filter) : products;
-		basketDispatch({type: "ADD", payload: {product, productQuantity: 1}});
-		toastDispatch({type: "SHOW", payload: "Item(s) added to cart!"});
 
     // Lägger till en produkt i varukorgen, alltid med antal 1 från produktgriden
     function addToCart(product) {
+        dispatch({ type: "ADD", payload: { product, productQuantity: 1 } });
     }
 
     return (
@@ -49,14 +45,12 @@ export default function Products({ filter }) {
                 displayedProducts.map(p => {
                     return (
                         <div class="card" key={p.id} style={{display: "flex", flexDirection: "column"}}>
-						<Link to={`/products/${p.id}`}>
-							<h3 class="card-title">{p.title}</h3>
-						</Link>
 
                             { p.isDiscount ? <DiscountIcon /> : null}
 
                             <img class="card-img" alt={`${p.title}`} src={`./public/productimages/${p.imgLink}`} />
                             <p class="card-genre">{p.genre.toUpperCase()}</p>
+                            <h3 class="card-title">{p.title}</h3>
                             <p class="card-release">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar4-event" viewBox="0 0 16 16">
                                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
