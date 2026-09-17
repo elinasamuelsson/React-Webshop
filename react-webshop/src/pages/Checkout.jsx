@@ -5,7 +5,7 @@ import Form from "../components/Form.jsx";
 import Orders from "../api/Orders.js";
 
 export default function Checkout() {
-	const {basket: cartItems, dispatch} = useContext(BasketContext);
+	const {basket: cartItems, appliedDiscount, rawTotal, finalTotal, dispatch, setAppliedDiscount} = useContext(BasketContext);
 
 	const totalPrice = cartItems.reduce((sum, item) => sum + item.product.price * item.productQuantity, 0);
 
@@ -21,7 +21,7 @@ export default function Checkout() {
 			type: "text",
 			initialValue: "",
 			required: true,
-		},
+		}
 	};
 
 	async function decreaseStock(orderData) {
@@ -44,7 +44,9 @@ export default function Checkout() {
 		const orderData = {
 			...formData,
 			items: cartItems,
-			total: totalPrice,
+			rawTotal: rawTotal, 
+			discountApplied: appliedDiscount ? appliedDiscount.discountAmount : 0, 
+			total: finalTotal,
 		};
 
 		const {response, result} = await ordersAPI.createOrder(orderData);
@@ -53,6 +55,7 @@ export default function Checkout() {
 			console.log("Order placed!", result);
 			decreaseStock(orderData);
 			dispatch({type: "CLEAR"});
+			setAppliedDiscount(null);
 		} else {
 			console.log("Something went wrong placing the order.");
 		}
@@ -61,7 +64,19 @@ export default function Checkout() {
 	return (
 		<main className="checkout-page">
 			<h1>Checkout</h1>
-			<p>Total: {totalPrice} kr</p>
+
+			{appliedDiscount ? (
+				<div>
+					<p style={{ textDecoration: "line-through", color: "#888" }}>Original price: {rawTotal}</p>
+					<p>
+						Discount ({appliedDiscount.code}): -{appliedDiscount.discountAmount} kr
+					</p>
+					<strong>Total: {finalTotal} kr</strong>
+				</div>
+			) : (
+				<strong>Total: {rawTotal}</strong>
+			)}
+
 			<Form descriptor={formDescriptor} onSubmit={handleOrderSubmit} />
 		</main>
 	);

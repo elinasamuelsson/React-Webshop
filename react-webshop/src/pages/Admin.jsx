@@ -9,6 +9,10 @@ function Admin() {
 	let [report, setReport] = useState([]);
 	let [formKey, setFormKey] = useState(0);
 
+  // Kampanj typ
+  const [selectedType, setSelectedType] = useState("");
+  const [campaignFormKey, setCampaignFormKey] = useState(100);
+
 	const {dispatch} = useContext(ToastContext);
 
 	useEffect(() => {
@@ -80,6 +84,90 @@ function Admin() {
 		}
 	}
 
+  // Kampanj from descriptor och logik
+  const campaignFormDescriptor = {
+    code: {
+      label: "Rabattkod", 
+      type: "text", 
+      initialValue: "", 
+      required: true, 
+    }, 
+    ...(selectedType === "percentage" && {
+      value: {
+        label: "Procentsats (%)", 
+        type: "number", 
+        initialValue: "", 
+        required: true, 
+      }, 
+    }), 
+    ...(selectedType === "threshold" && {
+      minAmount: {
+        label: "Lägsta köpbelopp (kr)", 
+        type: "number", 
+        initialValue: "", 
+        required: true, 
+      }, 
+      discountAmount: {
+        label: "Rabatt (kr)", 
+        type: "number", 
+        initialValue: "", 
+        required: true, 
+      }
+    }), 
+    ...(selectedType === "buyXgetY" && {
+      buyCount: {
+        label: "Minsta antal produkter (X)", 
+        type: "number", 
+        initialValue: "", 
+        required: true, 
+      }, 
+      payCount: {
+        label: "Antal du betalar för (Y)", 
+        type: "number", 
+        initialValue: "", 
+        required: true, 
+      }, 
+    }), 
+  };
+
+  async function handleCampaignSubmit(formData) {
+    if (!selectedType) {
+      dispatch({ type: "SHOW", payload: "Välj en kampanjtyp först." });
+      return;
+    }
+
+    try {
+      const payload = {
+        // Formaterar sträng nummer till nummer
+        code: formData.code?.trim(), 
+        type: selectedType, 
+        ...(formData.value && { value: Number(formData.value) }), 
+        ...(formData.discountAmount && { discountAmount: Number(formData.discountAmount) }),
+        ...(formData.minAmount && { minAmount: Number(formData.minAmount) }),
+        ...(formData.buyCount && { buyCount: Number(formData.buyCount) }),
+        ...(formData.payCount && { payCount: Number(formData.payCount) }),
+      }
+
+      const response = await fetch(`/api/campaigns`, {
+        method: "POST", 
+        body: JSON.stringify(payload), 
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        }, 
+      }); 
+
+      if (!response.ok) {
+        throw new Error("Couldn't create campaign code.");
+      }
+
+      dispatch( { type: "SHOW", payload: `Kampanjkod '${payload.code}' har skapats!`}); 
+      setSelectedType(""); 
+      setCampaignFormKey((prev) => prev + 1); 
+    } catch(error) {
+      dispatch( {type: "SHOW", payload: error.message });
+    }
+  }
+
 	return (
 		<main>
 			<h1>Admin</h1>
@@ -109,6 +197,30 @@ function Admin() {
 				</tbody>
 			</table>
 			<Form key={formKey} descriptor={formDescriptor} onSubmit={handleMovementSubmit} />
+
+      {/* KAMPANJ SKAPANDE SEKTION */}
+      <section>
+        <h2>Skapa Kampanjkod</h2>
+
+          <div style={{ marginBottom: "1rem" }}>
+            <label style={{ display: "block", marginBottom: "0.5rem" }}>
+              Välj kampanjtyp:
+            </label>
+            <select
+              value={selectedType}
+              onChange={(e) => setSelectedType(e.target.value)}
+            >
+              <option value="">-- Välj kampanjtyp --</option>
+              <option value="percentage">Procentrabatt</option>
+              <option value="threshold">Tröskelrabatt</option>
+              <option value="buyXgetY">Mängdrabatt (Köp X betala för Y)</option>
+            </select>
+          </div>
+
+          {selectedType && (
+            <Form key={campaignFormKey} descriptor={campaignFormDescriptor} onSubmit={handleCampaignSubmit} />
+          )}
+      </section>
 		</main>
 	);
 }
