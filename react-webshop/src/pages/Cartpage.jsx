@@ -73,6 +73,8 @@ function CartRow({ item, basketDispatch, toastDispatch, currency, onLineTotal })
 	);
 }
 
+const campaignModule = new CampaignEngineModule();
+
 export default function Cart() {
 	const {
 		basket: cartItems,

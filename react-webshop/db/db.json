@@ -1,509 +1,1571 @@
 {
-  "products": [
-    {
-      "id": "k3j9x2q",
-      "title": "Die Hard",
-      "price": 49,
-      "description": "A NYPD cop battles terrorists who've taken over a Los Angeles skyscraper on Christmas Eve.",
-      "release": 1988,
-      "genre": "Action",
-      "imgLink": "dieHard.jpg",
-      "isDiscount": true,
-      "discountPercent": 0.15
-    },
-    {
-      "id": "p7m1t8w",
-      "title": "Heat",
-      "price": 59,
-      "description": "A relentless detective and a master thief face off in a cat-and-mouse battle across LA.",
-      "release": 1995,
-      "genre": "Action",
-      "imgLink": "heat.jpg"
-    },
-    {
-      "id": "z4h6r9v",
-      "title": "Mad Max: Fury Road",
-      "price": 59,
-      "description": "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland.",
-      "release": 2015,
-      "genre": "Action",
-      "imgLink": "madMaxFuryRoad.jpg"
-    },
-    {
-      "id": "b2n5f0y",
-      "title": "No Country for Old Men",
-      "price": 49,
-      "description": "A hunter stumbles upon a drug deal gone wrong and finds himself pursued by a remorseless killer.",
-      "release": 2007,
-      "genre": "Thriller",
-      "imgLink": "noCountryForOldMen.jpg"
-    },
-    {
-      "id": "q8s3d1c",
-      "title": "Ghostbusters",
-      "price": 39,
-      "description": "Three unemployed parapsychologists start a ghost-catching business in New York City.",
-      "release": 1984,
-      "genre": "Comedy",
-      "imgLink": "ghostbusters.png"
-    },
-    {
-      "id": "x1w7g4e",
-      "title": "Bridesmaids",
-      "price": 39,
-      "description": "A maid of honor's life unravels as she competes to plan the perfect wedding for her best friend.",
-      "release": 2011,
-      "genre": "Comedy",
-      "imgLink": "bridesmaids.webp"
-    },
-    {
-      "id": "j9k2l6a",
-      "title": "The Grand Budapest Hotel",
-      "price": 49,
-      "description": "A legendary concierge and his protégé become entangled in a theft and murder mystery.",
-      "release": 2014,
-      "genre": "Comedy",
-      "imgLink": "theGrandBudapestHotel.jpg"
-    },
-    {
-      "id": "m5v8b3n",
-      "title": "Groundhog Day",
-      "price": 39,
-      "description": "A cynical weatherman relives the same day over and over in a small Pennsylvania town.",
-      "release": 1993,
-      "genre": "Comedy",
-      "imgLink": "groundhogDay.webp"
-    },
-    {
-      "id": "t2c9x5r",
-      "title": "The Shining",
-      "price": 49,
-      "description": "A family heads to an isolated hotel for the winter, where a sinister presence influences the father.",
-      "release": 1980,
-      "genre": "Horror",
-      "imgLink": "theShining.webp"
-    },
-    {
-      "id": "f6q1z8h",
-      "title": "Get Out",
-      "price": 59,
-      "description": "A young man uncovers a disturbing secret when he meets his white girlfriend's family.",
-      "release": 2017,
-      "genre": "Horror",
-      "imgLink": "getOut.jpg"
-    },
-    {
-      "id": "d3p7y0w",
-      "title": "Alien",
-      "price": 49,
-      "description": "The crew of a commercial spacecraft encounters a deadly extraterrestrial lifeform.",
-      "release": 1979,
-      "genre": "Horror",
-      "imgLink": "alien.webp"
-    },
-    {
-      "id": "s9j4k2m",
-      "title": "Hereditary",
-      "price": 59,
-      "description": "A family unravels dark secrets after the death of their secretive grandmother.",
-      "release": 2018,
-      "genre": "Horror",
-      "imgLink": "hereditary.png"
-    },
-    {
-      "id": "l1g8v6b",
-      "title": "Blade Runner",
-      "price": 49,
-      "description": "A blade runner must pursue and terminate four replicants who stole a ship in space.",
-      "release": 1982,
-      "genre": "Sci-Fi",
-      "imgLink": "bladeRunner.jpg"
-    },
-    {
-      "id": "n5x2c9t",
-      "title": "Arrival",
-      "price": 59,
-      "description": "A linguist works with the military to communicate with alien lifeforms after twelve mysterious spacecraft land.",
-      "release": 2016,
-      "genre": "Sci-Fi",
-      "imgLink": "arrival.jpg"
-    },
-    {
-      "id": "w7r4f1q",
-      "title": "The Matrix",
-      "price": 49,
-      "description": "A computer hacker learns the truth about his reality and his role in the war against its controllers.",
-      "release": 1999,
-      "genre": "Sci-Fi",
-      "imgLink": "theMatrix.webp"
-    },
-    {
-      "id": "e8h3d6z",
-      "title": "The Godfather",
-      "price": 59,
-      "description": "The aging patriarch of an organized crime dynasty transfers control to his reluctant son.",
-      "release": 1972,
-      "genre": "Drama",
-      "imgLink": "theGodfather.webp"
-    },
-    {
-      "id": "a2m9k5j",
-      "title": "Moonlight",
-      "price": 49,
-      "description": "A young Black man's story of struggle and identity is told across three defining chapters of his life.",
-      "release": 2016,
-      "genre": "Drama",
-      "imgLink": "moonlight.png"
-    },
-    {
-      "id": "y6b1v8p",
-      "title": "Manchester by the Sea",
-      "price": 49,
-      "description": "A man is forced to return home to care for his teenage nephew after his brother's death.",
-      "release": 2016,
-      "genre": "Drama",
-      "imgLink": "manchesterByTheSea.jpg"
-    },
-    {
-      "id": "c4t9x2s",
-      "title": "Spirited Away",
-      "price": 49,
-      "description": "A young girl wanders into a mysterious world of spirits after her parents are transformed.",
-      "release": 2001,
-      "genre": "Animated",
-      "imgLink": "spiritedAway.jpg"
-    },
-    {
-      "id": "r7q3g1n",
-      "title": "Spider-Man: Into the Spider-Verse",
-      "price": 59,
-      "description": "A teen from Brooklyn discovers he's one of many Spider-People across the multiverse.",
-      "release": 2018,
-      "genre": "Animated",
-      "imgLink": "spiderManIntoTheSpiderVerse.webp"
-    },
-    {
-      "id": "h5w8f6d",
-      "title": "WALL-E",
-      "price": 39,
-      "description": "A lonely robot tasked with cleaning a deserted Earth falls in love and embarks on a journey through space.",
-      "release": 2008,
-      "genre": "Animated",
-      "imgLink": "wallE.webp"
-    },
-    {
-      "id": "u1j4k9m",
-      "title": "When Harry Met Sally",
-      "price": 39,
-      "description": "Two friends debate whether men and women can ever truly just be friends.",
-      "release": 1989,
-      "genre": "Romance",
-      "imgLink": "whenHarryMetSally.webp"
-    },
-    {
-      "id": "v6p2t7b",
-      "title": "Eternal Sunshine of the Spotless Mind",
-      "price": 49,
-      "description": "A couple undergoes a procedure to erase each other from their memories after a painful breakup.",
-      "release": 2004,
-      "genre": "Romance",
-      "imgLink": "eternalSunshine.webp"
-    },
-    {
-      "id": "d8m2w5r",
-      "title": "Superman",
-      "price": 59,
-      "description": "The Man of Steel navigates his dual heritage as both a Kryptonian and a human raised on Earth.",
-      "release": 2025,
-      "genre": "Action",
-      "imgLink": "superman.jpg"
-    },
-    {
-      "id": "x4q9k1v",
-      "title": "The Fantastic Four: First Steps",
-      "price": 59,
-      "description": "Marvel's first family must defend Earth from a cosmic threat while balancing life together.",
-      "release": 2025,
-      "genre": "Family",
-      "imgLink": "fantasticFour.jpg"
-    },
-    {
-      "id": "w3n7t2b",
-      "title": "Zootopia 2",
-      "price": 49,
-      "description": "A rabbit officer and a fox con artist reunite to investigate a mysterious new resident of their city.",
-      "release": 2025,
-      "genre": "Animated",
-      "imgLink": "zootopia2.jpg"
-    },
-    {
-      "id": "c9h5m8j",
-      "title": "Lilo & Stitch",
-      "price": 49,
-      "description": "A lonely Hawaiian girl befriends a chaotic alien fugitive who crash-lands on her island.",
-      "release": 2025,
-      "genre": "Family",
-      "imgLink": "lilo&stitch.jpg"
-    },
-    {
-      "id": "v2k6d1q",
-      "title": "A Minecraft Movie",
-      "price": 49,
-      "description": "Four misfits are pulled through a portal into a blocky, creative world where survival takes imagination.",
-      "release": 2025,
-      "genre": "Family",
-      "imgLink": "aMinecraftMovie.jpg"
-    },
-    {
-      "id": "m6j1w9c",
-      "title": "The Bad Guys 2",
-      "price": 39,
-      "description": "A reformed crew of animal outlaws is pulled back into crime by a new team of slick criminals.",
-      "release": 2025,
-      "genre": "Animated",
-      "imgLink": "theBadGuys2.jpg"
-    },
-    {
-      "id": "h5w1q8c",
-      "title": "Five Nights at Freddy's 2",
-      "price": 49,
-      "description": "A night security guard and his allies face fresh terrors from animatronic figures with a violent past.",
-      "release": 2025,
-      "genre": "Horror",
-      "imgLink": "fiveNightsAtFreddys2.jpg"
-    },
-    {
-      "id": "q5d8v2h",
-      "title": "Elio",
-      "price": 49,
-      "description": "A space-obsessed boy is mistakenly beamed up and mistaken for Earth's official ambassador to aliens.",
-      "release": 2025,
-      "genre": "Animated",
-      "imgLink": "elio.jpg"
-    },
-    {
-      "id": "k1n4t7b",
-      "title": "Avatar: Fire and Ash",
-      "price": 59,
-      "description": "The Na'vi face a new and volatile threat as conflict spreads across Pandora.",
-      "release": 2025,
-      "genre": "Sci-Fi",
-      "imgLink": "avatarFireAndAsh.jpg"
-    },
-    {
-      "id": "j7x2m5w",
-      "title": "Wicked: For Good",
-      "price": 59,
-      "description": "The concluding chapter follows Elphaba and Glinda as their diverging paths reach a turning point.",
-      "release": 2025,
-      "genre": "Musical",
-      "imgLink": "wickedForGood.jpg"
-    },
-    {
-      "id": "f3k8m1p",
-      "title": "Toy Story",
-      "price": 39,
-      "description": "A cowboy doll feels threatened when a new spaceman toy replaces him as a boy's favorite.",
-      "release": 1995,
-      "genre": "Family",
-      "imgLink": "toyStory.jpg"
-    },
-    {
-      "id": "n7q2x5d",
-      "title": "The Incredibles",
-      "price": 49,
-      "description": "A family of undercover superheroes tries to live a quiet suburban life while forced into a crisis.",
-      "release": 2004,
-      "genre": "Family",
-      "imgLink": "theIncredibles.jpg"
-    },
-    {
-      "id": "j4r8v2b",
-      "title": "Harry Potter and the Sorcerer's Stone",
-      "price": 49,
-      "description": "An orphaned boy discovers he's a wizard and begins his first year at a magical school.",
-      "release": 2001,
-      "genre": "Family",
-      "imgLink": "harryPotterSorcerersStone.jpg"
-    },
-    {
-      "id": "y9m3g6k",
-      "title": "Back to the Future",
-      "price": 49,
-      "description": "A teenager is accidentally sent thirty years into the past in a time-traveling DeLorean.",
-      "release": 1985,
-      "genre": "Adventure",
-      "imgLink": "backToTheFuture.jpg"
-    },
-    {
-      "id": "s2p7d4x",
-      "title": "Jurassic Park",
-      "price": 49,
-      "description": "A theme park showcasing genetically recreated dinosaurs suffers a catastrophic systems failure.",
-      "release": 1993,
-      "genre": "Adventure",
-      "imgLink": "jurassicPark.webp"
-    },
-    {
-      "id": "w6c1n8q",
-      "title": "Indiana Jones and the Last Crusade",
-      "price": 49,
-      "description": "An archaeologist races to find his father and the Holy Grail before the Nazis do.",
-      "release": 1989,
-      "genre": "Adventure",
-      "imgLink": "indianaJonesLastCrusade.webp"
-    },
-    {
-      "id": "e5x9j2t",
-      "title": "Superbad",
-      "price": 39,
-      "description": "Two high school best friends have one wild night before graduation forces them apart.",
-      "release": 2007,
-      "genre": "Comedy",
-      "imgLink": "superbad.webp"
-    },
-    {
-      "id": "b8f4h1m",
-      "title": "Legally Blonde",
-      "price": 39,
-      "description": "A sorority queen enrolls at Harvard Law to win back her ex and discovers she's smarter than she thought.",
-      "release": 2001,
-      "genre": "Comedy",
-      "imgLink": "legallyBlonde.webp"
-    },
-    {
-      "id": "k2v7r5n",
-      "title": "Knives Out",
-      "price": 59,
-      "description": "A detective investigates the death of a wealthy crime novelist surrounded by a family of suspects.",
-      "release": 2019,
-      "genre": "Mystery",
-      "imgLink": "knivesOut.jpg"
-    },
-    {
-      "id": "q9d3w6p",
-      "title": "Gone Girl",
-      "price": 49,
-      "description": "A man becomes the prime suspect when his wife disappears on their wedding anniversary.",
-      "release": 2014,
-      "genre": "Thriller",
-      "imgLink": "goneGirl.jpg"
-    },
-    {
-      "id": "m1t8k4c",
-      "title": "Se7en",
-      "price": 49,
-      "description": "Two detectives hunt a serial killer who uses the seven deadly sins as his motives.",
-      "release": 1995,
-      "genre": "Thriller",
-      "imgLink": "se7en.webp"
-    },
-    {
-      "id": "x5j2q9v",
-      "title": "Parasite",
-      "price": 59,
-      "description": "A poor family schemes to become employed by a wealthy household, with unforeseen consequences.",
-      "release": 2019,
-      "genre": "Drama",
-      "imgLink": "parasite.jpg"
-    },
-    {
-      "id": "g7n4b1w",
-      "title": "Whiplash",
-      "price": 49,
-      "description": "A young drummer enrolls at a music conservatory and clashes with an abusive, perfectionist instructor.",
-      "release": 2014,
-      "genre": "Drama",
-      "imgLink": "whiplash.webp"
-    },
-    {
-      "id": "c3h9m6d",
-      "title": "La La Land",
-      "price": 49,
-      "description": "A jazz musician and an aspiring actress fall in love while pursuing their dreams in Los Angeles.",
-      "release": 2016,
-      "genre": "Musical",
-      "imgLink": "laLaLand.webp"
-    },
-    {
-      "id": "p6k1x8f",
-      "title": "The Nightmare Before Christmas",
-      "price": 39,
-      "description": "The king of Halloween Town stumbles into Christmas Town and decides to take over the holiday.",
-      "release": 1993,
-      "genre": "Musical",
-      "imgLink": "theNightmareBeforeChristmas.jpg"
-    },
-    {
-      "id": "v4q7t2j",
-      "title": "A Quiet Place",
-      "price": 59,
-      "description": "A family must live in silence while hiding from creatures that hunt by sound.",
-      "release": 2018,
-      "genre": "Horror",
-      "imgLink": "aQuietPlace.jpg"
-    },
-    {
-      "id": "d8w3n5r",
-      "title": "Midsommar",
-      "price": 59,
-      "description": "A grieving woman's trip to a Swedish festival with her friends descends into a disturbing cult ritual.",
-      "release": 2019,
-      "genre": "Horror",
-      "imgLink": "midsommar.jpg"
-    },
-    {
-      "id": "t1c6v9k",
-      "title": "The Exorcist",
-      "price": 49,
-      "description": "A mother seeks the help of two priests when her daughter becomes possessed by a demonic entity.",
-      "release": 1973,
-      "genre": "Horror",
-      "imgLink": "theExorcist.webp"
-    }
-  ],
-  "rates": {
-    "SEK": 1,
-    "EUR": 0.087,
-    "USD": 0.096
-  },
-  "cart": [
-    {
-      "id": "1",
-      "productId": "k3j9x2q",
-      "quantity": 2
-    }
-  ],
-  "orders": [
-    {
-      "firstName": "alex",
-      "lastName": "reichstein",
-      "items": [],
-      "total": 0,
-      "id": "LMNobfiiz5o"
-    },
-    {
-      "firstName": "Alex ",
-      "lastName": "Reichstein",
-      "items": [
-        {
-          "product": {
-            "id": "k3j9x2q",
-            "title": "Die Hard",
-            "price": 49,
-            "description": "A NYPD cop battles terrorists who've taken over a Los Angeles skyscraper on Christmas Eve.",
-            "release": 1988,
-            "genre": "Action",
-            "imgLink": "dieHard.jpg",
-            "isDiscount": true,
-            "discountPercent": 0.15
-          },
-          "productQuantity": 1
-        }
-      ],
-      "total": 49,
-      "id": "qRGX2b4O8m4"
-    }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+	"products": [
+		{
+			"id": "k3j9x2q",
+			"title": "Die Hard",
+			"price": 49,
+			"description": "A NYPD cop battles terrorists who've taken over a Los Angeles skyscraper on Christmas Eve.",
+			"release": 1988,
+			"genre": "Action",
+			"imgLink": "dieHard.jpg",
+			"isDiscount": true,
+			"discountPercent": 0.15
+		},
+		{
+			"id": "p7m1t8w",
+			"title": "Heat",
+			"price": 59,
+			"description": "A relentless detective and a master thief face off in a cat-and-mouse battle across LA.",
+			"release": 1995,
+			"genre": "Action",
+			"imgLink": "heat.jpg"
+		},
+		{
+			"id": "z4h6r9v",
+			"title": "Mad Max: Fury Road",
+			"price": 59,
+			"description": "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search of her homeland.",
+			"release": 2015,
+			"genre": "Action",
+			"imgLink": "madMaxFuryRoad.jpg"
+		},
+		{
+			"id": "b2n5f0y",
+			"title": "No Country for Old Men",
+			"price": 49,
+			"description": "A hunter stumbles upon a drug deal gone wrong and finds himself pursued by a remorseless killer.",
+			"release": 2007,
+			"genre": "Thriller",
+			"imgLink": "noCountryForOldMen.jpg"
+		},
+		{
+			"id": "q8s3d1c",
+			"title": "Ghostbusters",
+			"price": 39,
+			"description": "Three unemployed parapsychologists start a ghost-catching business in New York City.",
+			"release": 1984,
+			"genre": "Comedy",
+			"imgLink": "ghostbusters.png"
+		},
+		{
+			"id": "x1w7g4e",
+			"title": "Bridesmaids",
+			"price": 39,
+			"description": "A maid of honor's life unravels as she competes to plan the perfect wedding for her best friend.",
+			"release": 2011,
+			"genre": "Comedy",
+			"imgLink": "bridesmaids.webp"
+		},
+		{
+			"id": "j9k2l6a",
+			"title": "The Grand Budapest Hotel",
+			"price": 49,
+			"description": "A legendary concierge and his protégé become entangled in a theft and murder mystery.",
+			"release": 2014,
+			"genre": "Comedy",
+			"imgLink": "theGrandBudapestHotel.jpg"
+		},
+		{
+			"id": "m5v8b3n",
+			"title": "Groundhog Day",
+			"price": 39,
+			"description": "A cynical weatherman relives the same day over and over in a small Pennsylvania town.",
+			"release": 1993,
+			"genre": "Comedy",
+			"imgLink": "groundhogDay.webp"
+		},
+		{
+			"id": "t2c9x5r",
+			"title": "The Shining",
+			"price": 49,
+			"description": "A family heads to an isolated hotel for the winter, where a sinister presence influences the father.",
+			"release": 1980,
+			"genre": "Horror",
+			"imgLink": "theShining.webp"
+		},
+		{
+			"id": "f6q1z8h",
+			"title": "Get Out",
+			"price": 59,
+			"description": "A young man uncovers a disturbing secret when he meets his white girlfriend's family.",
+			"release": 2017,
+			"genre": "Horror",
+			"imgLink": "getOut.jpg"
+		},
+		{
+			"id": "d3p7y0w",
+			"title": "Alien",
+			"price": 49,
+			"description": "The crew of a commercial spacecraft encounters a deadly extraterrestrial lifeform.",
+			"release": 1979,
+			"genre": "Horror",
+			"imgLink": "alien.webp"
+		},
+		{
+			"id": "s9j4k2m",
+			"title": "Hereditary",
+			"price": 59,
+			"description": "A family unravels dark secrets after the death of their secretive grandmother.",
+			"release": 2018,
+			"genre": "Horror",
+			"imgLink": "hereditary.png"
+		},
+		{
+			"id": "l1g8v6b",
+			"title": "Blade Runner",
+			"price": 49,
+			"description": "A blade runner must pursue and terminate four replicants who stole a ship in space.",
+			"release": 1982,
+			"genre": "Sci-Fi",
+			"imgLink": "bladeRunner.jpg"
+		},
+		{
+			"id": "n5x2c9t",
+			"title": "Arrival",
+			"price": 59,
+			"description": "A linguist works with the military to communicate with alien lifeforms after twelve mysterious spacecraft land.",
+			"release": 2016,
+			"genre": "Sci-Fi",
+			"imgLink": "arrival.jpg"
+		},
+		{
+			"id": "w7r4f1q",
+			"title": "The Matrix",
+			"price": 49,
+			"description": "A computer hacker learns the truth about his reality and his role in the war against its controllers.",
+			"release": 1999,
+			"genre": "Sci-Fi",
+			"imgLink": "theMatrix.webp"
+		},
+		{
+			"id": "e8h3d6z",
+			"title": "The Godfather",
+			"price": 59,
+			"description": "The aging patriarch of an organized crime dynasty transfers control to his reluctant son.",
+			"release": 1972,
+			"genre": "Drama",
+			"imgLink": "theGodfather.webp"
+		},
+		{
+			"id": "a2m9k5j",
+			"title": "Moonlight",
+			"price": 49,
+			"description": "A young Black man's story of struggle and identity is told across three defining chapters of his life.",
+			"release": 2016,
+			"genre": "Drama",
+			"imgLink": "moonlight.png"
+		},
+		{
+			"id": "y6b1v8p",
+			"title": "Manchester by the Sea",
+			"price": 49,
+			"description": "A man is forced to return home to care for his teenage nephew after his brother's death.",
+			"release": 2016,
+			"genre": "Drama",
+			"imgLink": "manchesterByTheSea.jpg"
+		},
+		{
+			"id": "c4t9x2s",
+			"title": "Spirited Away",
+			"price": 49,
+			"description": "A young girl wanders into a mysterious world of spirits after her parents are transformed.",
+			"release": 2001,
+			"genre": "Animated",
+			"imgLink": "spiritedAway.jpg"
+		},
+		{
+			"id": "r7q3g1n",
+			"title": "Spider-Man: Into the Spider-Verse",
+			"price": 59,
+			"description": "A teen from Brooklyn discovers he's one of many Spider-People across the multiverse.",
+			"release": 2018,
+			"genre": "Animated",
+			"imgLink": "spiderManIntoTheSpiderVerse.webp"
+		},
+		{
+			"id": "h5w8f6d",
+			"title": "WALL-E",
+			"price": 39,
+			"description": "A lonely robot tasked with cleaning a deserted Earth falls in love and embarks on a journey through space.",
+			"release": 2008,
+			"genre": "Animated",
+			"imgLink": "wallE.webp"
+		},
+		{
+			"id": "u1j4k9m",
+			"title": "When Harry Met Sally",
+			"price": 39,
+			"description": "Two friends debate whether men and women can ever truly just be friends.",
+			"release": 1989,
+			"genre": "Romance",
+			"imgLink": "whenHarryMetSally.webp"
+		},
+		{
+			"id": "v6p2t7b",
+			"title": "Eternal Sunshine of the Spotless Mind",
+			"price": 49,
+			"description": "A couple undergoes a procedure to erase each other from their memories after a painful breakup.",
+			"release": 2004,
+			"genre": "Romance",
+			"imgLink": "eternalSunshine.webp"
+		},
+		{
+			"id": "d8m2w5r",
+			"title": "Superman",
+			"price": 59,
+			"description": "The Man of Steel navigates his dual heritage as both a Kryptonian and a human raised on Earth.",
+			"release": 2025,
+			"genre": "Action",
+			"imgLink": "superman.jpg"
+		},
+		{
+			"id": "x4q9k1v",
+			"title": "The Fantastic Four: First Steps",
+			"price": 59,
+			"description": "Marvel's first family must defend Earth from a cosmic threat while balancing life together.",
+			"release": 2025,
+			"genre": "Family",
+			"imgLink": "fantasticFour.jpg"
+		},
+		{
+			"id": "w3n7t2b",
+			"title": "Zootopia 2",
+			"price": 49,
+			"description": "A rabbit officer and a fox con artist reunite to investigate a mysterious new resident of their city.",
+			"release": 2025,
+			"genre": "Animated",
+			"imgLink": "zootopia2.jpg"
+		},
+		{
+			"id": "c9h5m8j",
+			"title": "Lilo & Stitch",
+			"price": 49,
+			"description": "A lonely Hawaiian girl befriends a chaotic alien fugitive who crash-lands on her island.",
+			"release": 2025,
+			"genre": "Family",
+			"imgLink": "lilo&stitch.jpg"
+		},
+		{
+			"id": "v2k6d1q",
+			"title": "A Minecraft Movie",
+			"price": 49,
+			"description": "Four misfits are pulled through a portal into a blocky, creative world where survival takes imagination.",
+			"release": 2025,
+			"genre": "Family",
+			"imgLink": "aMinecraftMovie.jpg"
+		},
+		{
+			"id": "m6j1w9c",
+			"title": "The Bad Guys 2",
+			"price": 39,
+			"description": "A reformed crew of animal outlaws is pulled back into crime by a new team of slick criminals.",
+			"release": 2025,
+			"genre": "Animated",
+			"imgLink": "theBadGuys2.jpg"
+		},
+		{
+			"id": "h5w1q8c",
+			"title": "Five Nights at Freddy's 2",
+			"price": 49,
+			"description": "A night security guard and his allies face fresh terrors from animatronic figures with a violent past.",
+			"release": 2025,
+			"genre": "Horror",
+			"imgLink": "fiveNightsAtFreddys2.jpg"
+		},
+		{
+			"id": "q5d8v2h",
+			"title": "Elio",
+			"price": 49,
+			"description": "A space-obsessed boy is mistakenly beamed up and mistaken for Earth's official ambassador to aliens.",
+			"release": 2025,
+			"genre": "Animated",
+			"imgLink": "elio.jpg"
+		},
+		{
+			"id": "k1n4t7b",
+			"title": "Avatar: Fire and Ash",
+			"price": 59,
+			"description": "The Na'vi face a new and volatile threat as conflict spreads across Pandora.",
+			"release": 2025,
+			"genre": "Sci-Fi",
+			"imgLink": "avatarFireAndAsh.jpg"
+		},
+		{
+			"id": "j7x2m5w",
+			"title": "Wicked: For Good",
+			"price": 59,
+			"description": "The concluding chapter follows Elphaba and Glinda as their diverging paths reach a turning point.",
+			"release": 2025,
+			"genre": "Musical",
+			"imgLink": "wickedForGood.jpg"
+		},
+		{
+			"id": "f3k8m1p",
+			"title": "Toy Story",
+			"price": 39,
+			"description": "A cowboy doll feels threatened when a new spaceman toy replaces him as a boy's favorite.",
+			"release": 1995,
+			"genre": "Family",
+			"imgLink": "toyStory.jpg"
+		},
+		{
+			"id": "n7q2x5d",
+			"title": "The Incredibles",
+			"price": 49,
+			"description": "A family of undercover superheroes tries to live a quiet suburban life while forced into a crisis.",
+			"release": 2004,
+			"genre": "Family",
+			"imgLink": "theIncredibles.jpg"
+		},
+		{
+			"id": "j4r8v2b",
+			"title": "Harry Potter and the Sorcerer's Stone",
+			"price": 49,
+			"description": "An orphaned boy discovers he's a wizard and begins his first year at a magical school.",
+			"release": 2001,
+			"genre": "Family",
+			"imgLink": "harryPotterSorcerersStone.jpg"
+		},
+		{
+			"id": "y9m3g6k",
+			"title": "Back to the Future",
+			"price": 49,
+			"description": "A teenager is accidentally sent thirty years into the past in a time-traveling DeLorean.",
+			"release": 1985,
+			"genre": "Adventure",
+			"imgLink": "backToTheFuture.jpg"
+		},
+		{
+			"id": "s2p7d4x",
+			"title": "Jurassic Park",
+			"price": 49,
+			"description": "A theme park showcasing genetically recreated dinosaurs suffers a catastrophic systems failure.",
+			"release": 1993,
+			"genre": "Adventure",
+			"imgLink": "jurassicPark.webp"
+		},
+		{
+			"id": "w6c1n8q",
+			"title": "Indiana Jones and the Last Crusade",
+			"price": 49,
+			"description": "An archaeologist races to find his father and the Holy Grail before the Nazis do.",
+			"release": 1989,
+			"genre": "Adventure",
+			"imgLink": "indianaJonesLastCrusade.webp"
+		},
+		{
+			"id": "e5x9j2t",
+			"title": "Superbad",
+			"price": 39,
+			"description": "Two high school best friends have one wild night before graduation forces them apart.",
+			"release": 2007,
+			"genre": "Comedy",
+			"imgLink": "superbad.webp"
+		},
+		{
+			"id": "b8f4h1m",
+			"title": "Legally Blonde",
+			"price": 39,
+			"description": "A sorority queen enrolls at Harvard Law to win back her ex and discovers she's smarter than she thought.",
+			"release": 2001,
+			"genre": "Comedy",
+			"imgLink": "legallyBlonde.webp"
+		},
+		{
+			"id": "k2v7r5n",
+			"title": "Knives Out",
+			"price": 59,
+			"description": "A detective investigates the death of a wealthy crime novelist surrounded by a family of suspects.",
+			"release": 2019,
+			"genre": "Mystery",
+			"imgLink": "knivesOut.jpg"
+		},
+		{
+			"id": "q9d3w6p",
+			"title": "Gone Girl",
+			"price": 49,
+			"description": "A man becomes the prime suspect when his wife disappears on their wedding anniversary.",
+			"release": 2014,
+			"genre": "Thriller",
+			"imgLink": "goneGirl.jpg"
+		},
+		{
+			"id": "m1t8k4c",
+			"title": "Se7en",
+			"price": 49,
+			"description": "Two detectives hunt a serial killer who uses the seven deadly sins as his motives.",
+			"release": 1995,
+			"genre": "Thriller",
+			"imgLink": "se7en.webp"
+		},
+		{
+			"id": "x5j2q9v",
+			"title": "Parasite",
+			"price": 59,
+			"description": "A poor family schemes to become employed by a wealthy household, with unforeseen consequences.",
+			"release": 2019,
+			"genre": "Drama",
+			"imgLink": "parasite.jpg"
+		},
+		{
+			"id": "g7n4b1w",
+			"title": "Whiplash",
+			"price": 49,
+			"description": "A young drummer enrolls at a music conservatory and clashes with an abusive, perfectionist instructor.",
+			"release": 2014,
+			"genre": "Drama",
+			"imgLink": "whiplash.webp"
+		},
+		{
+			"id": "c3h9m6d",
+			"title": "La La Land",
+			"price": 49,
+			"description": "A jazz musician and an aspiring actress fall in love while pursuing their dreams in Los Angeles.",
+			"release": 2016,
+			"genre": "Musical",
+			"imgLink": "laLaLand.webp"
+		},
+		{
+			"id": "p6k1x8f",
+			"title": "The Nightmare Before Christmas",
+			"price": 39,
+			"description": "The king of Halloween Town stumbles into Christmas Town and decides to take over the holiday.",
+			"release": 1993,
+			"genre": "Musical",
+			"imgLink": "theNightmareBeforeChristmas.jpg"
+		},
+		{
+			"id": "v4q7t2j",
+			"title": "A Quiet Place",
+			"price": 59,
+			"description": "A family must live in silence while hiding from creatures that hunt by sound.",
+			"release": 2018,
+			"genre": "Horror",
+			"imgLink": "aQuietPlace.jpg"
+		},
+		{
+			"id": "d8w3n5r",
+			"title": "Midsommar",
+			"price": 59,
+			"description": "A grieving woman's trip to a Swedish festival with her friends descends into a disturbing cult ritual.",
+			"release": 2019,
+			"genre": "Horror",
+			"imgLink": "midsommar.jpg"
+		},
+		{
+			"id": "t1c6v9k",
+			"title": "The Exorcist",
+			"price": 49,
+			"description": "A mother seeks the help of two priests when her daughter becomes possessed by a demonic entity.",
+			"release": 1973,
+			"genre": "Horror",
+			"imgLink": "theExorcist.webp"
+		}
+	],
+	"rates": {
+		"SEK": 1,
+		"EUR": 0.087,
+		"USD": 0.096
+	},
+	"cart": [
+		{
+			"id": "1",
+			"productId": "k3j9x2q",
+			"quantity": 2
+		}
+	],
+	"stockItems": [
+		{
+			"id": "k3j9x2q",
+			"reorderPoint": 15
+		},
+		{
+			"id": "p7m1t8w",
+			"reorderPoint": 5
+		},
+		{
+			"id": "z4h6r9v",
+			"reorderPoint": 15
+		},
+		{
+			"id": "b2n5f0y",
+			"reorderPoint": 12
+		},
+		{
+			"id": "q8s3d1c",
+			"reorderPoint": 25
+		},
+		{
+			"id": "x1w7g4e",
+			"reorderPoint": 8
+		},
+		{
+			"id": "j9k2l6a",
+			"reorderPoint": 20
+		},
+		{
+			"id": "m5v8b3n",
+			"reorderPoint": 5
+		},
+		{
+			"id": "t2c9x5r",
+			"reorderPoint": 15
+		},
+		{
+			"id": "f6q1z8h",
+			"reorderPoint": 25
+		},
+		{
+			"id": "d3p7y0w",
+			"reorderPoint": 10
+		},
+		{
+			"id": "s9j4k2m",
+			"reorderPoint": 5
+		},
+		{
+			"id": "l1g8v6b",
+			"reorderPoint": 12
+		},
+		{
+			"id": "n5x2c9t",
+			"reorderPoint": 25
+		},
+		{
+			"id": "w7r4f1q",
+			"reorderPoint": 20
+		},
+		{
+			"id": "e8h3d6z",
+			"reorderPoint": 5
+		},
+		{
+			"id": "a2m9k5j",
+			"reorderPoint": 25
+		},
+		{
+			"id": "y6b1v8p",
+			"reorderPoint": 15
+		},
+		{
+			"id": "c4t9x2s",
+			"reorderPoint": 10
+		},
+		{
+			"id": "r7q3g1n",
+			"reorderPoint": 5
+		},
+		{
+			"id": "h5w8f6d",
+			"reorderPoint": 8
+		},
+		{
+			"id": "u1j4k9m",
+			"reorderPoint": 8
+		},
+		{
+			"id": "v6p2t7b",
+			"reorderPoint": 25
+		},
+		{
+			"id": "d8m2w5r",
+			"reorderPoint": 10
+		},
+		{
+			"id": "x4q9k1v",
+			"reorderPoint": 10
+		},
+		{
+			"id": "w3n7t2b",
+			"reorderPoint": 10
+		},
+		{
+			"id": "c9h5m8j",
+			"reorderPoint": 15
+		},
+		{
+			"id": "v2k6d1q",
+			"reorderPoint": 15
+		},
+		{
+			"id": "m6j1w9c",
+			"reorderPoint": 10
+		},
+		{
+			"id": "h5w1q8c",
+			"reorderPoint": 15
+		},
+		{
+			"id": "q5d8v2h",
+			"reorderPoint": 8
+		},
+		{
+			"id": "k1n4t7b",
+			"reorderPoint": 10
+		},
+		{
+			"id": "j7x2m5w",
+			"reorderPoint": 10
+		},
+		{
+			"id": "f3k8m1p",
+			"reorderPoint": 12
+		},
+		{
+			"id": "n7q2x5d",
+			"reorderPoint": 5
+		},
+		{
+			"id": "j4r8v2b",
+			"reorderPoint": 15
+		},
+		{
+			"id": "y9m3g6k",
+			"reorderPoint": 20
+		},
+		{
+			"id": "s2p7d4x",
+			"reorderPoint": 5
+		},
+		{
+			"id": "w6c1n8q",
+			"reorderPoint": 8
+		},
+		{
+			"id": "e5x9j2t",
+			"reorderPoint": 12
+		},
+		{
+			"id": "b8f4h1m",
+			"reorderPoint": 25
+		},
+		{
+			"id": "k2v7r5n",
+			"reorderPoint": 8
+		},
+		{
+			"id": "q9d3w6p",
+			"reorderPoint": 15
+		},
+		{
+			"id": "m1t8k4c",
+			"reorderPoint": 12
+		},
+		{
+			"id": "x5j2q9v",
+			"reorderPoint": 20
+		},
+		{
+			"id": "g7n4b1w",
+			"reorderPoint": 8
+		},
+		{
+			"id": "c3h9m6d",
+			"reorderPoint": 10
+		},
+		{
+			"id": "p6k1x8f",
+			"reorderPoint": 8
+		},
+		{
+			"id": "v4q7t2j",
+			"reorderPoint": 8
+		},
+		{
+			"id": "d8w3n5r",
+			"reorderPoint": 25
+		},
+		{
+			"id": "t1c6v9k",
+			"reorderPoint": 5
+		}
+	],
+	"stockMovements": [
+		{
+			"id": "l3WzE9szaXV",
+			"stockItemId": "m1t8k4c",
+			"type": "inleverans",
+			"quantity": 37,
+			"timestamp": "2026-08-18T12:02:43.496Z"
+		},
+		{
+			"id": "5mPOGbj-QCM",
+			"stockItemId": "k3j9x2q",
+			"type": "inleverans",
+			"quantity": 40,
+			"timestamp": "2026-08-19T08:21:49.227Z"
+		},
+		{
+			"id": "nrEjfEIAt91",
+			"stockItemId": "w3n7t2b",
+			"type": "inleverans",
+			"quantity": 20,
+			"timestamp": "2026-08-19T11:04:45.896Z"
+		},
+		{
+			"id": "Jq5CY_yvpCW",
+			"stockItemId": "d3p7y0w",
+			"type": "inleverans",
+			"quantity": 37,
+			"timestamp": "2026-08-19T12:55:21.514Z"
+		},
+		{
+			"id": "krmDPODbbaf",
+			"stockItemId": "s2p7d4x",
+			"type": "inleverans",
+			"quantity": 31,
+			"timestamp": "2026-08-19T13:00:49.810Z"
+		},
+		{
+			"id": "cD8u2DfL5P5",
+			"stockItemId": "d8m2w5r",
+			"type": "inleverans",
+			"quantity": 40,
+			"timestamp": "2026-08-19T13:47:10.245Z"
+		},
+		{
+			"id": "HNIcGwTDVpB",
+			"stockItemId": "j7x2m5w",
+			"type": "inleverans",
+			"quantity": 34,
+			"timestamp": "2026-08-19T14:44:34.832Z"
+		},
+		{
+			"id": "hstl39psWB6",
+			"stockItemId": "w6c1n8q",
+			"type": "inleverans",
+			"quantity": 26,
+			"timestamp": "2026-08-20T08:54:23.699Z"
+		},
+		{
+			"id": "XUjtjugk6tV",
+			"stockItemId": "n7q2x5d",
+			"type": "inleverans",
+			"quantity": 39,
+			"timestamp": "2026-08-20T12:25:03.665Z"
+		},
+		{
+			"id": "lEKswZYAn1a",
+			"stockItemId": "t1c6v9k",
+			"type": "inleverans",
+			"quantity": 41,
+			"timestamp": "2026-08-20T13:07:39.156Z"
+		},
+		{
+			"id": "aiEHhCyMpLd",
+			"stockItemId": "h5w1q8c",
+			"type": "inleverans",
+			"quantity": 30,
+			"timestamp": "2026-08-20T13:23:12.952Z"
+		},
+		{
+			"id": "80WjMWDO_Zh",
+			"stockItemId": "z4h6r9v",
+			"type": "inleverans",
+			"quantity": 47,
+			"timestamp": "2026-08-20T18:55:12.336Z"
+		},
+		{
+			"id": "3Pq9xW2lPU1",
+			"stockItemId": "s9j4k2m",
+			"type": "inleverans",
+			"quantity": 6,
+			"timestamp": "2026-08-21T07:28:41.821Z"
+		},
+		{
+			"id": "f7ArSrenEZl",
+			"stockItemId": "x4q9k1v",
+			"type": "inleverans",
+			"quantity": 28,
+			"timestamp": "2026-08-21T09:43:08.663Z"
+		},
+		{
+			"id": "zLhb9Z_hcXR",
+			"stockItemId": "y9m3g6k",
+			"type": "inleverans",
+			"quantity": 48,
+			"timestamp": "2026-08-21T16:17:26.720Z"
+		},
+		{
+			"id": "BmL6rbOckej",
+			"stockItemId": "w7r4f1q",
+			"type": "inleverans",
+			"quantity": 30,
+			"timestamp": "2026-08-21T16:39:12.851Z"
+		},
+		{
+			"id": "qrFfxjTE0VC",
+			"stockItemId": "g7n4b1w",
+			"type": "inleverans",
+			"quantity": 38,
+			"timestamp": "2026-08-21T18:12:06.229Z"
+		},
+		{
+			"id": "wWZQ-cpSUxp",
+			"stockItemId": "a2m9k5j",
+			"type": "inleverans",
+			"quantity": 58,
+			"timestamp": "2026-08-21T18:18:44.421Z"
+		},
+		{
+			"id": "8uphiAvf7ON",
+			"stockItemId": "c3h9m6d",
+			"type": "inleverans",
+			"quantity": 33,
+			"timestamp": "2026-08-22T11:58:53.380Z"
+		},
+		{
+			"id": "xuS1-HQ4g9o",
+			"stockItemId": "p6k1x8f",
+			"type": "inleverans",
+			"quantity": 16,
+			"timestamp": "2026-08-22T12:31:37.648Z"
+		},
+		{
+			"id": "YqmGKANCGA0",
+			"stockItemId": "m6j1w9c",
+			"type": "inleverans",
+			"quantity": 42,
+			"timestamp": "2026-08-22T12:35:54.475Z"
+		},
+		{
+			"id": "zXaWqD3OfjL",
+			"stockItemId": "v4q7t2j",
+			"type": "inleverans",
+			"quantity": 27,
+			"timestamp": "2026-08-22T14:02:43.073Z"
+		},
+		{
+			"id": "2O7H0jVAuiI",
+			"stockItemId": "d8w3n5r",
+			"type": "inleverans",
+			"quantity": 47,
+			"timestamp": "2026-08-22T16:22:13.315Z"
+		},
+		{
+			"id": "nwpcXnD6lyq",
+			"stockItemId": "n5x2c9t",
+			"type": "inleverans",
+			"quantity": 38,
+			"timestamp": "2026-08-22T18:50:08.488Z"
+		},
+		{
+			"id": "tqY6Ca4nA5I",
+			"stockItemId": "x5j2q9v",
+			"type": "inleverans",
+			"quantity": 41,
+			"timestamp": "2026-08-23T07:01:33.880Z"
+		},
+		{
+			"id": "0AFabFBbngo",
+			"stockItemId": "c9h5m8j",
+			"type": "inleverans",
+			"quantity": 41,
+			"timestamp": "2026-08-23T09:10:47.473Z"
+		},
+		{
+			"id": "6Nrfhd89ota",
+			"stockItemId": "e8h3d6z",
+			"type": "inleverans",
+			"quantity": 40,
+			"timestamp": "2026-08-23T15:47:32.234Z"
+		},
+		{
+			"id": "At_osDyi2_d",
+			"stockItemId": "q9d3w6p",
+			"type": "inleverans",
+			"quantity": 42,
+			"timestamp": "2026-08-23T18:21:16.127Z"
+		},
+		{
+			"id": "28uD8NKLr_v",
+			"stockItemId": "j9k2l6a",
+			"type": "inleverans",
+			"quantity": 48,
+			"timestamp": "2026-08-24T07:25:15.978Z"
+		},
+		{
+			"id": "fvHyVVh5ndL",
+			"stockItemId": "t2c9x5r",
+			"type": "inleverans",
+			"quantity": 21,
+			"timestamp": "2026-08-24T16:42:15.825Z"
+		},
+		{
+			"id": "W_gelNQhXRk",
+			"stockItemId": "h5w8f6d",
+			"type": "inleverans",
+			"quantity": 19,
+			"timestamp": "2026-08-24T18:24:08.179Z"
+		},
+		{
+			"id": "z9iA9eZ3caC",
+			"stockItemId": "q8s3d1c",
+			"type": "inleverans",
+			"quantity": 61,
+			"timestamp": "2026-08-24T18:29:36.866Z"
+		},
+		{
+			"id": "SR_87fGP8t3",
+			"stockItemId": "y6b1v8p",
+			"type": "inleverans",
+			"quantity": 26,
+			"timestamp": "2026-08-25T11:52:14.126Z"
+		},
+		{
+			"id": "ytRq3VVZgJG",
+			"stockItemId": "j4r8v2b",
+			"type": "inleverans",
+			"quantity": 35,
+			"timestamp": "2026-08-25T13:29:47.986Z"
+		},
+		{
+			"id": "6lm6wEAEGtX",
+			"stockItemId": "q5d8v2h",
+			"type": "inleverans",
+			"quantity": 19,
+			"timestamp": "2026-08-25T17:59:55.277Z"
+		},
+		{
+			"id": "JJRosgvsZ23",
+			"stockItemId": "v6p2t7b",
+			"type": "inleverans",
+			"quantity": 47,
+			"timestamp": "2026-08-25T18:34:15.553Z"
+		},
+		{
+			"id": "yd_D8Mj_Bus",
+			"stockItemId": "k2v7r5n",
+			"type": "inleverans",
+			"quantity": 36,
+			"timestamp": "2026-08-25T18:45:55.144Z"
+		},
+		{
+			"id": "W2jnJlWC5jw",
+			"stockItemId": "v2k6d1q",
+			"type": "inleverans",
+			"quantity": 19,
+			"timestamp": "2026-08-25T18:57:18.444Z"
+		},
+		{
+			"id": "sWH4-hpWkKi",
+			"stockItemId": "k1n4t7b",
+			"type": "inleverans",
+			"quantity": 33,
+			"timestamp": "2026-08-26T08:33:54.875Z"
+		},
+		{
+			"id": "QUcfrwMjz0u",
+			"stockItemId": "q9d3w6p",
+			"type": "f├Ârs├ñljning",
+			"quantity": -8,
+			"timestamp": "2026-08-27T13:55:33.012Z"
+		},
+		{
+			"id": "9VBHtwxv53Z",
+			"stockItemId": "p7m1t8w",
+			"type": "inleverans",
+			"quantity": 14,
+			"timestamp": "2026-08-27T14:24:09.668Z"
+		},
+		{
+			"id": "VKlhhbehcDm",
+			"stockItemId": "l1g8v6b",
+			"type": "inleverans",
+			"quantity": 44,
+			"timestamp": "2026-08-28T07:16:01.050Z"
+		},
+		{
+			"id": "TiWF2c-Wic_",
+			"stockItemId": "d8m2w5r",
+			"type": "f├Ârs├ñljning",
+			"quantity": -10,
+			"timestamp": "2026-08-28T11:30:11.952Z"
+		},
+		{
+			"id": "9B3xNdrhfMl",
+			"stockItemId": "b8f4h1m",
+			"type": "inleverans",
+			"quantity": 37,
+			"timestamp": "2026-08-28T14:35:54.488Z"
+		},
+		{
+			"id": "k225xzsxvSV",
+			"stockItemId": "r7q3g1n",
+			"type": "inleverans",
+			"quantity": 20,
+			"timestamp": "2026-08-28T18:14:11.008Z"
+		},
+		{
+			"id": "94-9rRp_3RD",
+			"stockItemId": "e8h3d6z",
+			"type": "f├Ârs├ñljning",
+			"quantity": -6,
+			"timestamp": "2026-08-28T18:42:06.630Z"
+		},
+		{
+			"id": "-HebKao9l79",
+			"stockItemId": "c4t9x2s",
+			"type": "inleverans",
+			"quantity": 17,
+			"timestamp": "2026-08-29T10:18:01.471Z"
+		},
+		{
+			"id": "0A8hovDILUH",
+			"stockItemId": "e5x9j2t",
+			"type": "inleverans",
+			"quantity": 50,
+			"timestamp": "2026-08-29T13:47:36.533Z"
+		},
+		{
+			"id": "WNOyRj5Hny9",
+			"stockItemId": "z4h6r9v",
+			"type": "f├Ârs├ñljning",
+			"quantity": -16,
+			"timestamp": "2026-08-29T15:29:05.402Z"
+		},
+		{
+			"id": "KWV1ImZ4KKN",
+			"stockItemId": "u1j4k9m",
+			"type": "inleverans",
+			"quantity": 22,
+			"timestamp": "2026-08-30T11:13:49.394Z"
+		},
+		{
+			"id": "WdUunChyvWo",
+			"stockItemId": "n7q2x5d",
+			"type": "justering",
+			"quantity": -1,
+			"timestamp": "2026-08-30T13:42:33.902Z"
+		},
+		{
+			"id": "jSTuoleAkha",
+			"stockItemId": "y6b1v8p",
+			"type": "f├Ârs├ñljning",
+			"quantity": -12,
+			"timestamp": "2026-08-31T14:52:36.784Z"
+		},
+		{
+			"id": "tmwYKG3F8ss",
+			"stockItemId": "f6q1z8h",
+			"type": "inleverans",
+			"quantity": 36,
+			"timestamp": "2026-08-31T15:55:29.220Z"
+		},
+		{
+			"id": "wkwBITMkPT-",
+			"stockItemId": "k2v7r5n",
+			"type": "f├Ârs├ñljning",
+			"quantity": -5,
+			"timestamp": "2026-08-31T17:53:29.604Z"
+		},
+		{
+			"id": "buN_RQOlWl3",
+			"stockItemId": "n5x2c9t",
+			"type": "f├Ârs├ñljning",
+			"quantity": -11,
+			"timestamp": "2026-09-02T10:52:06.692Z"
+		},
+		{
+			"id": "LOjUP9Cy_q1",
+			"stockItemId": "j4r8v2b",
+			"type": "f├Ârs├ñljning",
+			"quantity": -3,
+			"timestamp": "2026-09-02T14:18:35.174Z"
+		},
+		{
+			"id": "e4KWphTid-C",
+			"stockItemId": "d8m2w5r",
+			"type": "f├Ârs├ñljning",
+			"quantity": -2,
+			"timestamp": "2026-09-02T17:40:46.398Z"
+		},
+		{
+			"id": "FlKXKTwpOIy",
+			"stockItemId": "h5w8f6d",
+			"type": "f├Ârs├ñljning",
+			"quantity": -12,
+			"timestamp": "2026-09-03T07:47:16.766Z"
+		},
+		{
+			"id": "x7Lq-xXV1-_",
+			"stockItemId": "m6j1w9c",
+			"type": "f├Ârs├ñljning",
+			"quantity": -13,
+			"timestamp": "2026-09-03T10:10:11.213Z"
+		},
+		{
+			"id": "w9jjZeDsHGM",
+			"stockItemId": "w3n7t2b",
+			"type": "f├Ârs├ñljning",
+			"quantity": -8,
+			"timestamp": "2026-09-03T15:19:37.504Z"
+		},
+		{
+			"id": "jLcOYha4ne2",
+			"stockItemId": "t1c6v9k",
+			"type": "f├Ârs├ñljning",
+			"quantity": -11,
+			"timestamp": "2026-09-03T17:11:14.764Z"
+		},
+		{
+			"id": "HE7xJ99qRqV",
+			"stockItemId": "q9d3w6p",
+			"type": "f├Ârs├ñljning",
+			"quantity": -2,
+			"timestamp": "2026-09-04T10:24:17.181Z"
+		},
+		{
+			"id": "8CFklWdXDK7",
+			"stockItemId": "e8h3d6z",
+			"type": "f├Ârs├ñljning",
+			"quantity": -1,
+			"timestamp": "2026-09-04T10:55:54.695Z"
+		},
+		{
+			"id": "NQbD6_gA9v4",
+			"stockItemId": "j7x2m5w",
+			"type": "f├Ârs├ñljning",
+			"quantity": -3,
+			"timestamp": "2026-09-04T16:12:15.153Z"
+		},
+		{
+			"id": "uGIeel6n5qG",
+			"stockItemId": "s2p7d4x",
+			"type": "f├Ârs├ñljning",
+			"quantity": -1,
+			"timestamp": "2026-09-05T09:11:59.551Z"
+		},
+		{
+			"id": "H5_196U47Xs",
+			"stockItemId": "x4q9k1v",
+			"type": "justering",
+			"quantity": -1,
+			"timestamp": "2026-09-05T09:25:27.323Z"
+		},
+		{
+			"id": "f3YVTt6x-Dz",
+			"stockItemId": "m5v8b3n",
+			"type": "inleverans",
+			"quantity": 11,
+			"timestamp": "2026-09-05T10:43:05.098Z"
+		},
+		{
+			"id": "NE5Ej2saHE6",
+			"stockItemId": "w7r4f1q",
+			"type": "f├Ârs├ñljning",
+			"quantity": -11,
+			"timestamp": "2026-09-05T13:08:05.692Z"
+		},
+		{
+			"id": "vuZwhXs-V_L",
+			"stockItemId": "k2v7r5n",
+			"type": "f├Ârs├ñljning",
+			"quantity": -2,
+			"timestamp": "2026-09-06T11:09:40.311Z"
+		},
+		{
+			"id": "Xud10_QADBx",
+			"stockItemId": "g7n4b1w",
+			"type": "justering",
+			"quantity": -1,
+			"timestamp": "2026-09-06T13:31:22.806Z"
+		},
+		{
+			"id": "9Cdjq9yOFrS",
+			"stockItemId": "n7q2x5d",
+			"type": "f├Ârs├ñljning",
+			"quantity": -1,
+			"timestamp": "2026-09-06T13:45:58.145Z"
+		},
+		{
+			"id": "966g5DmYGlr",
+			"stockItemId": "j9k2l6a",
+			"type": "f├Ârs├ñljning",
+			"quantity": -7,
+			"timestamp": "2026-09-06T14:55:01.466Z"
+		},
+		{
+			"id": "Niwy3f67xTY",
+			"stockItemId": "w6c1n8q",
+			"type": "f├Ârs├ñljning",
+			"quantity": -1,
+			"timestamp": "2026-09-06T17:47:25.849Z"
+		},
+		{
+			"id": "9ALVGt4Tfe9",
+			"stockItemId": "z4h6r9v",
+			"type": "f├Ârs├ñljning",
+			"quantity": -3,
+			"timestamp": "2026-09-06T18:00:08.706Z"
+		},
+		{
+			"id": "7Vao9V_sFTO",
+			"stockItemId": "t1c6v9k",
+			"type": "f├Ârs├ñljning",
+			"quantity": -1,
+			"timestamp": "2026-09-08T09:13:29.449Z"
+		},
+		{
+			"id": "7z5MLsoJtLb",
+			"stockItemId": "y6b1v8p",
+			"type": "f├Ârs├ñljning",
+			"quantity": -2,
+			"timestamp": "2026-09-09T08:33:17.618Z"
+		},
+		{
+			"id": "y1TXYrqjqMM",
+			"stockItemId": "c9h5m8j",
+			"type": "f├Ârs├ñljning",
+			"quantity": -3,
+			"timestamp": "2026-09-09T08:48:21.759Z"
+		},
+		{
+			"id": "fyDgBEl9z-j",
+			"stockItemId": "f3k8m1p",
+			"type": "inleverans",
+			"quantity": 22,
+			"timestamp": "2026-09-09T12:00:28.459Z"
+		},
+		{
+			"id": "xWtMUFHIJdb",
+			"stockItemId": "y9m3g6k",
+			"type": "f├Ârs├ñljning",
+			"quantity": -2,
+			"timestamp": "2026-09-09T15:11:27.643Z"
+		},
+		{
+			"id": "W931RbWS9i_",
+			"stockItemId": "m1t8k4c",
+			"type": "f├Ârs├ñljning",
+			"quantity": -3,
+			"timestamp": "2026-09-09T15:12:57.469Z"
+		},
+		{
+			"id": "RNT0ErKkuSm",
+			"stockItemId": "b2n5f0y",
+			"type": "inleverans",
+			"quantity": 25,
+			"timestamp": "2026-09-10T07:06:06.639Z"
+		},
+		{
+			"id": "v9Y9DgmaFAB",
+			"stockItemId": "c9h5m8j",
+			"type": "f├Ârs├ñljning",
+			"quantity": -3,
+			"timestamp": "2026-09-10T11:05:26.401Z"
+		},
+		{
+			"id": "iNPlv5Z-KSa",
+			"stockItemId": "h5w8f6d",
+			"type": "f├Ârs├ñljning",
+			"quantity": -1,
+			"timestamp": "2026-09-10T11:53:53.856Z"
+		},
+		{
+			"id": "P_ECU5hrnWd",
+			"stockItemId": "e5x9j2t",
+			"type": "f├Ârs├ñljning",
+			"quantity": -3,
+			"timestamp": "2026-09-10T13:14:34.901Z"
+		},
+		{
+			"id": "GYfwswEerlM",
+			"stockItemId": "x4q9k1v",
+			"type": "f├Ârs├ñljning",
+			"quantity": -2,
+			"timestamp": "2026-09-10T18:11:37.693Z"
+		},
+		{
+			"id": "_AVMMHHNkTN",
+			"stockItemId": "m6j1w9c",
+			"type": "f├Ârs├ñljning",
+			"quantity": -2,
+			"timestamp": "2026-09-11T07:00:10.145Z"
+		},
+		{
+			"id": "SNh9aivvL1K",
+			"stockItemId": "x1w7g4e",
+			"type": "inleverans",
+			"quantity": 23,
+			"timestamp": "2026-09-11T07:06:29.164Z"
+		},
+		{
+			"id": "2Mzc4YiUixD",
+			"stockItemId": "a2m9k5j",
+			"type": "f├Ârs├ñljning",
+			"quantity": -6,
+			"timestamp": "2026-09-11T09:37:35.752Z"
+		},
+		{
+			"id": "XqRll3Kvpzf",
+			"stockItemId": "w7r4f1q",
+			"type": "f├Ârs├ñljning",
+			"quantity": -2,
+			"timestamp": "2026-09-11T12:53:08.005Z"
+		},
+		{
+			"id": "uQ0_PiezLIp",
+			"stockItemId": "q8s3d1c",
+			"type": "f├Ârs├ñljning",
+			"quantity": -5,
+			"timestamp": "2026-09-11T14:24:39.949Z"
+		},
+		{
+			"id": "a0Zykvva3Ia",
+			"stockItemId": "d3p7y0w",
+			"type": "f├Ârs├ñljning",
+			"quantity": -1,
+			"timestamp": "2026-09-11T14:53:47.154Z"
+		},
+		{
+			"id": "gzin76blPkc",
+			"stockItemId": "v2k6d1q",
+			"type": "f├Ârs├ñljning",
+			"quantity": -4,
+			"timestamp": "2026-09-11T17:31:35.564Z"
+		},
+		{
+			"id": "qVUaTNYZqG8",
+			"stockItemId": "v2k6d1q",
+			"type": "f├Ârs├ñljning",
+			"quantity": -4,
+			"timestamp": "2026-09-12T08:06:01.785Z"
+		},
+		{
+			"id": "vHN5xt7cuTV",
+			"stockItemId": "n5x2c9t",
+			"type": "f├Ârs├ñljning",
+			"quantity": -6,
+			"timestamp": "2026-09-12T12:48:32.949Z"
+		},
+		{
+			"id": "wFBYO2M6pU1",
+			"stockItemId": "q8s3d1c",
+			"type": "f├Ârs├ñljning",
+			"quantity": -6,
+			"timestamp": "2026-09-12T12:48:36.699Z"
+		},
+		{
+			"id": "zeqjl7KgeXe",
+			"stockItemId": "t2c9x5r",
+			"type": "f├Ârs├ñljning",
+			"quantity": -4,
+			"timestamp": "2026-09-12T13:22:15.348Z"
+		},
+		{
+			"id": "doHcSwyi4d3",
+			"stockItemId": "g7n4b1w",
+			"type": "f├Ârs├ñljning",
+			"quantity": -1,
+			"timestamp": "2026-09-12T14:25:32.909Z"
+		},
+		{
+			"id": "oz-aYrQizgd",
+			"stockItemId": "s9j4k2m",
+			"type": "f├Ârs├ñljning",
+			"quantity": -2,
+			"timestamp": "2026-09-12T14:47:05.350Z"
+		},
+		{
+			"id": "rTLRne_PqDJ",
+			"stockItemId": "j9k2l6a",
+			"type": "f├Ârs├ñljning",
+			"quantity": -2,
+			"timestamp": "2026-09-12T15:51:14.844Z"
+		},
+		{
+			"id": "1zQnhS8SKFL",
+			"stockItemId": "l1g8v6b",
+			"type": "f├Ârs├ñljning",
+			"quantity": -3,
+			"timestamp": "2026-09-12T18:47:27.676Z"
+		},
+		{
+			"id": "HBurHZcaWJB",
+			"stockItemId": "a2m9k5j",
+			"type": "f├Ârs├ñljning",
+			"quantity": -6,
+			"timestamp": "2026-09-13T07:24:46.864Z"
+		},
+		{
+			"id": "rNnNJqLcQVP",
+			"stockItemId": "w3n7t2b",
+			"type": "f├Ârs├ñljning",
+			"quantity": -3,
+			"timestamp": "2026-09-13T10:06:20.521Z"
+		},
+		{
+			"id": "JhC75NYPO9d",
+			"stockItemId": "t2c9x5r",
+			"type": "f├Ârs├ñljning",
+			"quantity": -4,
+			"timestamp": "2026-09-13T16:10:52.507Z"
+		},
+		{
+			"id": "GKQBTUUbqDj",
+			"stockItemId": "e5x9j2t",
+			"type": "f├Ârs├ñljning",
+			"quantity": -4,
+			"timestamp": "2026-09-13T18:38:59.629Z"
+		},
+		{
+			"id": "xiPRKxWhs-R",
+			"stockItemId": "s9j4k2m",
+			"type": "f├Ârs├ñljning",
+			"quantity": -3,
+			"timestamp": "2026-09-13T18:50:17.900Z"
+		},
+		{
+			"id": "f5mxPlFvhBl",
+			"stockItemId": "l1g8v6b",
+			"type": "f├Ârs├ñljning",
+			"quantity": -3,
+			"timestamp": "2026-09-14T07:55:41.713Z"
+		},
+		{
+			"id": "druxTBufjCg",
+			"stockItemId": "k3j9x2q",
+			"type": "försäljning",
+			"quantity": -1,
+			"timestamp": "2026-09-17T14:06:09.392Z"
+		},
+		{
+			"id": "Ap8fzIu-dzk",
+			"stockItemId": "p7m1t8w",
+			"type": "försäljning",
+			"quantity": -1,
+			"timestamp": "2026-09-17T14:06:09.395Z"
+		},
+		{
+			"id": "tBQhJh0zIHw",
+			"stockItemId": "z4h6r9v",
+			"type": "försäljning",
+			"quantity": -2,
+			"timestamp": "2026-09-17T19:29:42.083Z"
+		},
+		{
+			"id": "PsL485JvAzI",
+			"stockItemId": "k3j9x2q",
+			"type": "försäljning",
+			"quantity": -2,
+			"timestamp": "2026-09-17T19:29:42.100Z"
+		},
+		{
+			"id": "ClfLijMT3qA",
+			"stockItemId": "c9h5m8j",
+			"type": "försäljning",
+			"quantity": -1,
+			"timestamp": "2026-09-17T19:33:22.575Z"
+		},
+		{
+			"id": "ae1MgZxHib4",
+			"stockItemId": "v2k6d1q",
+			"type": "försäljning",
+			"quantity": -1,
+			"timestamp": "2026-09-17T19:33:22.584Z"
+		}
+	],
+	"campaigns": [
+		{
+			"code": "SOMMAR20",
+			"type": "percentage",
+			"value": 20,
+			"id": "S_M9xGCz9HE"
+		},
+		{
+			"code": "HANDLA500",
+			"type": "threshold",
+			"discountAmount": 100,
+			"minAmount": 500,
+			"id": "-x-Zwk4rNng"
+		},
+		{
+			"code": "3FOR2",
+			"type": "buyXgetY",
+			"buyCount": 3,
+			"payCount": 2,
+			"id": "JPyM8cC11kk"
+		}
+	],
+	"carriers": [
+		{
+			"id": "postnord",
+			"name": "PostNord",
+			"pricingModel": "weight",
+			"pricePerKg": 15,
+			"basePrice": 39,
+			"estimatedDays": "3-5"
+		},
+		{
+			"id": "dhl",
+			"name": "DHL",
+			"pricingModel": "zone",
+			"zonePrices": {
+				"zone1": 49,
+				"zone2": 69,
+				"zone3": 99
+			},
+			"estimatedDays": "1-2"
+		},
+		{
+			"id": "budbee",
+			"name": "Budbee",
+			"pricingModel": "volumetric",
+			"pricePerKg": 12,
+			"basePrice": 45,
+			"estimatedDays": "2-3"
+		}
+	],
+	"productDimensions": {
+		"weightGrams": 200,
+		"lengthCm": 19,
+		"widthCm": 11,
+		"heightCm": 3
+	},
+	"orders": [
+		{
+			"firstName": "Milo",
+			"lastName": "Söderberg",
+			"address": "Hemv. 12",
+			"zipCode": "36532",
+			"items": [
+				{
+					"product": {
+						"id": "c9h5m8j",
+						"title": "Lilo & Stitch",
+						"price": 49,
+						"description": "A lonely Hawaiian girl befriends a chaotic alien fugitive who crash-lands on her island.",
+						"release": 2025,
+						"genre": "Family",
+						"imgLink": "lilo&stitch.jpg"
+					},
+					"productQuantity": 1
+				},
+				{
+					"product": {
+						"id": "v2k6d1q",
+						"title": "A Minecraft Movie",
+						"price": 49,
+						"description": "Four misfits are pulled through a portal into a blocky, creative world where survival takes imagination.",
+						"release": 2025,
+						"genre": "Family",
+						"imgLink": "aMinecraftMovie.jpg"
+					},
+					"productQuantity": 1
+				}
+			],
+			"rawTotal": 98,
+			"discountApplied": 19.6,
+			"shipping": {
+				"carrierId": "postnord",
+				"carrierName": "PostNord",
+				"price": 45,
+				"estimatedDays": "3-5"
+			},
+			"total": 123.4,
+			"id": "A0iXXGFRpX0"
+		}
+	],
+	"$schema": "./node_modules/json-server/schema.json"
 }

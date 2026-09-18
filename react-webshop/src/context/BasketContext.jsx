@@ -1,4 +1,4 @@
-import {createContext, useReducer} from "react";
+import {createContext, useReducer, useState} from "react";
 
 /* skapar kontext / sammanhang för kundkorgen så att hela applikationen kommer ihåg vad som ligger i medan man bläddrar runt på sidan.
  * importera variabeln och använd den i komponenter genom att lägga den i en variabel:
@@ -58,8 +58,27 @@ function basketReducer(basket, action) {
 	}
 }
 
-/* BasketProvider gör varukorgens kontext tillgänglig för alla komponenter / sidor som finns innanför taggarna <BasketProvider> </BasketProvider> istället för att använda useReducer(basketReducer, []) i App.jsx */
-export function BasketProvider({children}) {
+export function BasketProvider({ children }) {
 	const [basket, dispatch] = useReducer(basketReducer, []);
-	return <BasketContext.Provider value={{basket, dispatch}}>{children}</BasketContext.Provider>;
+	const [appliedDiscount, setAppliedDiscount] = useState(null);
+	const rawTotal = basket.reduce(
+		(sum, item) => sum + item.product.price * item.productQuantity, 0
+	)
+
+	const discountAmount = appliedDiscount?.discountAmount || 0;
+	const finalTotal = Math.max(0, rawTotal - discountAmount);
+
+	return (
+		<BasketContext.Provider 
+			value={{
+				basket, 
+				dispatch, 
+				appliedDiscount,
+				setAppliedDiscount,
+				rawTotal,
+				finalTotal
+			}}>
+			{children}
+		</BasketContext.Provider>
+	);
 }
