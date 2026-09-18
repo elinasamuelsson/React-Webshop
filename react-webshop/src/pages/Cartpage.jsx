@@ -61,7 +61,7 @@ function CartRow({ item, basketDispatch, toastDispatch, currency, onLineTotal })
 
 			<strong>{lineTotal !== null ? `${lineTotal.toFixed(2)} kr` : "..."}</strong>
 
-			<button
+			<button className="cart-remove-button"
 				onClick={() => {
 					basketDispatch({ type: "REMOVE", payload: item.product.id });
 					toastDispatch({ type: "SHOW", payload: "Cart was updated!" });

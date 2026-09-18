@@ -107,7 +107,7 @@
     white-space: nowrap;
 }
 
-.cart-row button:last-child {
+.cart-remove-button:last-child {
     background: none;
     border: none;
     color: var(--rv-text-muted);
@@ -117,7 +117,7 @@
     padding: 0;
 }
 
-.cart-row button:last-child:hover {
+.cart-remove-button:hover {
     color: var(--rv-bg);
 }
 
