@@ -3,10 +3,10 @@ import {Link} from "react-router";
 import Product from "../api/Products.js";
 import "./ProductCard.css";
 import DiscountIcon from "./DiscountIcon.jsx";
-import {BasketContext} from "../context/BasketContext.jsx";
-import {CurrencyContext} from "../context/CurrencyContext.jsx";
 import {ToastContext} from "../context/ToastContext.jsx";
-import {priceWithTax} from "../hooks/priceWithTax.js";
+import { BasketContext } from "../context/BasketContext.jsx";
+import { CurrencyContext } from "../context/CurrencyContext.jsx";
+import { priceWithTax } from "../hooks/priceWithTax.js";
 
 function CardPrice({price}) {
 	const {currency} = useContext(CurrencyContext);
@@ -50,65 +50,56 @@ export default function Products({filter}) {
 	// Lägger till en produkt i varukorgen, alltid med antal 1 från produktgriden
 	function addToCart(product) {
 		basketDispatch({type: "ADD", payload: {product, productQuantity: 1}});
-		toastDispatch({type: "SHOW", payload: "Item was added to cart!"});
+		toastDispatch({type: "SHOW", payload: "Item added to cart!"});
 	}
+    return (
+        <div class="card-container">
+            {
+                displayedProducts.map(p => {
+                    return (
+                        <div class="card" key={p.id} style={{ display: "flex", flexDirection: "column" }}>
 
-	return (
-		<div class="card-container">
-			{displayedProducts.map((p) => {
-				return (
-					<div class="card" key={p.id} style={{display: "flex", flexDirection: "column"}}>
-						{p.isDiscount ? <DiscountIcon /> : null}
+                            {p.isDiscount ? <DiscountIcon /> : null}
 
-						<img class="card-img" alt={`${p.title}`} src={`./public/productimages/${p.imgLink}`} />
-						<p class="card-genre">{p.genre.toUpperCase()}</p>
-						<Link to={`/products/${p.id}`}>
-							<h3 class="card-title">{p.title}</h3>
-						</Link>
-						<p class="card-release">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="16"
-								height="16"
-								fill="currentColor"
-								class="bi bi-calendar4-event"
-								viewBox="0 0 16 16"
-							>
-								<path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
-								<path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
-							</svg>
-							{p.release}
-						</p>
-						<p class="card-description">{p.description}</p>
-						<p class="card-stock">{p.stock}</p>
-						<div>
-							<CardPrice price={p.price} />
-							<button onClick={() => addToCart(p)}>ADD TO CART</button>
-						</div>
-					</div>
-				);
-			})}
+                            <img class="card-img" alt={`${p.title}`} src={`./public/productimages/${p.imgLink}`} />
+                            <p class="card-genre">{p.genre.toUpperCase()}</p>
+                            		<Link to={`/products/${p.id}`}>
+							                      <h3 class="card-title">{p.title}</h3>
+					                    	</Link>
+                            <p class="card-release">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar4-event" viewBox="0 0 16 16">
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
+                                    <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                                </svg>
+                                {p.release}
+                            </p>
+                            <p class="card-description">{p.description}</p>
+                            <p class="card-stock">{p.stock}</p>
+                            <div>
+                                <CardPrice price={p.price} />
+                                <button onClick={() => addToCart(p)}>ADD TO CART</button>
+                            </div>
+                        </div>
+                    );
+                })
+            }
 
-			{/* Knappar för att bläddra mellan sidorna */}
-			<div style={{gridColumn: "span 3", display: "flex", alignItems: "center", justifyContent: "center"}}>
-				<button
-					class="previous"
-					disabled={page <= 1}
-					onClick={() => setPage((prev) => prev - 1)} // Functional state value
-				>
-					Previous
-				</button>
-				<span class="page">
-					Page {page} of {totalPages}
-				</span>
-				<button
-					class="next"
-					disabled={page >= totalPages || displayedProducts.length < 9}
-					onClick={() => setPage((prev) => prev + 1)}
-				>
-					Next
-				</button>
-			</div>
-		</div>
-	);
+            {/* Knappar för att bläddra mellan sidorna */}
+            <div style={{ gridColumn: "span 3", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <button class="previous"
+                    disabled={page <= 1}
+                    onClick={() => setPage(prev => prev - 1)} // Functional state value
+                >
+                    Previous
+                </button>
+                <span class="page">Page {page} of {totalPages}</span>
+                <button class="next"
+                    disabled={page >= totalPages || displayedProducts.length < 9}
+                    onClick={() => setPage(prev => prev + 1)}
+                >
+                    Next
+                </button>
+            </div>
+        </div>
+    );
 }
