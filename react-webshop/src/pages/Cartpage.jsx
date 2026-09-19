@@ -4,6 +4,7 @@ import {BasketContext} from "../context/BasketContext.jsx";
 import {ToastContext} from "../context/ToastContext.jsx";
 import CampaignEngineModule from "../modules/campaigns/CampaignEngineModule.js";
 import {Link} from "react-router";
+import {ToastContext} from "../context/ToastContext.jsx";
 
 const campaignModule = new CampaignEngineModule();
 

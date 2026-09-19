@@ -1,5 +1,6 @@
 import {useContext, useState} from "react";
 import {BasketContext} from "../context/BasketContext.jsx";
+import {ToastContext} from "../context/ToastContext.jsx";
 import moduleMaker from "../modules/moduleMaker.js";
 import Form from "../components/Form.jsx";
 import Orders from "../api/Orders.js";
@@ -7,6 +8,7 @@ import ShippingQuoteService from "../modules/alex/ShippingQuoteService.js";
 
 export default function Checkout() {
 	const {basket: cartItems, appliedDiscount, rawTotal, finalTotal, dispatch, setAppliedDiscount} = useContext(BasketContext);
+  	const {dispatch: toastDispatch} = useContext(ToastContext);
 
 	// "form" -> "shipping" -> "done"
 	const [step, setStep] = useState("form");
@@ -104,12 +106,15 @@ export default function Checkout() {
 			total: finalTotal + selectedQuote.price,
 		};
 
-		const {response, result} = await ordersAPI.createOrder(orderData);
+		const {response, result} = await ordersAPI.createOrder(orderData).catch((e) => {
+			toastDispatch({type: "SHOW", payload: `${e}`});
+			return {response: null, result: null};
+		});
 
 		if (response && response.ok) {
-			console.log("Order placed!", result);
 			decreaseStock(orderData);
-			dispatch({type: "CLEAR"});
+	toastDispatch({type: "SHOW", payload: "Your order has been placed!"});		
+  dispatch({type: "CLEAR"});
 			setAppliedDiscount(null);
 			setStep("done");
 		} else {
