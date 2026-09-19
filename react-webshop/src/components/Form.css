@@ -1,0 +1,18 @@
+@media (max-width: 1050px) {
+	form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	form label {
+		display: flex;
+		flex-direction: column;
+		max-width: 250px;
+		margin: 10px;
+	}
+
+	form button {
+		max-width: 250px;
+		margin: 10px;
+	}
+}
