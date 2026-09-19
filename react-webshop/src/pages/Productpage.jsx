@@ -2,12 +2,12 @@ import "./Productpage.css";
 import Product from "../api/Products";
 import PriceConverter from "../modules/Admir/index.js";
 
-import { useState, useEffect, useContext } from "react";
-import { useParams, NavLink, useNavigate } from "react-router";
-import { BasketContext } from "../context/BasketContext";
-import { ToastContext } from "../context/ToastContext";
-import { CurrencyContext } from "../context/CurrencyContext.jsx";
-import { priceWithTax } from "../hooks/priceWithTax.js";
+import {useState, useEffect, useContext} from "react";
+import {useParams, Link, useNavigate} from "react-router";
+import {BasketContext} from "../context/BasketContext";
+import {ToastContext} from "../context/ToastContext";
+import {CurrencyContext} from "../context/CurrencyContext.jsx";
+import {priceWithTax} from "../hooks/priceWithTax.js";
 
 const priceConverter = new PriceConverter();
 
