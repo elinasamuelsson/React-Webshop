@@ -6,6 +6,7 @@ import CampaignEngineModule from "../modules/campaigns/CampaignEngineModule.js";
 import { Link } from "react-router";
 import { CurrencyContext } from "../context/CurrencyContext.jsx";
 import { priceWithTax } from "../hooks/priceWithTax.js";
+import {ToastContext} from "../context/ToastContext.jsx";
 
 const campaignModule = new CampaignEngineModule();
 
