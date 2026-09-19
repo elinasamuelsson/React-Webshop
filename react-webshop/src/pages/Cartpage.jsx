@@ -1,6 +1,7 @@
 import "./Cartpage.css";
 import {useContext, useState} from "react";
 import {BasketContext} from "../context/BasketContext.jsx";
+import {ToastContext} from "../context/ToastContext.jsx";
 import CampaignEngineModule from "../modules/campaigns/CampaignEngineModule.js";
 import {Link} from "react-router";
 import {ToastContext} from "../context/ToastContext.jsx";
@@ -8,8 +9,15 @@ import {ToastContext} from "../context/ToastContext.jsx";
 const campaignModule = new CampaignEngineModule();
 
 export default function Cart() {
-	const {basket: cartItems, appliedDiscount, setAppliedDiscount, rawTotal, finalTotal, dispatch} = useContext(BasketContext);
-  const {dispatch: toastDispatch} = useContext(ToastContext);
+	const {
+		basket: cartItems,
+		appliedDiscount,
+		setAppliedDiscount,
+		rawTotal,
+		finalTotal,
+		dispatch: basketDispatch,
+	} = useContext(BasketContext);
+	const {dispatch: toastDispatch} = useContext(ToastContext);
 
 	const [promoCode, setPromoCode] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
@@ -19,20 +27,13 @@ export default function Cart() {
 		setErrorMessage("");
 
 		try {
-			const result = await campaignModule.run(
-				{ code: promoCode }, 
-				{ cartItems }
-			);
+			const result = await campaignModule.run({code: promoCode}, {cartItems});
 
 			setAppliedDiscount(result);
 		} catch (error) {
 			setAppliedDiscount(null);
 			setErrorMessage(error.message);
 		}
-	}
-
-	function toast() {
-		toastDispatch({type: "SHOW", payload: "Cart has been updated!"});
 	}
 
 	return (
@@ -65,7 +66,7 @@ export default function Cart() {
 												type: "UPDATE",
 												payload: {product: item.product, productQuantity: -1},
 											});
-											toast();
+											toastDispatch({type: "SHOW", payload: "Cart was updated!"});
 										}}
 									>
 										&#45;
@@ -79,7 +80,7 @@ export default function Cart() {
 												type: "UPDATE",
 												payload: {product: item.product, productQuantity: 1},
 											});
-											toast();
+											toastDispatch({type: "SHOW", payload: "Cart was updated!"});
 										}}
 									>
 										+
@@ -91,7 +92,7 @@ export default function Cart() {
 								<button
 									onClick={() => {
 										basketDispatch({type: "REMOVE", payload: item.product.id});
-										toast();
+										toastDispatch({type: "SHOW", payload: "Cart was updated!"});
 									}}
 								>
 									Remove
@@ -102,10 +103,11 @@ export default function Cart() {
 
 					<div className="cart-total" style={{display: "flex", flexDirection: "column"}}>
 						<form onSubmit={handleDiscountSubmit}>
-							<input 
-								type="text" 
-								placeholder="Enter promo code" 
-								onChange={(e) => setPromoCode(e.target.value)}/>
+							<input
+								type="text"
+								placeholder="Enter promo code"
+								onChange={(e) => setPromoCode(e.target.value)}
+							/>
 							<button type="submit">Apply</button>
 						</form>
 
@@ -118,7 +120,9 @@ export default function Cart() {
 								<p>Discount: -{appliedDiscount.discountAmount} kr</p>
 								<strong>Final total: {finalTotal} kr</strong>
 							</div>
-						) : <strong>Total: {rawTotal} kr</strong>}
+						) : (
+							<strong>Total: {rawTotal} kr</strong>
+						)}
 
 						<Link to="/checkout">
 							<button>Go to Checkout</button>

@@ -8,13 +8,13 @@ import { BasketContext } from "../context/BasketContext.jsx";
 import { CurrencyContext } from "../context/CurrencyContext.jsx";
 import { priceWithTax } from "../hooks/priceWithTax.js";
 
-function CardPrice({ price }) {
-    const { currency } = useContext(CurrencyContext);
-    const { priceInfo, priceError } = priceWithTax(price, "standard", currency);
+function CardPrice({price}) {
+	const {currency} = useContext(CurrencyContext);
+	const {priceInfo, priceError} = priceWithTax(price, "standard", currency);
 
-    if (priceError) return <p className="card-price">{priceError}</p>;
-    if (!priceInfo) return <p className="card-price">...</p>;
-    return <p className="card-price">{priceInfo.formatted}</p>;
+	if (priceError) return <p className="card-price">{priceError}</p>;
+	if (!priceInfo) return <p className="card-price">...</p>;
+	return <p className="card-price">{priceInfo.formatted}</p>;
 }
 
 export default function Products({filter}) {
