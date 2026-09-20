@@ -1,4 +1,5 @@
 import {useState} from "react";
+import "./Form.css";
 
 export default function Form({descriptor, onSubmit}) {
 	// Bygger startvärdet för formData utifrån descriptorn, en gång
@@ -40,7 +41,7 @@ export default function Form({descriptor, onSubmit}) {
 				);
 			})}
 
-			<button type="submit">Skicka</button>
+			<button type="submit">Submit</button>
 		</form>
 	);
 }
