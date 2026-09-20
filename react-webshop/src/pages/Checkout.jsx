@@ -4,7 +4,7 @@ import {ToastContext} from "../context/ToastContext.jsx";
 import moduleMaker from "../modules/moduleMaker.js";
 import Form from "../components/Form.jsx";
 import Orders from "../api/Orders.js";
-import ShippingQuoteService from "../modules/alex/ShippingQuoteService.js";
+
 
 export default function Checkout() {
 	const {basket: cartItems, appliedDiscount, rawTotal, finalTotal, dispatch, setAppliedDiscount} = useContext(BasketContext);
@@ -77,8 +77,10 @@ export default function Checkout() {
 		setLoadingQuotes(true);
 
 		try {
-			const shippingService = new ShippingQuoteService();
-			const result = await shippingService.getQuotes(cartItems, formData.zipCode);
+			const result = await moduleMaker.ShippingModule.run(
+    			{postalCode: formData.zipCode},
+    			{cartItems}
+);
 
 			if (result.length === 0) {
 				setErrorMessage("No shipping options available right now. Please try again later.");
